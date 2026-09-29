@@ -1,0 +1,102 @@
+\documentclass[aps,rmp,reprint,amsmath,amssymb,graphicx,longbibliography]{revtex4-1}
+
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{wrapfig}
+\usepackage{array} 
+\usepackage{listings}
+\usepackage[para,online,flushleft]{threeparttablex}
+\usepackage{booktabs,dcolumn}
+\usepackage{color}
+ 
+
+\usepackage{textpos}
+\usepackage{booktabs}
+\usepackage{multirow,bigdelim}
+
+
+\usepackage{upgreek} %upalpha in Saxena2021 Reference
+
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\hypersetup{breaklinks=true,colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=magenta,urlcolor=blue}
+
+
+
+
+\usepackage{xcolor}
+%\newcommand{\contrib}[1]{\textcolor{red}{#1}}
+%\newcommand{\comment}[1]{\textcolor{blue}{#1}}
+
+%\newcommand{\WN}[1]{{\color{red} #1}}
+
+\makeatletter
+\def\@bibdataout@aps{%
+\immediate\write\@bibdataout{%
+@CONTROL{%
+apsrev41Control%
+\longbibliography@sw{%
+    ,author="08",editor="1",pages="1",title="0",year="1"%
+    }{%
+    ,author="08",editor="1",pages="1",title="",year="1"%
+    }%
+  }%
+}%
+\if@filesw \immediate \write \@auxout {\string \citation {apsrev41Control}}\fi
+}
+\makeatother
+%\usepackage[left]{lineno}
+%\linenumbers
+
+
+\begin{document}
+%\pagenumbering{gobble} 
+
+\title{Project 1 on Machine Learning: regression analysis, resampling methods and gradient descent}
+
+\author{Tim Herrmann Holmen}
+\affiliation{FYS-STK4155}
+\affiliation{Department of Physics}
+
+
+\begin{abstract}
+    Dette prosjektet er en vandring gjennom metodene innen dataanalyse som har ledet til det vi idag kaller maskinlæring. Hovedmålet er å studere i detalj diverese regresjonsmetoder, som ordinary least squares, ridge regresjon og lasso regresjon. Resampling teknikker som bootstrap og kryssvalidering lar oss vurdere og velge den beste metoden for problemet. For å optimalisere parametrene (hvilke parametre er det her snakk om?: det er selve parametrene og hyperparametrene) vil vi bruke gradient descent, og teste ulike metoder for å utføre denne beregningen, som består av derivasjon. Vi har studert newtons metode og automatiserte derivasjons metoder, for å optimalisere parametrene i modellene. Polynomene vi utvikler skal passe til en spesifik en dimensjonal funksjon kalt Runges funksjon, med et støy element, dermed har vi det analytiske svaret tilgjengelig. 
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+
+
+\section{Introduction} 
+subsection\{2a) The motivation.}
+
+En av grunnene til å tilpasse funksjoner med polynomer, er at man kan øke polynomgraden vilkårlig, og dermed utforske ulike polynomgrader med tilhørende parametre for å se hvilken polynomgrad som gir en best tilpasning. En utfordring er at man tilsynelatende kan få en optimal tilpasning ved å øke polynomgraden, og dermed bedre tilpasse polynomet til dataen man ønsker å beskrive, med en grunntanke om at dataen har en slags sammenheng som kan beskrives med et polynom, dvs. en funksjon. Ved å justere parametrene, vekten til hver enkelt polynomgrad, kan de ulike gradene bety mer eller mindre for å beskrive dataene. Runge funksjon er en klassisk test funksjon fordi den oppfører seg som en gaussisk fordeling i intervallet $[-1,1]$ , utenfor dette intervallet er funksjonen forholdsvis glatt og flat. For runge og polynomtilpasning vil dette si at en stadig høyere polynomgrad ikke nødvendigvis gir en bedre modell, dette fenomenet kalles overtilpasning. 
+Dette fenomenet blir tydelig dersom man kartlegger "bias-variance" tradeoff. Dersom man tilpasser polynomer av økende grad, vil man se at feilen mellom modellen og treningsdataen blir mindre for høyere kompleksitet, derimot vil feilen mellom modellen og test data, etter at initielt har falt, gradvis øke med høyere kompleksitet. At test error gradvis øker, og trening error gradvis minker, er et resultat av bias og varians, ved høyere kompleksitet, blir bias mindre, som blir tydelig gjennom trening error, variansen vil derimot øke, som blir tydelig gjennom test erroren. Det er slik ettersom erroren er en sum av kvadrert bias, varians og kvadrert støy. At bias minker for treningsdata, er et tegn på overtilpasning, at variansen øker, dette forstår jeg ikke. 
+
+\subsection{2b) What has been done and what i do.}
+\subsubsection{Linear Models}
+\paragraph{OLS}
+\paragraph{Ridge}
+\paragraph{Lasso}
+\subsubsection{Resampling techniques}
+\paragraph{Bootstrap}
+\paragraph{Kfold cross validation}
+\subsubsection{Optimization}
+\paragraph{Gradient descent}
+\paragraph{Momentum}
+\paragraph{Adagrad}
+\paragraph{RMSprop}
+\paragraph{Adam}
+\paragraph{Stochastic gradient descent}
+
+\subsection{2c) The structure of the report,}
+he last paragraph, one sentence per section, and where code can be found.
+
+\section{Conclusion}
+
+
+
+\bibliography{References} % add  references to this file
+\end{document}
