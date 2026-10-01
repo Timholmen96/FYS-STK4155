@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99e (TeX Live 2026)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Prosjekt1.aux
+The style file: apsrmp4-1.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: Prosjekt1Notes.bib
+Database file #2: References.bib
+control{REVTEX41Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
+control{apsrev41Control}, control.key{N/A}, control.author{08}, control.editor{1}, control.title{0}, control.pages{1}, control.year{1}, control.eprint{N/A}, 
+Warning--jnrlst (dependency: not reversed) set 1
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+merlin.mbs apsrmp4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+Control: key (0) 
+Control: author (8) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (0) allowed
+Control: page (1) range
+Control: year (1) truncated
+Control: production of eprint (0) enabled
+You've used 3 entries,
+            5876 wiz_defined-function locations,
+            1610 strings with 14827 characters,
+and the built_in function-call counts, 1705 in all, are:
+= -- 65
+> -- 29
+< -- 38
++ -- 14
+- -- 23
+* -- 218
+:= -- 161
+add.period$ -- 1
+call.type$ -- 3
+change.case$ -- 5
+chr.to.int$ -- 13
+cite$ -- 3
+duplicate$ -- 208
+empty$ -- 81
+format.name$ -- 6
+if$ -- 267
+int.to.chr$ -- 1
+int.to.str$ -- 9
+missing$ -- 35
+newline$ -- 55
+num.names$ -- 4
+pop$ -- 103
+preamble$ -- 1
+purify$ -- 6
+quote$ -- 0
+skip$ -- 60
+stack$ -- 0
+substring$ -- 25
+swap$ -- 160
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 10
+type$ -- 25
+warning$ -- 1
+while$ -- 14
+width$ -- 0
+write$ -- 60
+(There was 1 warning)

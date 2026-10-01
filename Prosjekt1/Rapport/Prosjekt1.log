@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.14)  1 OCT 2026 13:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.14)  1 OCT 2026 15:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -355,7 +355,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
 Package nameref Warning: The definition of \label has changed! 
 (nameref)                Check your packages! 
-(nameref)                Replacing it with the kernel definition on input line 161.
+(nameref)                Replacing it with the kernel definition on input line 172.
 
 \c@section@level=\count317
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -451,12 +451,7 @@ Class revtex4-1 Info: multicol was not loaded (OK!) on input line 53.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count329
-)
-
-LaTeX Warning: Unused global option(s):
-    [graphicx].
-
-(./Prosjekt1.aux)
+) (./Prosjekt1.aux)
 \openout1 = `Prosjekt1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -511,34 +506,27 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 108.
-
-[1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-No file Prosjekt1.bbl.
-[2] (./Prosjekt1.aux)
+) [1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Prosjekt1.bbl) [2] (./Prosjekt1.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `Prosjekt1.out' has not changed.
-(rerunfilecheck)             Checksum: 938994B9284D67952C00980477AB1866;3283.
+(rerunfilecheck)             Checksum: 6A2F82F647B9565C47CBED4A630F6E9F;3389.
  ) 
 Here is how much of TeX's memory you used:
- 14325 strings out of 467525
- 215101 string characters out of 5418982
- 662612 words of memory out of 5000000
- 42997 multiletter control sequences out of 15000+600000
- 635839 words of font info for 69 fonts, out of 8000000 for 9000
+ 14350 strings out of 467525
+ 215466 string characters out of 5418982
+ 662627 words of memory out of 5000000
+ 43016 multiletter control sequences out of 15000+600000
+ 636184 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,6n,79p,966b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb>
-Output written on Prosjekt1.pdf (2 pages, 128400 bytes).
+ 71i,5n,79p,966b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on Prosjekt1.pdf (2 pages, 154020 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 185 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 187 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
+ 193 words of extra memory for PDF output out of 10000 (max. 10000000)
 

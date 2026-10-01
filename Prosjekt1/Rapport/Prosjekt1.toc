@@ -5,7 +5,7 @@
 \tocdepth@restore 
 \contentsline {section}{\numberline {I}Introduction}{1}{section*.4}%
 \contentsline {subsection}{\numberline {A}2a The motivation.}{1}{section*.5}%
-\contentsline {paragraph}{\numberline {a}The data}{2}{section*.6}%
+\contentsline {subsubsection}{\numberline {1}The data}{2}{section*.6}%
 \contentsline {subsection}{\numberline {B}2b What has been done and what i do.}{2}{section*.7}%
 \contentsline {subsubsection}{\numberline {1}Linear Models}{2}{section*.8}%
 \contentsline {paragraph}{\numberline {a}OLS}{2}{section*.9}%
@@ -23,3 +23,4 @@
 \contentsline {paragraph}{\numberline {f}Stochastic gradient descent}{2}{section*.21}%
 \contentsline {subsection}{\numberline {C}2c) The structure of the report,}{2}{section*.22}%
 \contentsline {section}{\numberline {II}Conclusion}{2}{section*.23}%
+\contentsline {section}{\numberline {}References}{2}{section*.24}%
