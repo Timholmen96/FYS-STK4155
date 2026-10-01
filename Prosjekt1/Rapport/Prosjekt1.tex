@@ -70,12 +70,42 @@ apsrev41Control%
 
 
 \section{Introduction} 
-subsection\{2a) The motivation.}
+\subsection{2a The motivation.}
 
-En av grunnene til å tilpasse funksjoner med polynomer, er at man kan øke polynomgraden vilkårlig, og dermed utforske ulike polynomgrader med tilhørende parametre for å se hvilken polynomgrad som gir en best tilpasning. En utfordring er at man tilsynelatende kan få en optimal tilpasning ved å øke polynomgraden, og dermed bedre tilpasse polynomet til dataen man ønsker å beskrive, med en grunntanke om at dataen har en slags sammenheng som kan beskrives med et polynom, dvs. en funksjon. Ved å justere parametrene, vekten til hver enkelt polynomgrad, kan de ulike gradene bety mer eller mindre for å beskrive dataene. Runge funksjon er en klassisk test funksjon fordi den oppfører seg som en gaussisk fordeling i intervallet $[-1,1]$ , utenfor dette intervallet er funksjonen forholdsvis glatt og flat. For runge og polynomtilpasning vil dette si at en stadig høyere polynomgrad ikke nødvendigvis gir en bedre modell, dette fenomenet kalles overtilpasning. 
-Dette fenomenet blir tydelig dersom man kartlegger "bias-variance" tradeoff. Dersom man tilpasser polynomer av økende grad, vil man se at feilen mellom modellen og treningsdataen blir mindre for høyere kompleksitet, derimot vil feilen mellom modellen og test data, etter at initielt har falt, gradvis øke med høyere kompleksitet. At test error gradvis øker, og trening error gradvis minker, er et resultat av bias og varians, ved høyere kompleksitet, blir bias mindre, som blir tydelig gjennom trening error, variansen vil derimot øke, som blir tydelig gjennom test erroren. Det er slik ettersom erroren er en sum av kvadrert bias, varians og kvadrert støy. At bias minker for treningsdata, er et tegn på overtilpasning, at variansen øker, dette forstår jeg ikke. 
+En av grunnene til å tilpasse funksjoner med polynomer, 
+er at man kan øke polynomgraden vilkårlig, og dermed utforske ulike polynomgrader med tilhørende parametre 
+for å se hvilken polynomgrad som gir en best tilpasning. En utfordring er at man tilsynelatende kan få en 
+optimal tilpasning ved å øke polynomgraden, og dermed bedre tilpasse polynomet til dataen man ønsker å beskrive.
+Runge funksjon er en klassisk test funksjon fordi den oppfører seg som en gaussisk fordeling i intervallet $[-1,1]$ , 
+utenfor dette intervallet er funksjonen forholdsvis flat. For runge vil dette si at en 
+stadig høyere polynomgrad ikke nødvendigvis gir en bedre modell i ytterpunktene, det finnes en begrensning allerede
+i formen på dataen, som kommer fra runge funksjonen. 
+Dette fenomenet blir tydelig dersom man kartlegger "bias-variance" tradeoff. Dersom man tilpasser polynomer av økende grad,
+ vil man se at feilen mellom modellen og treningsdataen blir mindre for høyere kompleksitet, 
+ derimot vil feilen mellom modellen og test data, gradvis øke med høyere kompleksitet, dette kalles overtilpasning. 
+ At test error gradvis øker, og trening error gradvis minker, er et resultat av bias og varians, ved høyere kompleksitet,
+blir bias mindre, som blir tydelig gjennom trening error, variansen vil derimot øke, som blir tydelig gjennom test erroren. 
+Det er slik ettersom erroren er en sum av kvadrert bias, varians og kvadrert støy. At bias minker for treningsdata, 
+er et tegn på overtilpasning, at variansen øker, kommer av at modellen er overtilpasset treningsdata, og dermed
+får en dårligere tilpasning til annen type data, fra samme fordeling. I andre enden, kan man ha en 
+modell som er dårligere tilpasset treningsdataen, den har høyere bias, men samtidig vil 
+variansen være mindre dersom man tester modellen på en annen datagruppe fra samme fordeling. 
+Målet er å finne en balanse mellom bias og varians som gir den laveste mulige totale feilen. \newline 
+The bias variance tradeoff:
+\begin{equation}
+  E[(y - \tilde{y})^2] = \frac{1}{n}\sum_{i}(f_i - E[\tilde{y}])^2 + \frac{1}{n}\sum_{i}(\tilde{y}_i - E[\tilde{y}])^2 + \sigma^2 
+\end{equation}
+$$ MSE = Bias^2 + Var[\tilde{y}] + irreducible \ noise$$
+The bias measures how far the average prediction is from the truth.
+The variance measures how much the prediction moves when the training
+set is redrwan.
+The irreducible error is the variance of the noise itself. 
 
-\subsection{2b) What has been done and what i do.}
+To furhter explore this tradeoff
+
+
+
+\subsection{2b What has been done and what i do.}
 \subsubsection{Linear Models}
 \paragraph{OLS}
 \paragraph{Ridge}

@@ -1,0 +1,24 @@
+\contentsline {title}{Project 1 on Machine Learning: regression analysis, resampling methods and gradient descent}{1}{section*.2}%
+\contentsline {abstract}{Abstract}{1}{section*.1}%
+\tocdepth@munge 
+\contentsline {section}{\numberline {}Contents}{1}{section*.3}%
+\tocdepth@restore 
+\contentsline {section}{\numberline {I}Introduction}{1}{section*.4}%
+\contentsline {subsection}{\numberline {A}2a The motivation.}{1}{section*.5}%
+\contentsline {subsection}{\numberline {B}2b What has been done and what i do.}{1}{section*.6}%
+\contentsline {subsubsection}{\numberline {1}Linear Models}{1}{section*.7}%
+\contentsline {paragraph}{\numberline {a}OLS}{1}{section*.8}%
+\contentsline {paragraph}{\numberline {b}Ridge}{1}{section*.9}%
+\contentsline {paragraph}{\numberline {c}Lasso}{1}{section*.10}%
+\contentsline {subsubsection}{\numberline {2}Resampling techniques}{2}{section*.11}%
+\contentsline {paragraph}{\numberline {a}Bootstrap}{2}{section*.12}%
+\contentsline {paragraph}{\numberline {b}Kfold cross validation}{2}{section*.13}%
+\contentsline {subsubsection}{\numberline {3}Optimization}{2}{section*.14}%
+\contentsline {paragraph}{\numberline {a}Gradient descent}{2}{section*.15}%
+\contentsline {paragraph}{\numberline {b}Momentum}{2}{section*.16}%
+\contentsline {paragraph}{\numberline {c}Adagrad}{2}{section*.17}%
+\contentsline {paragraph}{\numberline {d}RMSprop}{2}{section*.18}%
+\contentsline {paragraph}{\numberline {e}Adam}{2}{section*.19}%
+\contentsline {paragraph}{\numberline {f}Stochastic gradient descent}{2}{section*.20}%
+\contentsline {subsection}{\numberline {C}2c) The structure of the report,}{2}{section*.21}%
+\contentsline {section}{\numberline {II}Conclusion}{2}{section*.22}%
