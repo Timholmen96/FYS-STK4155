@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex Prosjekt1"] 1790860850.22203 "Prosjekt1.aux" "Prosjekt1.bbl" "Prosjekt1" 1790860884.07514 0
-  "./Prosjekt1Notes.bib" 1790860882.09492 104 ae5e0a544405ee38327e9d4052af6dd8 ""
-  "./References.bib" 1790860781.92919 219 033744315ffd9966048cf7e11bc2ac88 ""
+["bibtex Prosjekt1"] 1790869602.33471 "Prosjekt1.aux" "Prosjekt1.bbl" "Prosjekt1" 1790869632.50731 0
+  "./Prosjekt1Notes.bib" 1790869630.95076 104 ae5e0a544405ee38327e9d4052af6dd8 ""
+  "./References.bib" 1790869601.88712 529 4988c38b876a571ac6d47e5b97932156 ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/revtex4-1/apsrmp4-1.bst" 1602107945 71748 f711d7df172771f6dc44f5fb891e6757 ""
-  "Prosjekt1.aux" 1790860882.07274 3530 7692a2a80a01cdf10e8e0e71fce75d9f "pdflatex"
+  "Prosjekt1.aux" 1790869630.94893 3867 eacca73175ebf5e3f3eb01624265398e "pdflatex"
   (generated)
   "Prosjekt1.bbl"
   "Prosjekt1.blg"
   (rewritten before read)
-["pdflatex"] 1790860878.97246 "/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex" "Prosjekt1.pdf" "Prosjekt1" 1790860884.0757 0
-  "/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex" 1790860878.40698 7012 ea6e38f96530a9f51e69d9a71eb04c0d ""
+["pdflatex"] 1790869629.25723 "/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex" "Prosjekt1.pdf" "Prosjekt1" 1790869632.5077 0
+  "/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex" 1790869628.217 7277 8959c18211861f88f42ac5eae6713dc9 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -128,11 +128,11 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1786703604 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1786703436 3636773 17fe2d8d5c7efddfc0b6e5130954d037 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "Prosjekt1.aux" 1790860882.07274 3530 7692a2a80a01cdf10e8e0e71fce75d9f "pdflatex"
-  "Prosjekt1.bbl" 1790860850.47984 2332 6baee17995975287fb01989b061a16aa "bibtex Prosjekt1"
-  "Prosjekt1.out" 1790860882.09408 3389 6a2f82f647b9565c47cbed4a630f6e9f "pdflatex"
-  "Prosjekt1.tex" 1790860878.40698 7012 ea6e38f96530a9f51e69d9a71eb04c0d ""
-  "Prosjekt1.toc" 1790860882.09505 1834 b302fd20d70416146e225ba95326d065 "pdflatex"
+  "Prosjekt1.aux" 1790869630.94893 3867 eacca73175ebf5e3f3eb01624265398e "pdflatex"
+  "Prosjekt1.bbl" 1790869602.63146 2681 7dce78eb52784a73d880a67440710923 "bibtex Prosjekt1"
+  "Prosjekt1.out" 1790869630.95017 3591 3bd5fa21c006087bae3d76cc9acd5901 "pdflatex"
+  "Prosjekt1.tex" 1790869628.217 7277 8959c18211861f88f42ac5eae6713dc9 ""
+  "Prosjekt1.toc" 1790869630.95088 1974 43d2e5a2340836c46fbc06912c40ce12 "pdflatex"
   (generated)
   "Prosjekt1.aux"
   "Prosjekt1.log"

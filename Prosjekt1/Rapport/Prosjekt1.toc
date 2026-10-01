@@ -5,22 +5,24 @@
 \tocdepth@restore 
 \contentsline {section}{\numberline {I}Introduction}{1}{section*.4}%
 \contentsline {subsection}{\numberline {A}2a The motivation.}{1}{section*.5}%
-\contentsline {subsubsection}{\numberline {1}The data}{2}{section*.6}%
-\contentsline {subsection}{\numberline {B}2b What has been done and what i do.}{2}{section*.7}%
-\contentsline {subsubsection}{\numberline {1}Linear Models}{2}{section*.8}%
-\contentsline {paragraph}{\numberline {a}OLS}{2}{section*.9}%
-\contentsline {paragraph}{\numberline {b}Ridge}{2}{section*.10}%
-\contentsline {paragraph}{\numberline {c}Lasso}{2}{section*.11}%
-\contentsline {subsubsection}{\numberline {2}Resampling techniques}{2}{section*.12}%
-\contentsline {paragraph}{\numberline {a}Bootstrap}{2}{section*.13}%
-\contentsline {paragraph}{\numberline {b}Kfold cross validation}{2}{section*.14}%
-\contentsline {subsubsection}{\numberline {3}Optimization}{2}{section*.15}%
-\contentsline {paragraph}{\numberline {a}Gradient descent}{2}{section*.16}%
-\contentsline {paragraph}{\numberline {b}Momentum}{2}{section*.17}%
-\contentsline {paragraph}{\numberline {c}Adagrad}{2}{section*.18}%
-\contentsline {paragraph}{\numberline {d}RMSprop}{2}{section*.19}%
-\contentsline {paragraph}{\numberline {e}Adam}{2}{section*.20}%
-\contentsline {paragraph}{\numberline {f}Stochastic gradient descent}{2}{section*.21}%
-\contentsline {subsection}{\numberline {C}2c) The structure of the report,}{2}{section*.22}%
-\contentsline {section}{\numberline {II}Conclusion}{2}{section*.23}%
-\contentsline {section}{\numberline {}References}{2}{section*.24}%
+\contentsline {subsection}{\numberline {B}2b What has been done and what i do.}{2}{section*.6}%
+\contentsline {subsubsection}{\numberline {1}Linear Models}{2}{section*.7}%
+\contentsline {paragraph}{\numberline {a}OLS}{2}{section*.8}%
+\contentsline {paragraph}{\numberline {b}Ridge}{2}{section*.9}%
+\contentsline {paragraph}{\numberline {c}Lasso}{2}{section*.10}%
+\contentsline {subsubsection}{\numberline {2}Resampling techniques}{2}{section*.11}%
+\contentsline {paragraph}{\numberline {a}Bootstrap}{2}{section*.12}%
+\contentsline {paragraph}{\numberline {b}Kfold cross validation}{2}{section*.13}%
+\contentsline {subsubsection}{\numberline {3}Optimization}{2}{section*.14}%
+\contentsline {paragraph}{\numberline {a}Gradient descent}{2}{section*.15}%
+\contentsline {paragraph}{\numberline {b}Momentum}{2}{section*.16}%
+\contentsline {paragraph}{\numberline {c}Adagrad}{2}{section*.17}%
+\contentsline {paragraph}{\numberline {d}RMSprop}{2}{section*.18}%
+\contentsline {paragraph}{\numberline {e}Adam}{2}{section*.19}%
+\contentsline {paragraph}{\numberline {f}Stochastic gradient descent}{2}{section*.20}%
+\contentsline {subsubsection}{\numberline {4}Cross-Validation}{2}{section*.21}%
+\contentsline {subsection}{\numberline {C}The structure of the report,}{2}{section*.22}%
+\contentsline {section}{\numberline {II}Methods}{2}{section*.23}%
+\contentsline {subsection}{\numberline {A}The data}{2}{section*.24}%
+\contentsline {section}{\numberline {III}Conclusion}{2}{section*.25}%
+\contentsline {section}{\numberline {}References}{2}{section*.26}%

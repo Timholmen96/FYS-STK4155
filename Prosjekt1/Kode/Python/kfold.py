@@ -32,42 +32,18 @@ sigma = 0.8                                  # noise level: explore it!
 x = np.sort(rng.uniform(-1, 1, n))
 y = runge(x) + sigma*rng.normal(0, sigma, n)
 
-# No reason to scale for OLS regression.
-def kfold_CV_OLS(folds, degree):
-    X = design_matrix(x, degree)
 
-    kfold = KFold(
-        n_splits=folds,
-        shuffle=True,
-        random_state=2026
-    )
-
-    model = make_pipeline(
-        PolynomialFeatures(degree=degree),
-        LinearRegression(fit_intercept=False))
-    
-    fold_mse = []
-    for train_index, test_index in kfold.split(X):
-        x_train, x_test = X[train_index], X[test_index]
-        y_train, y_test = y[train_index], y[test_index]
+def runge_data(n=100, degree=6, noise=0.1, seed=2026):
+    """Runge function 1/(1+25x^2) on [-1,1], standardised polynomial features, centred y."""
+    rng = np.random.default_rng(seed)
+    x = rng.uniform(-1.0, 1.0, n)
+    y = 1.0 / (1.0 + 25.0 * x**2) + noise * rng.standard_normal(n)
+    X = np.column_stack([x**k for k in range(1, degree + 1)])
+    X_norm = (X - X.mean(axis=0)) / X.std(axis=0)
+    return X_norm, y - y.mean()
 
 
-        theta = np.linalg.pinv(x_train) @ y_train
-        y_pred = x_test @ theta
-        mse = np.mean((y_test - y_pred) ** 2)
-        fold_mse.append(mse)
-
-    mse_mean = np.mean(fold_mse)
-    mse_std = np.std(fold_mse, ddof=1)
-    return mse_mean, mse_std
-
-mse_mean, mse_std = kfold_CV_OLS(5, 10) 
-print("OLS mean, std:",mse_mean, mse_std)
-print("-----")
-
-
-
-def ridge_kfold(k, deg, lmb):
+def Kfold_CV(k, deg, model, lmb=0): # OLS med mindre lmb blir gitt verdi
     X = design_matrix(x, deg)
     kfold = KFold(n_splits=k, shuffle=True, random_state=2026)
     score_KFold = []
@@ -92,7 +68,15 @@ def ridge_kfold(k, deg, lmb):
         I = np.eye(X_train_norm.shape[1])
         I[0,0] = 0.0 # Vil ikke straffe intercept i Ridge regresjon
 
-        theta = np.linalg.pinv((X_train_norm).T @ (X_train_norm) + lmb*I) @ (X_train_norm).T @ y_train
+        if model == "OLS" or lmb == 0:
+            theta = np.linalg.pinv(X_train_norm) @ y_train
+        elif model == "Ridge":
+            theta = (
+                np.linalg.pinv(X_train_norm.T @ X_train_norm + lmb * I)
+                @ X_train_norm.T @ y_train)
+        elif model == "Lasso":
+            # Lasso regression is not implemented manually here, as it requires iterative optimization.
+            raise NotImplementedError("Manual Lasso regression is not implemented.")
 
         y_predict = X_test_norm @ theta 
         mse = np.mean((y_test - y_predict)**2)
@@ -102,18 +86,20 @@ def ridge_kfold(k, deg, lmb):
     return mse_Kfold, mse_std
 
 
-def sklearn_kfold(folds, degree, lmb=None):
+def sklearn_kfold(folds, degree, model, lmb=None):
     X = design_matrix(x, degree)
     cv = KFold(n_splits=folds, shuffle=True, random_state=2026)
 
-    if lmb is None:
+    if model == "OLS" or lmb is None:
         # X already includes the constant column.
         model = LinearRegression(fit_intercept=False)
-    else:
+    elif model == "Ridge":
         model = make_pipeline(
             StandardScaler(),
             Ridge(alpha=lmb, fit_intercept=True, solver="svd")
         )
+    elif model == "Lasso":
+        model = make_pipeline(StandardScaler(),Lasso(alpha=lmb/2, fit_intercept=True, max_iter=10000, tol=1e-6))
 
     fold_mse = -cross_val_score(
         model, X, y,
@@ -125,6 +111,7 @@ def sklearn_kfold(folds, degree, lmb=None):
     return fold_mse.mean(), fold_mse.std(ddof=1)
 
 
+
 degrees = np.arange(21)
 lambdas = [1e-2, 1e-1, 1.0, 1e1]
 
@@ -133,11 +120,11 @@ fig, axes = plt.subplots(2, 2, figsize=(13, 9), sharex=True)
 for row, folds in enumerate([5, 10]):
     # OLS
     manual = np.array([
-        kfold_CV_OLS(folds, degree)[0]
+        Kfold_CV(folds, degree, "OLS")[0]
         for degree in degrees
     ])
     sklearn_mse = np.array([
-        sklearn_kfold(folds, degree)[0]
+        sklearn_kfold(folds, degree, "OLS")[0]
         for degree in degrees
     ])
 
@@ -154,11 +141,11 @@ for row, folds in enumerate([5, 10]):
     ax = axes[row, 1]
     for lmb in lambdas:
         manual = np.array([
-            ridge_kfold(folds, degree, lmb)[0]
+            Kfold_CV(folds, degree, "Ridge", lmb)[0]
             for degree in degrees
         ])
         sklearn_mse = np.array([
-            sklearn_kfold(folds, degree, lmb)[0]
+            sklearn_kfold(folds, degree, "Ridge", lmb)[0]
             for degree in degrees
         ])
 
