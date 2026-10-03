@@ -49,9 +49,9 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
-\bibitem [{Tim(2026)}]{Timholmen96FYSSTK4155Prosjektarbeid}%
+\bibitem [{Tim(????)}]{Timholmen96FYSSTK4155Prosjektarbeid}%
   \BibitemOpen
-   (\bibinfo {year} {2026}),\ \href@noop {} {\enquote {\bibinfo {title} {{{FYS-STK4155}}: {{Prosjektarbeid}} i faget {{FYS-STK4155}}: {{Anvendt}} dataanalyse og maskinl\ae ring},}\ }\bibinfo {howpublished} {https://github.com/Timholmen96/FYS-STK4155}\BibitemShut {NoStop}%
+   (????),\ \href@noop {} {\enquote {\bibinfo {title} {Timholmen96/{{FYS-STK4155}}: {{Prosjektarbeid}} i faget {{FYS-STK4155}}: {{Anvendt}} dataanalyse og maskinl\ae ring},}\ }\bibinfo {howpublished} {https://github.com/Timholmen96/FYS-STK4155}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {{Hjorth-Jensen}}(2016)}]{LectureNotes}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {{Hjorth-Jensen}}}} (\bibinfo {year} {2016}),\ \href@noop {} {\emph {\bibinfo {title} {Machine {{Learning}} and the {{Physical Sciences}}}}}\ (\bibinfo  {publisher} {Springer})\BibitemShut {NoStop}%

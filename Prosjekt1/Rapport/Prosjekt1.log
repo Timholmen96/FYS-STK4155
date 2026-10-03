@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.14)  1 OCT 2026 17:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.14)  3 OCT 2026 20:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -488,55 +488,171 @@ LaTeX Font Info:    ... okay on input line 57.
 )
 \c@lstlisting=\count336
 Package hyperref Info: Link coloring ON on input line 57.
- (./Prosjekt1.out) (./Prosjekt1.out)
 \@outlinefile=\write4
 \openout4 = `Prosjekt1.out'.
 
 Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 57.
 \openout3 = `Prosjekt1Notes.bib'.
 
- (./Prosjekt1.toc)
+
+No file Prosjekt1.toc.
 \tf@toc=\write5
 \openout5 = `Prosjekt1.toc'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Prosjekt1.bbl
-Underfull \hbox (badness 4441) in paragraph at lines 54--55
- []\OT1/cmr/m/n/9 (2026), ``FYS-STK4155: Pros-jek-tar-beid i faget FYS-
- []
+)
+
+Package natbib Warning: Citation `LectureNotes' on page 1 undefined on input line 89.
+
+[1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+Package natbib Warning: Citation `Timholmen96FYSSTK4155Prosjektarbeid' on page 2 undefined on input line 152.
+
+[2]
+
+Package natbib Warning: Citation `LectureNotes' on page 3 undefined on input line 200.
 
 
-Underfull \hbox (badness 6078) in paragraph at lines 54--55
- \OT1/cmr/m/n/9 STK4155: An-vendt data-anal-yse og maskin-l^^Zring,''
- []
+Package natbib Warning: Citation `LectureNotes' on page 3 undefined on input line 207.
 
-) [2] (./Prosjekt1.aux)
+
+LaTeX Warning: Hyper reference `sec:PF' on page 3 undefined on input line 214.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:232: Display math should end with $$.
+<to be read again> 
+                   R
+l.232 $R
+        ^2$
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:232: Missing $ inserted.
+<inserted text> 
+                $
+l.232 $R^
+         2$
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:234: Missing $ inserted.
+<inserted text> 
+                $
+l.234           {\sum_{i=1}^{n}(y_i-\bar{y})^2}
+                                               ,
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:234: Missing $ inserted.
+<inserted text> 
+                $
+l.234           {\sum_{i=1}^{n}(y_i-\bar{y})^2}
+                                               ,
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:234: Missing $ inserted.
+<inserted text> 
+                $
+l.234           {\sum_{i=1}^{n}(y_i-\bar{y})^2}
+                                               ,
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:234: Extra }, or forgotten $.
+\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
+                                                 
+l.234           {\sum_{i=1}^{n}(y_i-\bar{y})^2}
+                                               ,
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:238: You can't use `\eqno' in math mode.
+\veqno ->\@kernel@eqno 
+                       \aftergroup \ignorespaces 
+l.238 \end{equation}
+                    
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:238: Missing $ inserted.
+<inserted text> 
+                $
+l.238 \end{equation}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:238: Missing } inserted.
+<inserted text> 
+                }
+l.238 \end{equation}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+(./Prosjekt1.bbl)
+
+Package natbib Warning: There were undefined citations.
+
+[3] (./Prosjekt1.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `Prosjekt1.out' has not changed.
-(rerunfilecheck)             Checksum: 3BD5FA21C006087BAE3D76CC9ACD5901;3591.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `Prosjekt1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Prosjekt1.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  247387AF80525D72571D42075B471F8E;4813.
  ) 
 Here is how much of TeX's memory you used:
- 14358 strings out of 467525
- 215695 string characters out of 5418982
- 663649 words of memory out of 5000000
- 43021 multiletter control sequences out of 15000+600000
+ 14342 strings out of 467525
+ 215493 string characters out of 5418982
+ 672376 words of memory out of 5000000
+ 42997 multiletter control sequences out of 15000+600000
  636184 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,5n,79p,966b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on Prosjekt1.pdf (2 pages, 160082 bytes).
+ 71i,9n,79p,966b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Prosjekt1.pdf (3 pages, 240892 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 209 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 172 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
