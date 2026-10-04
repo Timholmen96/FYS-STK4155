@@ -183,7 +183,7 @@ Train test split of skicit
 
 \subsubsection{Normalisation and scaling of the data}
 Unless explicitly told otherwise, such as in the bootstrap resampling method,
-the training data is normalized, 
+the training data of all models are normalized.  
 
 \subsection{Linear Regression}
 The basic idea of linear regression is, by using a polynomial $f(x)$
@@ -195,30 +195,107 @@ is minimised, which is the basis for the name least squares regression.
 \subsubsection{Ordinary Least Sqaures}
 Thus the cost function, for least squared, is written mathematically:
 \begin{equation}
-  C(\Theta) = \frac{1}{n}||y - X\Theta||_2^2 
+  C(\theta) = \frac{1}{n}||y - X\theta||_2^2 
 \end{equation} 
 \cite[p.~81]{LectureNotes}
-This is the optimization problem, to adjust the parameter $\Theta$ such that the cost function is minimized. \newline 
-We se that our predicted model is characterized by $X\Theta$, where theta contains the coefficients,
-through singular value decomposition, it can be shown that the best estimate for this theta, which
+This is the optimization problem, to adjust the parameter $\theta$ such that the cost function is minimized. \newline 
+We se that our predicted model is characterized by $X\theta$, where theta contains the coefficients, the direct solution to this problem is:
+\begin{equation}
+  \hat{\theta} = (X^TX)^{-1}X^Ty
+\end{equation}
+\cite[p.~81]{LectureNotes}
+through singular value decomposition \cite[p.~42]{LectureNotes} , it can be shown that the best estimate for this theta, which
 minimizez the cost function, is the pseudioinverse of X multiplied by the output data y, 
 \begin{equation}
-  \hat{Theta} = X^{+}y 
+  \hat{\theta} = X^{+}y 
 \end{equation} \cite[p.~82]{LectureNotes}
 The pseudoinverse is solved by the numpy package $np.linalg.pinv(X)$, on the assumption that 
-the columns of x are linearly independent, such that $X^TX = I$. \newline 
+the columns of $X$ are linearly independent, such that $X^TX = I$ and $X^{+}=(X^TX)^{-1}X^T=I^{-1}X^T=X^T$. \newline 
 It is safe to assume that the columns are linearly independent, since the number of columns (degrees d) is much smaller than the number of rows (data points n),
 the possibility of one column being a linear combination of the other colmuns is close to zero. \newline 
 The data is split into training and test data as described above, and the training data is normalised
 as explained above. This ensures that the model can predict on the test data of X, and the predictions
-can be used against the test data of y to calculate the mean squared error MSE and coefficient of determination $R^2$, how these values are calculated will be explained in \hyperref[sec:PF]{predictive performance}
+can be used against the test data of y to calculate the mean squared error MSE and coefficient of determination $R^2$, how these values are calculated will be explained in \hyperref[sec:PF]{measures of quality}
 This procedure is done for different degrees of the polynomial design matrice. The parameters are plotted against degree, and the predicted
 models for different degrees are plotted against the runge function, for different values of the noise $\sigma$.
- 
+\subsubsection{Pseudocode}
+
+
+\subsection{Ridge Regression}
+Ridge regression adds a penalty on the squard length of the parameter vector,
+and the cost function is;
+\begin{equation}
+C_{\mathrm{Ridge}}(\bm{\theta})
+= \frac{1}{n}
+  \left\|\bm{y}-\bm{X}\bm{\theta}\right\|_2^2
+  + \lambda\left\|\bm{\theta}\right\|_2^2,
+\qquad \lambda \geq 0.
+\label{eq:ridge_cost}
+\end{equation}
+with $||\theta||_2^2 = \sum_{j}\theta_j^2$
+The closed form solution to this problem is, 
+by dropping the factor 1/n: 
+\begin{equation}
+  \hat{\theta}_{Ridge} = 
+  (X^TX + \lambda I)^{-1}X^Ty
+\label{eq:ridge_sol}
+\end{equation}
+$I$ is the $p\times p$ identity matrix. The penalty adds $\lambda$ to the eigenvalues
+of $\bm{X}^T\bm{X}$. \cite[p.~87]{LectureNotes} 
+Supposing the design matrice is orthonormal, $X^TX=I$: then $\hat{\theta}_{OLS}=X^Ty$ and
+\begin{equation}
+  \hat{\theta}_{Ridge}=
+  (I + \lambda I)^{-1}X^Ty = 
+  \frac{1}{1+\lambda}\hat{\theta}_{OLS}
+\label{eq:ROLS_Relation}
+\end{equation}
+So every coefficient is scaled by the same factor, and the estimator 
+tends to zero as $\lambda -> \inf$. Ridge shrinks all coefficients proportionally;
+it never sets any of the exactly to zero. 
+
+\subsubsection{Pseudocode Ridge}
+
+\subsection{Lasso Regression}
+Replacing the 2-norm penalty of Ridge by a 1-norm gives the cost function 
+\begin{equation}
+  C(\theta)_{Lasso}
+  = \frac{1}{n}||y - X\theta||_2^2 + \lambda ||\theta||_1
+  \qquad
+  ||\theta||_1 = \sum_{j=0}^{p-1}|\theta_j| 
+\label{eq:Lasso_cost}
+\end{equation}
+Which is the Lasso - least absolute shrinkage and selection operator. The Lasso
+sets coefficients exactly t ozero, and thereby perfoms variable selection as part of the fitting. \cite[p.~90]{LectureNotes}
+The lasso has no closed form solution, since differentiating the \hyperref{Lasso} cost function,
+requires the derivative of the absolute value of $\theta$:
+ \begin{equation}
+\frac{d|\theta|}{d\theta}
+= \operatorname{sgn}(\theta)
+= \begin{cases}
++1, & \theta > 0, \\
+-1, & \theta < 0.
+\end{cases}
+\label{eq:abs_derivative}
+\end{equation}
+This equation is undefined at th origin, theta = 0, thus the close form solution is lost,
+but a solution can still be found through the soft thresholding operator and gradient descent methods, which will be explained,
+here is the soft thresholding operator for $X=I$
+\begin{equation}
+  \hat{\theta}_i^{Lasso} = S_{\lambda/2}(y) = sgn(y)max(|y| - \lambda/2, 0)
+\end{equation} 
+\cite[p.~91]{LectureNotes}
+The selection property makes the lasso the natural first tool when the
+number of parameters is large and msot fatures are believed irrelevant.
+
+\subsubsection{Pseudocode Lasso}
+
+
+
+
 
 \subsection{Evaluation}
 
-\subsubsection{Predictive performance}
+\subsubsection{Measures of quality}
 \label{sec:PF}
 MSE is ..
 \begin{equation}
@@ -227,7 +304,7 @@ MSE is ..
 \label{eq:mse}
 \end{equation}
 
-
+R^2
 \begin{equation}
 = 1-\frac{\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}
           {\sum_{i=1}^{n}(y_i-\bar{y})^2},
@@ -238,10 +315,9 @@ MSE is ..
 
 \subsection{Optimization}
 
-\subsection{Lasso}
 
 
-\section{Conclusion}
+\section{Final analysis}
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.14)  3 OCT 2026 20:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.14)  4 OCT 2026 13:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -488,45 +488,174 @@ LaTeX Font Info:    ... okay on input line 57.
 )
 \c@lstlisting=\count336
 Package hyperref Info: Link coloring ON on input line 57.
- (./Prosjekt1.out) (./Prosjekt1.out)
 \@outlinefile=\write4
 \openout4 = `Prosjekt1.out'.
 
 Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 57.
 \openout3 = `Prosjekt1Notes.bib'.
 
- (./Prosjekt1.toc)
+
+No file Prosjekt1.toc.
 \tf@toc=\write5
 \openout5 = `Prosjekt1.toc'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./Prosjekt1.bbl) [4] (./Prosjekt1.aux)
+)
+
+Package natbib Warning: Citation `LectureNotes' on page 1 undefined on input line 89.
+
+[1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+Package natbib Warning: Citation `Timholmen96FYSSTK4155Prosjektarbeid' on page 2 undefined on input line 152.
+
+[2]
+
+Package natbib Warning: Citation `LectureNotes' on page 3 undefined on input line 200.
+
+
+Package natbib Warning: Citation `LectureNotes' on page 3 undefined on input line 206.
+
+
+Package natbib Warning: Citation `LectureNotes' on page 3 undefined on input line 207.
+
+
+Package natbib Warning: Citation `LectureNotes' on page 3 undefined on input line 211.
+
+
+LaTeX Warning: Hyper reference `sec:PF' on page 3 undefined on input line 218.
+
+
+Package natbib Warning: Citation `LectureNotes' on page 3 undefined on input line 244.
+
+[3]
+
+Package natbib Warning: Citation `LectureNotes' on page 4 undefined on input line 268.
+
+
+Package natbib Warning: Citation `LectureNotes' on page 4 undefined on input line 286.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:307: Missing $ inserted.
+<inserted text> 
+                $
+l.307 R^
+        2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:308: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.308 \begin{equation}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:314: You can't use `\eqno' in math mode.
+\veqno ->\@kernel@eqno 
+                       \aftergroup \ignorespaces 
+l.314 \end{equation}
+                    
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:314: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.314 \end{equation}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:314: LaTeX Error: \begin{document} ended by \end{equation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.314 \end{equation}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:314: Missing $ inserted.
+<inserted text> 
+                $
+l.314 \end{equation}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/timholmen/FYS-STK4155/Prosjekt1/Rapport/Prosjekt1.tex:314: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.314 \end{equation}
+                    
+Things are pretty mixed up, but I think the worst is over.
+
+(./Prosjekt1.bbl)
+
+Package natbib Warning: There were undefined citations.
+
+[4] (./Prosjekt1.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `Prosjekt1.out' has not changed.
-(rerunfilecheck)             Checksum: 247387AF80525D72571D42075B471F8E;4813.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `Prosjekt1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Prosjekt1.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  64C201BC5E4A2F1391D179024B63C21A;5409.
  ) 
 Here is how much of TeX's memory you used:
- 14391 strings out of 467525
- 216126 string characters out of 5418982
- 665761 words of memory out of 5000000
- 43039 multiletter control sequences out of 15000+600000
+ 14362 strings out of 467525
+ 215759 string characters out of 5418982
+ 664376 words of memory out of 5000000
+ 43005 multiletter control sequences out of 15000+600000
  636184 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,9n,79p,966b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Prosjekt1.pdf (4 pages, 221934 bytes).
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Prosjekt1.pdf (4 pages, 259244 bytes).
 PDF statistics:
- 295 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 45 named destinations out of 1000 (max. 500000)
- 273 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 195 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
