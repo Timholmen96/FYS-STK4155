@@ -4,17 +4,14 @@
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{wrapfig}
-\usepackage{array} 
+\usepackage{array}
 \usepackage{listings}
 \usepackage[para,online,flushleft]{threeparttablex}
 \usepackage{booktabs,dcolumn}
-\usepackage{color}
- 
+\usepackage{xcolor}
 
 \usepackage{textpos}
-\usepackage{booktabs}
 \usepackage{multirow,bigdelim}
-
 
 \usepackage{upgreek} %upalpha in Saxena2021 Reference
 
@@ -26,10 +23,6 @@
 \def\toclevel@paragraph{4}
 \makeatother
 
-
-
-
-\usepackage{xcolor}
 %\newcommand{\contrib}[1]{\textcolor{red}{#1}}
 %\newcommand{\comment}[1]{\textcolor{blue}{#1}}
 
@@ -40,10 +33,11 @@
 \immediate\write\@bibdataout{%
 @CONTROL{%
 apsrev41Control%
+% 0x48 keeps initials and journal-style names without dependency warnings.
 \longbibliography@sw{%
-    ,author="08",editor="1",pages="1",title="0",year="1"%
+    ,author="48",editor="1",pages="1",title="0",year="1"%
     }{%
-    ,author="08",editor="1",pages="1",title="",year="1"%
+    ,author="48",editor="1",pages="1",title="",year="1"%
     }%
   }%
 }%
@@ -53,9 +47,8 @@ apsrev41Control%
 %\usepackage[left]{lineno}
 %\linenumbers
 
-
 \begin{document}
-%\pagenumbering{gobble} 
+%\pagenumbering{gobble}
 
 \title{Project 1 on Machine Learning: regression analysis, resampling methods and gradient descent}
 
@@ -63,73 +56,74 @@ apsrev41Control%
 \affiliation{FYS-STK4155}
 \affiliation{Department of Physics}
 
-
 \begin{abstract}
-    Dette prosjektet er en vandring gjennom metodene innen dataanalyse som har ledet til det vi idag kaller maskinlæring. Hovedmålet er å studere i detalj diverese regresjonsmetoder, som ordinary least squares, ridge regresjon og lasso regresjon. Resampling teknikker som bootstrap og kryssvalidering lar oss vurdere og velge den beste metoden for problemet. For å optimalisere parametrene (hvilke parametre er det her snakk om?: det er selve parametrene og hyperparametrene) vil vi bruke gradient descent, og teste ulike metoder for å utføre denne beregningen, som består av derivasjon. Vi har studert newtons metode og automatiserte derivasjons metoder, for å optimalisere parametrene i modellene. Polynomene vi utvikler skal passe til en spesifik en dimensjonal funksjon kalt Runges funksjon, med et støy element, dermed har vi det analytiske svaret tilgjengelig. 
+    Dette prosjektet er en vandring gjennom metodene innen dataanalyse som har ledet til det vi idag kaller maskinlæring. Hovedmålet er å studere i detalj diverese regresjonsmetoder, som ordinary least squares, ridge regresjon og lasso regresjon. Resampling teknikker som bootstrap og kryssvalidering lar oss vurdere og velge den beste metoden for problemet. For å optimalisere parametrene (hvilke parametre er det her snakk om?: det er selve parametrene og hyperparametrene) vil vi bruke gradient descent, og teste ulike metoder for å utføre denne beregningen, som består av derivasjon. Vi har studert newtons metode og automatiserte derivasjons metoder, for å optimalisere parametrene i modellene. Polynomene vi utvikler skal passe til en spesifik en dimensjonal funksjon kalt Runges funksjon, med et støy element, dermed har vi det analytiske svaret tilgjengelig.
 \end{abstract}
 
 \maketitle
 
 \tableofcontents
 
-
-\section{Introduction} 
+\section{Introduction}
 \subsection{2a The motivation.}
 
-The reason we want to fit a function to data is that we want to 
+The reason we want to fit a function to data is that we want to
 predict the value of the function to new unknown data points. For fitting a function to
 data points, we use polynomials, and we want to find the best polynomial that fits the data.
-The best polynomial is the one that minimizes the mean squared error (MSE) between the predicted values and the true values (for the known data). 
+The best polynomial is the one that minimizes the mean squared error (MSE) between the predicted values and the true values (for the known data).
 The MSE can be decomposed into three components: bias, variance and irreducible error.
-$$ MSE = Bias^2 + Var[\tilde{y}] + irreducible \ noise$$ 
+\[
+  \mathrm{MSE} = \mathrm{Bias}^2 + \operatorname{Var}[\tilde{y}]
+  + \text{irreducible noise}
+\]
 The bias measures how far the average prediction is from the truth.
 The variance measures how much the prediction moves when the training
-set is redrawn. 
-The irreducible error is the variance of the noise itself, 
-which is baked into the data and the model cannot predict it. \cite[p.~62]{LectureNotes} 
-The bias-variance tradeoff is the balance between bias and variance, in which we minimize the MSE. We do not want 
-an overfitted model, which has low bias and high variance, nor do we want an underfitted model, which has high bias and low variance. 
+set is redrawn.
+The irreducible error is the variance of the noise itself,
+which is baked into the data and the model cannot predict it. \cite[p.~62]{LectureNotes}
+The bias-variance tradeoff is the balance between bias and variance, in which we minimize the MSE. We do not want
+an overfitted model, which has low bias and high variance, nor do we want an underfitted model, which has high bias and low variance.
 Optimally, we want a model that is just right, with low bias and low variance.
 When fitting a polynomial to data, we want to find the right degree of the polynomial and
 the right parameters for each degree. For example if there is a linear relationship between
 the data points, and we can assume this by looking at the data, we use a second order polynomial
 to describe the data, and the parameters are the coefficients of the polynomial, which can be
-changed in accordance with the relationship between the data points. 
-The parameters are found by minimizing the MSE between the model prediction and datapoints, 
-for avoiding overfitting, we can split the data into training and testing sets, to se how well 
-the model performs on unseen data. We can use regularization methods, such as ridge regression 
-and lasso regression, to regularize the model and avoid overfitting, and thus lower the variance, while maintaining a good bias. 
+changed in accordance with the relationship between the data points.
+The parameters are found by minimizing the MSE between the model prediction and datapoints,
+for avoiding overfitting, we can split the data into training and testing sets, to se how well
+the model performs on unseen data. We can use regularization methods, such as ridge regression
+and lasso regression, to regularize the model and avoid overfitting, and thus lower the variance, while maintaining a good bias.
 We can also use resampling methods, such as bootstrap and k-fold cross validation, to estimate the performance of the model on unseen data,
-and thus choose the best model for the data. \newline
-With lasso regression, we do not have the analytical solution for the gradient, as we do for OLS and Ridge, and we have to use gradient descent to find the optimal parameters.
-"Gradient descent is an optimization algorithm inspired by newtons method, which is used to find the minimum of a function. 
-The function we want to minimize is the cost function, which is the MSE between the predicted values and the true values. 
-The gradient descent algorithm uses the derivative of the cost function to find the direction of steepest descent,
- and then takes a step in that direction, with a step size determined by the learning rate. 
- We can use different optimization algorithms, such as momentum, adagrad, rmsprop and adam,
-where the learning rate of the descent is dependent on the iteration number to improve the convergence of gradient descent." - AI
-After exploring the different methods, we can compare them with cross validation, and choose the best model for the data.
+and thus choose the best model for the data.
 
+With lasso regression, we do not have the analytical solution for the gradient, as we do for OLS and Ridge, and we have to use gradient descent to find the optimal parameters.
+``Gradient descent is an optimization algorithm inspired by newtons method, which is used to find the minimum of a function.
+The function we want to minimize is the cost function, which is the MSE between the predicted values and the true values.
+The gradient descent algorithm uses the derivative of the cost function to find the direction of steepest descent,
+ and then takes a step in that direction, with a step size determined by the learning rate.
+ We can use different optimization algorithms, such as momentum, adagrad, rmsprop and adam,
+where the learning rate of the descent is dependent on the iteration number to improve the convergence of gradient descent.'' --- AI
+After exploring the different methods, we can compare them with cross validation, and choose the best model for the data.
 
 \subsection{2b What has been done and what i do.}
 The linear models with OLS nad Ridge have been implemented, and both have close form solutions, thus they can be solved without gradient descent.
-Lasso regression has been implemented, but it does not have a close form solution, thus we have to use gradient descent to find the optimal parameters. 
+Lasso regression has been implemented, but it does not have a close form solution, thus we have to use gradient descent to find the optimal parameters.
 The project starts with the implementation of OLS and Ridge regression, OLS uses the least square distance between model and data to find the optimal parameters, this is the cost function, and the optimal parameters are found by minimizing the cost function.
 Ridge regression does the same, but adds a regularizatin term to the cost function, which penalizes large parameters, and thus avoids overfitting.
 What ridge removes in variance, it adds in increased bias, which will be discussed as the bias-variance tradeoff. For exploring this theme we have
 emplyed resampling methods, the bootstrap and K-fold cross validation, to estimate the performance of the model on unseen data, and thus choose the best model for the data.
 The linear models OLS and Ridge are first treated separately, and then compared to each other with resampling methods to find the best degree of the polynomial, and the best regularization parameter, lambda, for Ridge.
-For lasso regression, we have to use gradient descent to find the optimal parameters, since it does not have a close form solution. 
-With this end in mind, we have implemented plain gradient descent, inspired by newtons iteration method for solving differentials, and explored different optimization algorithms, 
-such as momentum, adagrad, rmsprop and adam, where the learning rate of the descent is dependent on the iteration number. These methods are first 
-implemented on OLS and Ridge, and compared to the closed form solutions of both, to see how well they perform, in terms of convergence (towards zero difference between closed form and gradient descent solutions), and data cost (number of iterations). 
-In terms of hyperparameters, Ridge and Lasso both have a regularization term. 
-The degree is a hyperparameter for all three models, and the learning rate is a hyperparameter for gradient descent. 
+For lasso regression, we have to use gradient descent to find the optimal parameters, since it does not have a close form solution.
+With this end in mind, we have implemented plain gradient descent, inspired by newtons iteration method for solving differentials, and explored different optimization algorithms,
+such as momentum, adagrad, rmsprop and adam, where the learning rate of the descent is dependent on the iteration number. These methods are first
+implemented on OLS and Ridge, and compared to the closed form solutions of both, to see how well they perform, in terms of convergence (towards zero difference between closed form and gradient descent solutions), and data cost (number of iterations).
+In terms of hyperparameters, Ridge and Lasso both have a regularization term.
+The degree is a hyperparameter for all three models, and the learning rate is a hyperparameter for gradient descent.
 This project can be split in two parts, where first the Ridge and ordinary least square regression methods
 are used and evaluated. Then gradient descent is developed and used on all three methods, including Lasso,
 and the three methods are evaluated by k-fold cross validation. Underway the analytical solutions
-and sci-kit learn library are used and compared, to ensure numerial digit error, and in the last analysis 
-only sci-kit learn library is used $RIGHT?$. 
+and sci-kit learn library are used and compared, to ensure numerial digit error, and in the last analysis
+only sci-kit learn library is used \textbf{RIGHT?}.
 
 \subsubsection{Linear Models}
 \paragraph{OLS}
@@ -153,18 +147,20 @@ Code can be found on the following Github repository: \cite{Timholmen96FYSSTK415
 
 \section{Methods}
 \subsection{The data}
-In this project, the input data is normally distributed, and the output data is generated by Runge's function, with added noise, 
-Runge Function which is a one-dimensional function of second order. 
-$$ f(x) = \frac{1}{1 + 25x^2} $$ 
-From the beginning, we have created a relation between the input and output data. This is helpful since the project is research in machine learning methods, it is usefull to know the exact solution. 
+In this project, the input data is normally distributed, and the output data is generated by Runge's function, with added noise,
+Runge Function which is a one-dimensional function of second order.
+\[
+  f(x) = \frac{1}{1 + 25x^2}
+\]
+From the beginning, we have created a relation between the input and output data. This is helpful since the project is research in machine learning methods, it is usefull to know the exact solution.
 The noise is normally distributed, with a mean of 0 and a variable standard deviation.
-From the form of the runge function, we can see that the function has a maximum at x=0, and the function is symmetric around this point, 
-for values larger than [-1,1], the function approahes zero. 
-Thus we will focus on data which is normally distributed between -1 and 1.  
-The output is generated by adding noise $\sigma$ to the runge fucnction defined above, and the noise is normally distributed with a mean of 0 and a standard deviation of $\sigma$. 
+From the form of the runge function, we can see that the function has a maximum at x=0, and the function is symmetric around this point,
+for values larger than [-1,1], the function approahes zero.
+Thus we will focus on data which is normally distributed between -1 and 1.
+The output is generated by adding noise $\sigma$ to the runge fucnction defined above, and the noise is normally distributed with a mean of 0 and a standard deviation of $\sigma$.
 
-The input value x is transformed into a design matrix $X$, 
-where the columns describe a polynomial of variable degree $d$, 
+The input value x is transformed into a design matrix $X$,
+where the columns describe a polynomial of variable degree $d$,
 in such a way that the first column is $x^0$, the intrcept, the second column is $x^1$, and so on, up to $x^{d}$.
 The rows of the matrix are the data points, and are thus copied and multiplied according to the polynomial degree, or the column of the matrice.
 \begin{equation}
@@ -178,49 +174,103 @@ The rows of the matrix are the data points, and are thus copied and multiplied a
 \in \mathbb{R}^{n \times (d+1)}.
 \label{eq:design_matrix}
 \end{equation}
-\subsubsection{Splitting of the data}
-Train test split of skicit
 
-\subsubsection{Normalisation and scaling of the data}
-Unless explicitly told otherwise, such as in the bootstrap resampling method,
-the training data of all models are normalized.  
+\subsubsection{Data processsing: Splitting and scaling}
+\begin{itemize}
+\item Train test split of skicit
+\item Unless explicitly told otherwise, such as in the bootstrap resampling method,
+the training and test input data are normalized, using training values.
+\item All random data are within the random seed 2026
+\end{itemize}
+
+\paragraph{Pseudocode Data}
+Here is a pseudocode for the splitting and scaling of the data:
+\begin{lstlisting}[
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    caption={Preparation of training and test data.},
+    label={lst:preparedata}
+]
+FUNCTION PrepareData(x, y, degree):
+    X <- DesignMatrix(x, degree)
+
+    Split X and y into:
+        70% training data
+        30% test data
+    Use random seed 2026
+
+    mu <- column means of X_train
+    s  <- column standard deviations of X_train
+
+    mu[0] <- 0
+    s[0]  <- 1
+
+    X_train <- (X_train - mu) / s
+    X_test  <- (X_test - mu) / s
+
+    RETURN X_train, X_test,
+           y_train, y_test
+\end{lstlisting}
 
 \subsection{Linear Regression}
 The basic idea of linear regression is, by using a polynomial $f(x)$
 of fixed degree to describe the data points given the input
-data x, to adjust the coefficients in such a way that the difference 
-between the predicted values of the model $f(x)$ and the true value
-y(x). The coefficients are adjusted so that mean of the sum of the difference squared
+data x, to adjust the coefficients in such a way that the difference
+between the predicted values of the model $f(x)$ and the true output value
+$y(x)$. The coefficients are adjusted so that mean of the sum of the difference squared
 is minimised, which is the basis for the name least squares regression.
 \subsubsection{Ordinary Least Sqaures}
 Thus the cost function, for least squared, is written mathematically:
 \begin{equation}
-  C(\theta) = \frac{1}{n}||y - X\theta||_2^2 
-\end{equation} 
-\cite[p.~81]{LectureNotes}
-This is the optimization problem, to adjust the parameter $\theta$ such that the cost function is minimized. \newline 
-We se that our predicted model is characterized by $X\theta$, where theta contains the coefficients, the direct solution to this problem is:
-\begin{equation}
-  \hat{\theta} = (X^TX)^{-1}X^Ty
+  C(\theta) = \frac{1}{n}\lVert y - X\theta\rVert_2^2
 \end{equation}
 \cite[p.~81]{LectureNotes}
-through singular value decomposition \cite[p.~42]{LectureNotes} , it can be shown that the best estimate for this theta, which
-minimizez the cost function, is the pseudioinverse of X multiplied by the output data y, 
+This is the optimization problem, to adjust the parameter $\theta$ such that the cost function is minimized.
+
+We se that our predicted model is characterized by $X\theta$, where theta contains the coefficients, the direct solution to this problem is:
 \begin{equation}
-  \hat{\theta} = X^{+}y 
+  \hat{\theta} = (X^{T}X)^{-1}X^{T}y
+\end{equation}
+\cite[p.~81]{LectureNotes}
+through singular value decomposition~\cite[p.~42]{LectureNotes}, it can be shown that the best estimate for this theta, which
+minimizez the cost function, is the pseudioinverse of X multiplied by the output data y,
+\begin{equation}
+  \hat{\theta} = X^{+}y
 \end{equation} \cite[p.~82]{LectureNotes}
-The pseudoinverse is solved by the numpy package $np.linalg.pinv(X)$, on the assumption that 
-the columns of $X$ are linearly independent, such that $X^TX = I$ and $X^{+}=(X^TX)^{-1}X^T=I^{-1}X^T=X^T$. \newline 
+The pseudoinverse is solved by the numpy package \texttt{np.linalg.pinv(X)}, on the assumption that
+the columns of $X$ are linearly independent, such that $X^{T}X = I$ and $X^{+}=(X^{T}X)^{-1}X^{T}=I^{-1}X^{T}=X^{T}$.
+
 It is safe to assume that the columns are linearly independent, since the number of columns (degrees d) is much smaller than the number of rows (data points n),
-the possibility of one column being a linear combination of the other colmuns is close to zero. \newline 
+the possibility of one column being a linear combination of the other colmuns is close to zero.
+
 The data is split into training and test data as described above, and the training data is normalised
 as explained above. This ensures that the model can predict on the test data of X, and the predictions
 can be used against the test data of y to calculate the mean squared error MSE and coefficient of determination $R^2$, how these values are calculated will be explained in \hyperref[sec:PF]{measures of quality}
 This procedure is done for different degrees of the polynomial design matrice. The parameters are plotted against degree, and the predicted
 models for different degrees are plotted against the runge function, for different values of the noise $\sigma$.
-\subsubsection{Pseudocode}
+\subsubsection{Pseudocode OLS}
+Here we go
+\begin{lstlisting}[
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    caption={Ordinary least squares regression.},
+    label={lst:ols}
+]
+FOR degree = 0, ..., 15:
+    X_train, X_test, y_train, y_test
+        <- PrepareData(x, y, degree)
 
+    theta <- pseudoinverse(X_train) * y_train
 
+    prediction <- X_test * theta
+
+    mse <- MSE(y_test, prediction)
+    r2  <- R2(y_test, prediction)
+
+    Store degree, theta, mse and r2
+\end{lstlisting}
 \subsection{Ridge Regression}
 Ridge regression adds a penalty on the squard length of the parameter vector,
 and the cost function is;
@@ -232,41 +282,74 @@ C_{\mathrm{Ridge}}(\bm{\theta})
 \qquad \lambda \geq 0.
 \label{eq:ridge_cost}
 \end{equation}
-with $||\theta||_2^2 = \sum_{j}\theta_j^2$
-The closed form solution to this problem is, 
-by dropping the factor 1/n: 
+with $\lVert\theta\rVert_2^2 = \sum_{j}\theta_j^2$
+The closed form solution to this problem is,
+by dropping the factor 1/n:
 \begin{equation}
-  \hat{\theta}_{Ridge} = 
-  (X^TX + \lambda I)^{-1}X^Ty
+  \hat{\theta}_{\mathrm{Ridge}} =
+  (X^{T}X + \lambda I)^{-1}X^{T}y
 \label{eq:ridge_sol}
 \end{equation}
 $I$ is the $p\times p$ identity matrix. The penalty adds $\lambda$ to the eigenvalues
-of $\bm{X}^T\bm{X}$. \cite[p.~87]{LectureNotes} 
-Supposing the design matrice is orthonormal, $X^TX=I$: then $\hat{\theta}_{OLS}=X^Ty$ and
+of $\bm{X}^{T}\bm{X}$. \cite[p.~87]{LectureNotes}
+Supposing the design matrice is orthonormal, $X^{T}X=I$: then $\hat{\theta}_{\mathrm{OLS}}=X^{T}y$ and
 \begin{equation}
-  \hat{\theta}_{Ridge}=
-  (I + \lambda I)^{-1}X^Ty = 
-  \frac{1}{1+\lambda}\hat{\theta}_{OLS}
+  \hat{\theta}_{\mathrm{Ridge}}=
+  (I + \lambda I)^{-1}X^{T}y =
+  \frac{1}{1+\lambda}\hat{\theta}_{\mathrm{OLS}}
 \label{eq:ROLS_Relation}
 \end{equation}
-So every coefficient is scaled by the same factor, and the estimator 
-tends to zero as $\lambda -> \inf$. Ridge shrinks all coefficients proportionally;
-it never sets any of the exactly to zero. 
+So every coefficient is scaled by the same factor, and the estimator
+tends to zero as $\lambda \to \infty$. Ridge shrinks all coefficients proportionally;
+it never sets any of the exactly to zero.
 
 \subsubsection{Pseudocode Ridge}
+Here we go:
+\begin{lstlisting}[
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    caption={Ridge regression without penalizing the intercept.},
+    label={lst:ridge}
+]
+lambdas <- logspace(-3, 2, 5)
+
+FOR degree = 0, ..., 15:
+    X_train, X_test, y_train, y_test
+        <- PrepareData(x, y, degree)
+
+    P <- IdentityMatrix(degree + 1)
+    P[0, 0] <- 0
+
+    FOR lambda in lambdas:
+        A <- transpose(X_train) * X_train
+             + lambda * P
+
+        b <- transpose(X_train) * y_train
+
+        theta <- pseudoinverse(A) * b
+
+        prediction <- X_test * theta
+
+        mse <- MSE(y_test, prediction)
+        r2  <- R2(y_test, prediction)
+
+        Store degree, lambda, theta, mse and r2
+\end{lstlisting}
 
 \subsection{Lasso Regression}
-Replacing the 2-norm penalty of Ridge by a 1-norm gives the cost function 
+Replacing the 2-norm penalty of Ridge by a 1-norm gives the cost function
 \begin{equation}
-  C(\theta)_{Lasso}
-  = \frac{1}{n}||y - X\theta||_2^2 + \lambda ||\theta||_1
-  \qquad
-  ||\theta||_1 = \sum_{j=0}^{p-1}|\theta_j| 
+  \begin{aligned}
+  C_{\mathrm{Lasso}}(\theta)
+  &= \frac{1}{n}\lVert y - X\theta\rVert_2^2 + \lambda\lVert\theta\rVert_1, \\
+  \lVert\theta\rVert_1 &= \sum_{j=0}^{p-1}|\theta_j|
+  \end{aligned}
 \label{eq:Lasso_cost}
 \end{equation}
 Which is the Lasso - least absolute shrinkage and selection operator. The Lasso
 sets coefficients exactly t ozero, and thereby perfoms variable selection as part of the fitting. \cite[p.~90]{LectureNotes}
-The lasso has no closed form solution, since differentiating the \hyperref{Lasso} cost function,
+The lasso has no closed form solution, since differentiating the \hyperref[eq:Lasso_cost]{cost function},
 requires the derivative of the absolute value of $\theta$:
  \begin{equation}
 \frac{d|\theta|}{d\theta}
@@ -278,48 +361,259 @@ requires the derivative of the absolute value of $\theta$:
 \label{eq:abs_derivative}
 \end{equation}
 This equation is undefined at th origin, theta = 0, thus the close form solution is lost,
-but a solution can still be found through the soft thresholding operator and gradient descent methods, which will be explained,
+but a solution can still be found through the soft thresholding operator and gradient descent methods,
+which will be explained in \hyperref[sec:GD]{section gradient descent}.
 here is the soft thresholding operator for $X=I$
 \begin{equation}
-  \hat{\theta}_i^{Lasso} = S_{\lambda/2}(y) = sgn(y)max(|y| - \lambda/2, 0)
-\end{equation} 
+  \begin{aligned}
+  \hat{\theta}_i^{\mathrm{Lasso}} &= S_{\lambda/2}(y) \\
+  &= \operatorname{sgn}(y)\max(|y| - \lambda/2, 0)
+  \end{aligned}
+\end{equation}
 \cite[p.~91]{LectureNotes}
 The selection property makes the lasso the natural first tool when the
-number of parameters is large and msot fatures are believed irrelevant.
+number of parameters is large and most fatures are believed irrelevant.
+Pseudocode for lasso will be written after gradient descent is described.
 
 \subsubsection{Pseudocode Lasso}
-
-
-
-
+\label{subsec:Lasso_Code}
 
 \subsection{Evaluation}
 
 \subsubsection{Measures of quality}
 \label{sec:PF}
-MSE is ..
+\paragraph{Coefficient of determination}
+This
+\begin{equation}
+\begin{aligned}
+R^2 &= 1-\frac{\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}
+          {\sum_{i=1}^{n}(y_i-\bar{y})^2},
+\\
+\bar{y} &= \frac{1}{n}\sum_{i=1}^{n}y_i.
+\end{aligned}
+\label{eq:r2}
+\end{equation}
+
+\paragraph{Mean squared error}
 \begin{equation}
 \mathrm{MSE}
 = \frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2.
 \label{eq:mse}
 \end{equation}
 
-R^2
+\paragraph{Bias}
+For this project we will look at bias squared, the reason for this
+is that the squared values are positive, such that the terms will not
+cancel when we take the mean. the equation is.
 \begin{equation}
-= 1-\frac{\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}
-          {\sum_{i=1}^{n}(y_i-\bar{y})^2},
-\qquad
-\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_i.
-\label{eq:r2}
+  \begin{aligned}
+  \mathrm{Bias}^2 &= \frac{1}{n}\sum_{i}(f_i - \mathbb{E}[\hat{\boldsymbol{y}}])^2, \\
+  \mathbb{E}[\hat{\boldsymbol{y}}] &= \frac{1}{n}\sum_{i} \hat{y}_i
+  \end{aligned}
+  \label{eq:Bias}
+\end{equation}
+The bias measurs how far the average prediction $\mathbb{E}[\hat{\boldsymbol{y}}]$
+is from the fruth $f(x)$. \cite[p.~61-62]{LectureNotes}
+
+In the case of this project, the function $f(x)$ is the runge function.
+The details on this will be discussed in the \hyperref[sec:BV]{bias variance tradeoff},
+since the data $y = f(x) + \epsilon$ includes noise.
+
+\paragraph{Variance}
+The variance is closely related to the standard deviation, which is
+the square root of the variance, and tells how much the data varies
+within the sample.
+\begin{equation}
+  \operatorname{Var}[\hat{\boldsymbol{y}}]
+  = \frac{1}{n}\sum_{i}(\hat{y}_i - \mathbb{E}[\hat{\boldsymbol{y}}])^2
+\end{equation} \cite[p.~62]{LectureNotes}
+The variance measures how much the prediction moves when the training set is
+redrawn. (Feil?)
+
+\subsubsection{Bias-Variance tradeoff}
+\label{sec:BV}
+Before we perform an analysis of the bias variance tradeoff on the test data,
+we mak a figure similar to Fig. 2.11 of Hastie, Tibshirani and Friedman. \cite[p.~38]{StatisticalLearning}
+This figure displays only the test and training MSE. The test MSE
+can be used to indicate possible regions of low/ high bias and variance.
+To solve this, different values of noise, datapoints and polynomial degree is explored.
+
+The bias variance tradeoff equation:
+\begin{equation}
+  \begin{aligned}
+  &\mathbb{E}[
+    (\boldsymbol{y}-\hat{\boldsymbol{y}})^2] \\
+    &\quad = \frac{1}{n}\sum_{i=1}^{n}
+    \left(f_i-\mathbb{E}_{\mathcal{D}}[\hat{y}_i]\right)^2
+    \\
+    &\qquad + \frac{1}{n}\sum_{i=1}^{n}
+    \left(
+        \hat{y}_i-\mathbb{E}[\hat{y}_i]
+    \right)^2 + \sigma^2
+  \end{aligned}
+  \label{eq:bias_variance}
 \end{equation}
 
-\subsection{Optimization}
+\begin{equation}
+  \mathrm{MSE} = \mathrm{Bias}^2 + \operatorname{Var}[\hat{y}]
+  + \text{irreducible noise}
+\end{equation}
+Our empirical bias-related term compares the mean
+prediction with the noisy test targets,
+rather than with the noise-free function.
+Consequently, it also contains a contribution from
+the test noise and should not be interpreted as
+the squared bias alone.
 
+\paragraph{Fig 4.17}
 
+\subsubsection{Bootstrap}
+We study the bias variance tradeoff by implementing the bootstrap resampling technique.
+For studying this tradeoff we will only use ordinary least square for simplicity.
+The bootstrap approximates the sampling distribution of an estimator by repeatedly sampling
+from the observed data.
+\begin{enumerate}
+    \item Draw with replacement n values from the observations
+    $\boldsymbol{x} = (x_0,\ldots,x_{n-1})$, forming a resample $\boldsymbol{x^*}$
+    \item Evaluate the estimator on the resample to obtain $\hat{\theta^*}$
+    \item Repeat k times
+\end{enumerate}
+\cite[p.~65]{LectureNotes}
+The gist is that since $\hat{\theta} = \hat{\theta(\boldsymbol{X})}$ is
+a function of random variables, theta itself is a random variable with some
+probability distribution function $p(t)$. The different bootstrap samples,
+pulls different random samples from the training data, with replacement,
+and each produce different fitted coefficients and therefore different predictions.
+The number of samples is chosen as a variable, in our case 40, 100 and 300 samples,
+and all the models are used to calculate the man squard error, bias and variance between
+all the fitted models and the test data. This is done for each degree of the polynomial.
+To pull the random data from the training data, we use sci-kit function \texttt{resample}
+for pulling the random bootstrap data.
 
-\section{Final analysis}
+\paragraph{Bootstrap Pseudocode}
+LLM Declaration:
+This pseudocode is a pseudo copy of the reference project code c: Bootstrap \cite{Timholmen96FYSSTK4155Prosjektarbeid}
+created with help of OpenAI codex \cite{Codex}
+\begin{lstlisting}[
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    caption={Bootstrap estimation of prediction error,
+             a bias-related term, and variance for OLS.},
+    label={lst:bootstrap}
+]
+FUNCTION BootstrapBiasVariance(n_bs, maxdeg, seed):
+    Initialize random generator using seed
+    Generate n_bs bootstrap seeds
 
+    error    <- zeros(maxdeg + 1)
+    bias     <- zeros(maxdeg + 1)
+    variance <- zeros(maxdeg + 1)
 
+    FOR degree = 0, ..., maxdeg:
+        X <- DesignMatrix(x, degree)
+
+        Split X and y into:
+            70% training data
+            30% test data
+        Use random seed 2026
+
+        n_test <- number of test observations
+        predictions <- zeros(n_test, n_bs)
+
+        FOR b = 0, ..., n_bs - 1:
+            Draw paired rows from X_train and y_train
+                with replacement
+                using bootstrap seed b
+                and preserving the training set size
+
+            X_bs, y_bs <- bootstrap sample
+
+            theta <- pseudoinverse(X_bs) * y_bs
+
+            predictions[:, b] <- X_test * theta
+
+        mean_prediction <- row means of predictions
+        point_variance  <- row population variances
+                           of predictions
+
+        targets <- repeat y_test in n_bs columns
+
+        error[degree] <- mean(
+            (targets - predictions)^2
+        )
+
+        bias[degree] <- mean(
+            (y_test - mean_prediction)^2
+        )
+
+        variance[degree] <- mean(point_variance)
+
+    RETURN error, bias, variance
+\end{lstlisting}
+
+\subsubsection{Kfold Cross Validation}
+The data are divided into k roughly equal, mutually exclusive and
+exhaustive subsets, the folds. Each in turn plays the role of the
+test set while the union of the k-1 folds serve as the training set.
+Each observation is therefore used for testing exactly once and for
+training exactly k-1 times. The procedure is:
+\begin{enumerate}
+  \item Shuffle the data set at random
+  \item Split into k folds.
+  \item For each fold: hold it out, fit the model on the remaining folds,
+  evaluate on the held out folds and discard the model.
+  \item Summarize the model by the mean, the spread, of the k scores.
+\end{enumerate}
+\cite[p.~66]{LectureNotes}
+The k fold cross validation is solved with closed form solutions
+for ridge and OLS, and with ski-kit functions Linearregression and Ridge.
+The mean value of the mean squared error of all folds is calculated analytically
+and with sci-kit function cross-val-score, and the difference between analytical and
+sci-kit solutions are calculated. 5 fold and 10 fold cross validation is used,
+and the ridge regression is calculated for different values of lambda, the penalty.
+The sci-kit method is used to ensure that the results agree with the results obtained
+numerically.
+
+The cross validation is used to find the best degree, the best lambda value for ridge,
+and the best overall model, also the difference between the 5 fold and the 10 fold
+cross validation result is shown.
+
+\subsection{Gradient descent}
+\label{sec:GD}
+\subsubsection{Plain gradient descent}
+The gradient descent methods introduced is a method for finding
+the optimal parameter $\theta$, and is thus a replacement for
+the closed form solutions of OLS and Ridge, and gives a solution
+for the lasso regression problem, which had no analytical CF solution.
+In this regard the previous solutions for OLS and ridge can be used
+to verify that the gradient descent methods converge to the analytical solutions.
+
+In its simplest form, the gradient descent method can be written
+\begin{equation}
+  \theta_{k+1} = \theta_k - \eta\nabla_{\theta}C(\theta_k)
+\end{equation}
+\cite{Project1}
+The gradients of the cost function, will be solved both analytically
+and with automatic differentation (JAX), and the results will be compared
+to prove that they agree to numerical precision.
+
+Initially the learning rate $\eta$ 
+
+Momentum, Adagrad, RMSprop and Adam are advanced gradient descent methods
+where the learning rate $\eta(n)$ is updated during the iteration.
+Opposed to plain gradint descent where the learning rate is constant.
+
+\subsubsection{Momentum}
+\subsubsection{Adagrad}
+\subsubsection{RMSprop}
+\subsubsection{Adam}
+
+\subsubsection{learning rate}
+
+\subsection{Lasso gradient descent}
+
+\subsection{Final}
 
 \bibliography{References} % add  references to this file
 \end{document}
