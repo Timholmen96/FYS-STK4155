@@ -1,3 +1,5 @@
+% Preserve the LaTeX kernel label before REVTeX replaces it.
+\let\ReportKernelLabel\label
 \documentclass[aps,rmp,reprint,amsmath,amssymb,longbibliography]{revtex4-1}
 
 \usepackage{bm}
@@ -16,6 +18,11 @@
 \usepackage{upgreek} %upalpha in Saxena2021 Reference
 
 \usepackage[utf8]{inputenc}
+\usepackage{etoolbox}
+% Allow long URLs to wrap within the narrow bibliography columns.
+\usepackage{xurl}
+% Restore label hooks required by current hyperref/nameref.
+\let\label\ReportKernelLabel
 \usepackage{hyperref}
 \hypersetup{breaklinks=true,colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=magenta,urlcolor=blue}
 % Keep paragraph headings at the expected level in PDF bookmarks.
@@ -29,6 +36,13 @@
 %\newcommand{\WN}[1]{{\color{red} #1}}
 
 \makeatletter
+% LaTeX Workshop requires a comma after a BibTeX entry key, even with no fields.
+% Patch only the separator to preserve REVTeX's eprint setting and APS hook.
+\patchcmd{\@bibdataout@rev}
+  {\eprint@enable@sw{}{,eprint=""}}
+  {\eprint@enable@sw{}{,eprint=""},}
+  {}
+  {\PackageError{report}{Could not patch REVTeX's BibTeX separator}{}}
 \def\@bibdataout@aps{%
 \immediate\write\@bibdataout{%
 @CONTROL{%
@@ -598,11 +612,26 @@ The gradients of the cost function, will be solved both analytically
 and with automatic differentation (JAX), and the results will be compared
 to prove that they agree to numerical precision.
 
-Initially the learning rate $\eta$ 
-
+Initially the learning rate $\eta$ is guessd and adjusted for convergence
+over the number of iterations. But the learning rate has some limits,
+as long as the Hessian is known, as it is for Ridge and OLS, we can 
+calculate this limit, the limit of convergence:
+For all directions of the cost function to converge we need
+$0 < \eta < \frac{2}{\lambda_{max}}$, where $\lambda_{max}$ is 
+the largest eigen value of the Hessian. Since the Hessian is the 
+second derivative of the cost function, the largest eigenvalue
+is the steepest direction, and the smallest eigenvalue is the 
+slowest direction, thus we can define the condition number, $\kappa = \frac{\lambda_{max}}{\lambda_{min}}$
+, which is proportional to the number of iterations needed to reduce
+the error by a fixed factor. The bound is set by the steepest direction,
+and a flat direction (0). Presumably the number of iterations reaches 
+its minimum at $\eta = \frac{2}{\lambda_{min}+\lambda_{max}}$, and diverges
+exactly at $\frac{2}{\lambda_{max}}$. \newline 
 Momentum, Adagrad, RMSprop and Adam are advanced gradient descent methods
 where the learning rate $\eta(n)$ is updated during the iteration.
 Opposed to plain gradint descent where the learning rate is constant.
+The more advanced methods are more suitable for cases where we cannot
+analytically calculate the Hessian of the cost function. 
 
 \subsubsection{Momentum}
 \subsubsection{Adagrad}

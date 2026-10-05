@@ -76,10 +76,8 @@
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
   {Holmen}}} (\bibinfo {year} {2026}),\ \href@noop {} {\enquote {\bibinfo
-  {title} {Timholmen96/{{FYS-STK4155}}: {{Prosjektarbeid}} i faget
-  {{FYS-STK4155}}: {{Anvendt}} dataanalyse og maskinl\ae ring},}\ }\bibinfo
-  {howpublished} {\url{https://github.com/Timholmen96/FYS-STK4155}}\BibitemShut
-  {NoStop}%
+  {title} {Prosjekt1},}\ }\bibinfo {howpublished}
+  {\url{https://github.com/Timholmen96/FYS-STK4155}}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {{OpenAI}}(nd)}]{Codex}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibnamefont {{OpenAI}}}} (\bibinfo
