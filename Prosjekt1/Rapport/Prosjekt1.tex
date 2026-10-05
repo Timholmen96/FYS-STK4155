@@ -1,6 +1,6 @@
 % Preserve the LaTeX kernel label before REVTeX replaces it.
 \let\ReportKernelLabel\label
-\documentclass[aps,rmp,reprint,amsmath,amssymb,longbibliography]{revtex4-1}
+\documentclass[aps,rmp,reprint,raggedbottom,amsmath,amssymb,longbibliography]{revtex4-1}
 
 \usepackage{bm}
 \usepackage{graphicx}
@@ -11,6 +11,7 @@
 \usepackage[para,online,flushleft]{threeparttablex}
 \usepackage{booktabs,dcolumn}
 \usepackage{xcolor}
+\usepackage{capt-of}
 
 \usepackage{textpos}
 \usepackage{multirow,bigdelim}
@@ -71,7 +72,20 @@ apsrev41Control%
 \affiliation{Department of Physics}
 
 \begin{abstract}
-    Dette prosjektet er en vandring gjennom metodene innen dataanalyse som har ledet til det vi idag kaller maskinlæring. Hovedmålet er å studere i detalj diverese regresjonsmetoder, som ordinary least squares, ridge regresjon og lasso regresjon. Resampling teknikker som bootstrap og kryssvalidering lar oss vurdere og velge den beste metoden for problemet. For å optimalisere parametrene (hvilke parametre er det her snakk om?: det er selve parametrene og hyperparametrene) vil vi bruke gradient descent, og teste ulike metoder for å utføre denne beregningen, som består av derivasjon. Vi har studert newtons metode og automatiserte derivasjons metoder, for å optimalisere parametrene i modellene. Polynomene vi utvikler skal passe til en spesifik en dimensjonal funksjon kalt Runges funksjon, med et støy element, dermed har vi det analytiske svaret tilgjengelig.
+This project explores the data analysis methods that have contributed
+to the development of modern machine learning. The main objective is
+to study regression methods in detail, including ordinary least squares,
+Ridge regression and Lasso regression. Resampling techniques, such as
+bootstrap and cross-validation, allow us to evaluate and select the
+most suitable method for the problem.
+To optimise the model parameters, we use gradient descent and investigate
+different methods for performing derivative-based optimisation.
+Cross-validation helps select hyperparameters, such as polynomial degree
+and regularisation strength. We have studied Newton's method and
+automatic differentiation to support the optimisation of model parameters.
+The polynomial models are fitted to a specific one-dimensional function,
+known as the Runge function, with added noise, providing a known analytical
+function against which the predictions can be compared.
 \end{abstract}
 
 \maketitle
@@ -94,7 +108,7 @@ The bias measures how far the average prediction is from the truth.
 The variance measures how much the prediction moves when the training
 set is redrawn.
 The irreducible error is the variance of the noise itself,
-which is baked into the data and the model cannot predict it. \cite[p.~62]{LectureNotes}
+which is baked into the data such that the model cannot predict it. \cite[p.~62]{LectureNotes}
 The bias-variance tradeoff is the balance between bias and variance, in which we minimize the MSE. We do not want
 an overfitted model, which has low bias and high variance, nor do we want an underfitted model, which has high bias and low variance.
 Optimally, we want a model that is just right, with low bias and low variance.
@@ -111,12 +125,12 @@ We can also use resampling methods, such as bootstrap and k-fold cross validatio
 and thus choose the best model for the data.
 
 With lasso regression, we do not have the analytical solution for the gradient, as we do for OLS and Ridge, and we have to use gradient descent to find the optimal parameters.
-``Gradient descent is an optimization algorithm inspired by newtons method, which is used to find the minimum of a function.
+Gradient descent is an optimization algorithm inspired by newtons method, which is used to find the minimum of a function.
 The function we want to minimize is the cost function, which is the MSE between the predicted values and the true values.
 The gradient descent algorithm uses the derivative of the cost function to find the direction of steepest descent,
- and then takes a step in that direction, with a step size determined by the learning rate.
- We can use different optimization algorithms, such as momentum, adagrad, rmsprop and adam,
-where the learning rate of the descent is dependent on the iteration number to improve the convergence of gradient descent.'' --- AI
+and then take steps in that direction, with a step size determined by the learning rate.
+We can use different optimization algorithms, such as momentum, adagrad, rmsprop and adam,
+where the learning rate of the descent is dependent on the iteration number to improve the convergence of gradient descent.
 After exploring the different methods, we can compare them with cross validation, and choose the best model for the data.
 
 \subsection{2b What has been done and what i do.}
@@ -136,28 +150,28 @@ The degree is a hyperparameter for all three models, and the learning rate is a 
 This project can be split in two parts, where first the Ridge and ordinary least square regression methods
 are used and evaluated. Then gradient descent is developed and used on all three methods, including Lasso,
 and the three methods are evaluated by k-fold cross validation. Underway the analytical solutions
-and sci-kit learn library are used and compared, to ensure numerial digit error, and in the last analysis
-only sci-kit learn library is used \textbf{RIGHT?}.
+and sci-kit learn library are used and compared, to ensure numerical precision. 
 
-\subsubsection{Linear Models}
-\paragraph{OLS}
-\paragraph{Ridge}
-\paragraph{Lasso}
-\subsubsection{Resampling techniques}
-\paragraph{Bootstrap}
-\paragraph{Kfold cross validation}
-\subsubsection{Optimization}
-\paragraph{Gradient descent}
-\paragraph{Momentum}
-\paragraph{Adagrad}
-\paragraph{RMSprop}
-\paragraph{Adam}
-\paragraph{Stochastic gradient descent}
-\subsubsection{Cross-Validation}
+\subsection{The structure of the report}
+\label{subsec:Structure}
+The Introduction presents the motivation and objectives
+of the project.
+The Methods section describes the data preparation, OLS,
+Ridge and Lasso regression, evaluation metrics, resampling
+techniques, optimisation algorithms and experimental setup.
+The Results section presents the regression performance,
+bias--variance analysis, bootstrap and cross-validation
+results, gradient verification and convergence experiments,
+followed by the final comparison of OLS, Ridge and Lasso.
+The Discussion section interprets the results and examines
+the strengths and limitations of the methods.
+The Conclusion summarises the main findings concerning
+model complexity, regularisation and optimisation.
+The LLM Declaration describes how language models assisted
+with the code and report.
 
-\subsection{The structure of the report,}
-The last paragraph, one sentence per section, and where code can be found.
-Code can be found on the following Github repository: \cite{Timholmen96FYSSTK4155Prosjektarbeid}
+The project code is available in the GitHub repository
+\cite{Timholmen96FYSSTK4155Prosjektarbeid}.
 
 \section{Methods}
 \subsection{The data}
@@ -241,13 +255,18 @@ Thus the cost function, for least squared, is written mathematically:
 \end{equation}
 \cite[p.~81]{LectureNotes}
 This is the optimization problem, to adjust the parameter $\theta$ such that the cost function is minimized.
-
-We se that our predicted model is characterized by $X\theta$, where theta contains the coefficients, the direct solution to this problem is:
+The cost function is convex, and the minima is in the extremum point the $\nabla_{theta}C(\theta)=0$. 
+The gradient is
+\begin{equation}
+  \nabla_{\theta} C_{\mathrm{OLS}}(\theta)
+  = \frac{2}{n}X^T(X\theta-y).
+\end{equation}
+Setting this gradient to zero gives the normal equations:
 \begin{equation}
   \hat{\theta} = (X^{T}X)^{-1}X^{T}y
 \end{equation}
 \cite[p.~81]{LectureNotes}
-through singular value decomposition~\cite[p.~42]{LectureNotes}, it can be shown that the best estimate for this theta, which
+Through singular value decomposition~\cite[p.~42]{LectureNotes}, it can be shown that the best estimate for this theta, which
 minimizez the cost function, is the pseudioinverse of X multiplied by the output data y,
 \begin{equation}
   \hat{\theta} = X^{+}y
@@ -285,6 +304,7 @@ FOR degree = 0, ..., 15:
 
     Store degree, theta, mse and r2
 \end{lstlisting}
+% Ridge
 \subsection{Ridge Regression}
 Ridge regression adds a penalty on the squard length of the parameter vector,
 and the cost function is;
@@ -296,9 +316,15 @@ C_{\mathrm{Ridge}}(\bm{\theta})
 \qquad \lambda \geq 0.
 \label{eq:ridge_cost}
 \end{equation}
-with $\lVert\theta\rVert_2^2 = \sum_{j}\theta_j^2$
-The closed form solution to this problem is,
-by dropping the factor 1/n:
+with $\lVert\theta\rVert_2^2 = \sum_{j}\theta_j^2$ \newline 
+The gradient for this cost function is given by
+\begin{equation}
+  \nabla_{\theta} C_{\mathrm{Ridge}}(\theta)
+  = \frac{2}{n}X^T(X\theta-y)
+    + 2\lambda \theta.
+\end{equation}
+Setting this to zero and solving for theta, ignoring the factor 1/n, 
+gives the closed form solution to this problem
 \begin{equation}
   \hat{\theta}_{\mathrm{Ridge}} =
   (X^{T}X + \lambda I)^{-1}X^{T}y
@@ -387,10 +413,9 @@ here is the soft thresholding operator for $X=I$
 \cite[p.~91]{LectureNotes}
 The selection property makes the lasso the natural first tool when the
 number of parameters is large and most fatures are believed irrelevant.
-Pseudocode for lasso will be written after gradient descent is described.
-
-\subsubsection{Pseudocode Lasso}
-\label{subsec:Lasso_Code}
+Solving the lasso regession problem requires a gradient descent method, 
+which will be explained in \hyperref[sec:GD]{Gradient descent} and 
+\hyperref[subsec:Lasso_GD]{Lasso}
 
 \subsection{Evaluation}
 
@@ -506,7 +531,7 @@ for pulling the random bootstrap data.
 
 \paragraph{Bootstrap Pseudocode}
 LLM Declaration:
-This pseudocode is a pseudo copy of the reference project code c: Bootstrap \cite{Timholmen96FYSSTK4155Prosjektarbeid}
+This pseudocode is a copy of the reference project code c: Bootstrap \cite{Timholmen96FYSSTK4155Prosjektarbeid}
 created with help of OpenAI codex \cite{Codex}
 \begin{lstlisting}[
     basicstyle=\ttfamily\footnotesize,
@@ -595,6 +620,7 @@ cross validation result is shown.
 
 \subsection{Gradient descent}
 \label{sec:GD}
+Note: The chosen polynomial degree for gradient descent is 5 degrees.
 \subsubsection{Plain gradient descent}
 The gradient descent methods introduced is a method for finding
 the optimal parameter $\theta$, and is thus a replacement for
@@ -629,20 +655,661 @@ its minimum at $\eta = \frac{2}{\lambda_{min}+\lambda_{max}}$, and diverges
 exactly at $\frac{2}{\lambda_{max}}$. \newline 
 Momentum, Adagrad, RMSprop and Adam are advanced gradient descent methods
 where the learning rate $\eta(n)$ is updated during the iteration.
-Opposed to plain gradint descent where the learning rate is constant.
+Opposed to plain gradient descent where the learning rate is constant.
 The more advanced methods are more suitable for cases where we cannot
 analytically calculate the Hessian of the cost function. 
 
-\subsubsection{Momentum}
-\subsubsection{Adagrad}
-\subsubsection{RMSprop}
-\subsubsection{Adam}
+\subsubsection{Pseudocode GD}
+LLM Declaration. This pseudocode is a pseudo copy of the reference project code \textit{f: Momentum, Adagrad, RMSprop and Adam}
+\cite{Timholmen96FYSSTK4155Prosjektarbeid} Created with help of OpenAI codex \cite{Codex} with latex package \texttt{lstlisting}.
 
-\subsubsection{learning rate}
+The following two pseudocodes show simplified interfaces for the optimisation
+loop and a single update. The update step has access to the learning rate,
+iteration number, method settings and stored optimiser state. The stopping
+criterion includes a maximum number of iterations.
+
+\noindent\begin{minipage}{\linewidth}
+\begin{lstlisting}[
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    mathescape=true,
+    caption={Optimisation loop: optimise.},
+    label={lst:optimise}
+]
+INPUT method, $\theta_0$, gradient, $\gamma$
+
+$\theta \gets \theta_0$
+history <- [copy of $\theta$]
+Set learning rate to $\gamma$
+Initialise method state and iteration count
+
+REPEAT until stopping criterion is met:
+    grad <- gradient($\theta$)
+    $\theta \gets$ optimiser_step(method, $\theta$, grad)
+    Append a copy of $\theta$ to history
+    Advance iteration count
+
+RETURN history
+\end{lstlisting}
+\end{minipage}
+
+\noindent\begin{minipage}{\linewidth}
+\begin{lstlisting}[
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    mathescape=true,
+    caption={Single parameter update: optimiser\_step.},
+    label={lst:optimiser_step}
+]
+INPUT method, $\theta_n$, grad
+
+Apply the selected method's update rule
+    to obtain $\theta_{n+1}$ and update method state
+
+RETURN $\theta_{n+1}$
+\end{lstlisting}
+\end{minipage}
+
+% Momentum
+\noindent\begin{minipage}{\linewidth}
+\begin{lstlisting}[
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    mathescape=true,
+    caption={Momentum.},
+    label={lst:momentum}
+]
+INPUT $C$, $\theta_0$, $T$, $\gamma>0$, $0\leq\beta<1$
+
+$v_0 \gets \mathbf{0}$
+
+FOR $t=1,\ldots,T$:
+    $g_t \gets \nabla C(\theta_{t-1})$
+    $v_t \gets \beta v_{t-1}+\gamma g_t$
+    $\theta_t \gets \theta_{t-1}-v_t$
+
+RETURN $\theta_T$
+\end{lstlisting}
+\end{minipage}
+% Adagrad
+\noindent\begin{minipage}{\linewidth}
+\begin{lstlisting}[
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    mathescape=true,
+    caption={AdaGrad.},
+    label={lst:adagrad}
+]
+INPUT $C$, $\theta_0$, $T$, $\gamma>0$, $\varepsilon>0$
+
+$r_0 \gets \mathbf{0}$
+
+FOR $t=1,\ldots,T$:
+    $g_t \gets \nabla C(\theta_{t-1})$
+    $r_t \gets r_{t-1}+g_t^2$
+    $\theta_t \gets \theta_{t-1}-\frac{\gamma}{\sqrt{\varepsilon+r_t}}g_t$
+
+RETURN $\theta_T$
+\end{lstlisting}
+\end{minipage}
+%RMSprop
+\noindent\begin{minipage}{\linewidth}
+\begin{lstlisting}[
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    mathescape=true,
+    caption={RMSProp.},
+    label={lst:rmsprop}
+]
+INPUT $C$, $\theta_0$, $T$, $\gamma>0$, $0\leq\rho<1$, $\varepsilon>0$
+
+$r_0 \gets \mathbf{0}$
+
+FOR $t=1,\ldots,T$:
+    $g_t \gets \nabla C(\theta_{t-1})$
+    $r_t \gets \rho r_{t-1}+(1-\rho)g_t^2$
+    $\theta_t \gets \theta_{t-1}-\frac{\gamma}{\sqrt{\varepsilon+r_t}}g_t$
+
+RETURN $\theta_T$
+\end{lstlisting}
+\end{minipage}
+%Adam
+\noindent\begin{minipage}{\linewidth}
+\begin{lstlisting}[
+    basicstyle=\ttfamily\footnotesize,
+    lineskip=3pt,
+    breaklines=true,
+    frame=single,
+    mathescape=true,
+    caption={Adam.},
+    label={lst:adam}
+]
+INPUT $C$, $\theta_0$, $T$, $\gamma>0$,
+      $0\leq\beta_1,\beta_2<1$, $\varepsilon>0$
+
+$m_0 \gets \mathbf{0}$
+$r_0 \gets \mathbf{0}$
+
+FOR $t=1,\ldots,T$:
+    $g_t \gets \nabla C(\theta_{t-1})$
+    $m_t \gets \beta_1 m_{t-1}+(1-\beta_1)g_t$
+    $r_t \gets \beta_2 r_{t-1}+(1-\beta_2)g_t^2$
+    $\hat{m}_t \gets \frac{m_t}{1-\beta_1^t}$
+    $\hat{r}_t \gets \frac{r_t}{1-\beta_2^t}$
+    $\theta_t \gets \theta_{t-1}-\frac{\gamma}{\sqrt{\hat{r}_t}+\varepsilon}\hat{m}_t$
+
+RETURN $\theta_T$
+\end{lstlisting}
+\end{minipage}
+
+\subsubsection{Lasso Gradient descent}
+\label{subsec:Lasso_GD}
+The Lasso cost function is the mean squared error plus an
+L1 penalty. The intercept $\theta_0$ is not penalised:
+\begin{equation}
+  C_{\mathrm{Lasso}}(\theta)
+  = \frac{1}{n}\|X\theta-y\|_2^2
+    + \lambda\sum_{j=1}^{p-1}|\theta_j|.
+\end{equation}
+Here, $p$ is the number of coefficients, including the intercept.
+
+Since the L1 penalty is not differentiable at zero,
+we use a subgradient:
+\begin{equation}
+  g_{\mathrm{Lasso}}(\theta)
+  = \frac{2}{n}X^T(X\theta-y) + \lambda s(\theta).
+\end{equation}
+The first term is the MSE gradient. The penalty contribution
+is defined by $s_0=0$ and, for $j=1,\ldots,p-1$,
+\begin{equation}
+  s_j =
+  \begin{cases}
+    -1, & \theta_j < 0, \\
+    0, & \theta_j = 0, \\
+    1, & \theta_j > 0.
+  \end{cases}
+\end{equation}
+At zero, we choose $s_j=0$, which is a valid subgradient
+of the absolute value from the interval $[-1,1]$.
+This will be the input for the optimization pseudocode explained
+in gradient descent, and thus the optimal parameters will
+be found through gradient descent.
+
+\subsection{Experimental setup}
+\noindent\textit{LLM Declaration:} This section was generated with the assistance of OpenAI Codex \cite{Codex}, which analyzed the \texttt{Full\_Project.ipynb}\cite{Timholmen96FYSSTK4155Prosjektarbeid} code structure and helped organize the description of the experimental setup.
+
+We generate 350 observations from the Runge function,
+$f(x)=1/(1+25x^2)$, with $x$ sampled uniformly from $[-1,1]$
+and Gaussian noise with standard deviation $\sigma=0.25$.
+We use random seed 2026 and a 70/30 training--test split.
+Polynomial features are standardised using training-set statistics,
+except in the bias--variance and bootstrap experiments.
+The intercept is excluded from regularisation.
+
+OLS and Ridge are evaluated for polynomial degrees 0--15,
+with Ridge penalties ranging from $10^{-3}$ to $10^2$.
+The bias--variance analysis extends to degree 25.
+Bootstrap experiments use 40, 100 and 300 resamples.
+Shuffled 5-fold and 10-fold cross-validation compare OLS, Ridge
+and Lasso for degrees 0--14 and several regularisation strengths.
+Performance is measured using MSE and $R^2$, with mean validation
+MSE used for model comparison.
+
+The optimisation experiments use degree 5 and a regularisation
+strength of $0.01$ for Ridge and Lasso.
+Analytical gradients are compared with automatic differentiation
+using JAX. Plain gradient descent, Momentum, AdaGrad, RMSProp
+and Adam are evaluated at several learning rates.
+Lasso uses a subgradient of the $L_1$ penalty.
+Convergence is assessed against analytical OLS/Ridge solutions
+and a scikit-learn Lasso reference, using parameter error,
+iteration count and execution time.
+
+Finally, OLS, Ridge and Lasso are compared using shuffled
+5-fold and 10-fold cross-validation for polynomial degrees 0--14.
+Several regularisation strengths are tested for Ridge and Lasso.
+Features are standardised within each training fold.
+The models are compared using mean validation MSE and its
+standard deviation across folds, selecting the degree and
+regularisation strength with the lowest mean MSE.
+\clearpage
+\section{Results}
+\subsection{The data}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.33\linewidth]{Resultater/Data0.png}
+    \includegraphics[width=0.33\linewidth]{Resultater/Data01.png}
+    \includegraphics[width=0.33\linewidth]{Resultater/Data05.png}
+    \caption{Data generated from the Runge function with different noise levels}
+    \label{fig:data}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{Resultater/Data1.png}
+    \caption{Final data used during project}
+    \label{fig:data_f}
+\end{figure}
+% OLS and RIdge
+\onecolumngrid
+\subsection{OLS and Ridge regression}
+\subsubsection{OLS}
+\noindent\begin{minipage}[b]{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Resultater/OLS.png}
+    \captionof{figure}{Model predictions and parameters vs Degree}
+    \label{fig:OLS}
+\end{minipage}
+\par\medskip
+
+\noindent\begin{minipage}[b]{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Resultater/OLS_E.png}
+  \captionof{figure}{Measures of quality}
+  \label{fig:OLS_E}
+\end{minipage}
+\par\medskip
+\twocolumngrid
+
+
+%\clearpage
+
+
+%Ridge 
+\onecolumngrid
+\subsubsection{Ridge}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{Resultater/Ridge_1.png}
+  \caption{Regularization vs lambda}
+  \label{fig:Ridge_R}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{Resultater/Ridge_2.png}
+  \caption{Coefficinent values vs lambda}
+  \label{fig:Ridge_R1}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{Resultater/Ridge_Q.png}
+  \caption{Measures of quality}
+  \label{fig:Ridge_M}
+\end{figure}
+
+\clearpage
+\twocolumngrid
+
+\onecolumngrid
+\subsection{Bias-Variance tradeoff and bootstrap}
+\subsubsection{Fig 2.11}
+\noindent\begin{minipage}[b]{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Resultater/Fig211.png}
+  \captionof{figure}{Bias-Variance Reference figure 2.11}
+  \label{fig:Fig211}
+\end{minipage}
+\par\medskip
+\subsubsection{Bootstrap}
+
+\noindent\begin{minipage}[b]{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Resultater/Bootstrap.png}
+  \captionof{figure}{Bias-variance tradeoff: Boostrap}
+  \label{fig:Bootstrap}
+\end{minipage}
+\par\medskip
+
+
+\subsection{K-fold Cross validation}
+\noindent\begin{minipage}[b]{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Resultater/Kfold.png}
+  \captionof{figure}{Kfold Cross validation}
+  \label{fig:Kfold}
+\end{minipage}
+
+\noindent\begin{minipage}[b]{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Resultater/Kfold_vs.png}
+  \captionof{figure}{Kfold: Ridge vs OLS}
+  \label{fig:Kfold_VS}
+\end{minipage}
+
+\noindent\begin{minipage}[b]{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Resultater/CV_B100.png}
+  \captionof{figure}{Kfold and Bootstrap}
+  \label{fig:Kfold_Bootstrap}
+\end{minipage}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Final result K-fold and Bootstrap cross validation}
+    \label{tab:Kfold_Final}
+    \begin{tabular}{ccc}
+        \toprule
+        Modell & Best degree & MSE \\
+        \midrule
+        Bootstrap(100)  & 8 & 0.088 \\
+        5-fold CV & 12 & 0.070 \\
+        10-fold CV & 12 & 0.070 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\clearpage
+
+\twocolumngrid
+\subsection{Gradient descent and optimisation methods}
+\subsubsection{Automatic differentiation}
+The analytical gradients for OLS and Ridge were compared
+with automatic differentntiation using jax, using polynomial degree 5
+and $\lambda=0.01$. 
+On the full, unscaled dataset, the maximum absolute difference
+between gradient components was $1.332\times10^{-15}$. 
+This difference shows numerical percision and indicate agreement
+between the gradient both gradient solutions. \newline 
+The comparison was repeated on the scaled training data 
+at two different start parameter vectors. The differences
+ranged from $8.882\times10^{-16}$ to $1.332\times10^{-15}$, 
+showing numerical precision also on the scaled training data,
+which will be used throgout the gradient descent.
+
+\onecolumngrid
+
+\subsubsection{Plain Gradient descent}
+
+\noindent\begin{minipage}[b]{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Resultater/Plain_GD.png}
+    \captionof{figure}{Plain gradient descent for OLS and Ridge
+                      with different learning rates.}
+    \label{fig:Plain_GD}
+\end{minipage}
+\par\medskip
+
+\twocolumngrid
+
+\clearpage
+\onecolumngrid
+\subsubsection{Advanced gradient descent}
+\noindent\begin{minipage}[b]{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Resultater/GD.png}
+    \captionof{figure}{Advanced gradient descent methods with OLS and ridge}
+    \label{fig:Advanced_GD}
+\end{minipage}
+\par\medskip
+
+\twocolumngrid
+The learning-rate limits for plain gradient descent are:
+\begin{itemize}
+    \item OLS: $\eta_{\mathrm{lim}} \approx 0.356726$.
+    \item Ridge: $\eta_{\mathrm{lim}} \approx 0.356721$.
+\end{itemize}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Base learning rates for the optimisation methods.}
+    \label{tab:base_learning_rates}
+    \begin{tabular}{lrr}
+        \toprule
+        Method & OLS & Ridge \\
+        \midrule
+        Momentum & 0.338890 & 0.338885 \\
+        AdaGrad  & 0.100000 & 0.100000 \\
+        RMSProp  & 0.100000 & 0.100000 \\
+        Adam     & 0.356010 & 0.356000 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+For Momentum, the base rate is
+$0.95\times\eta_{lim}$.
+Each base rate is multiplied by factors
+$\{0.1,\,0.3,\,1,\,3\}$ to investigate learning-rate sensitivity.
+
+\clearpage
+
+\onecolumngrid
+
+% Keep the heading and five plots together with fixed spacing.
+\noindent\begin{minipage}[b]{\textwidth}
+  \subsection{Lasso with gradient descent}
+
+  \begin{minipage}[t]{0.48\textwidth}
+    \vspace{0pt}
+    \centering
+    \includegraphics[width=\linewidth]{Resultater/Lasso01.png}
+    \captionof{figure}{Lasso GD with $\eta$=0.01*0.1}
+    \label{fig:Lasso01}
+    \par\medskip
+    \includegraphics[width=\linewidth]{Resultater/Lasso03.png}
+    \captionof{figure}{Lasso GD with $\eta$=0.01*0.3}
+    \label{fig:Lasso03}
+    \par\medskip
+    \includegraphics[width=\linewidth]{Resultater/Lasso1.png}
+    \captionof{figure}{Lasso GD with $\eta$=0.01*1}
+    \label{fig:Lasso1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \vspace{0pt}
+    \centering
+    \includegraphics[width=\linewidth]{Resultater/Lasso3.png}
+    \captionof{figure}{Lasso GD with $\eta$=0.01*3}
+    \label{fig:Lasso3}
+    \par\medskip
+    \includegraphics[width=\linewidth]{Resultater/Lasso10.png}
+    \captionof{figure}{Lasso GD with $\eta$=0.01*10}
+    \label{fig:Lasso10}
+  \end{minipage}
+\end{minipage}
+\par\medskip
+
+\twocolumngrid
+\clearpage
+
+
+
+\onecolumngrid
+\subsection{Final cross-validation comparison}
+
+\noindent\begin{minipage}[b]{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Resultater/Final_5.png}
+  \captionof{figure}{Final k=5 fold CV for OLS, Ridge and Lasso}
+  \label{fig:Final_5}
+\end{minipage}
+
+\noindent\begin{minipage}[b]{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Resultater/Final_10.png}
+  \captionof{figure}{Final k=10 fold CV for OLS, Ridge and Lasso}
+  \label{fig:Final_10}
+\end{minipage}
+\clearpage
+\twocolumngrid
+
+\section{Discussion}
+\subsection{OLS}
+% Fig1
+\subsubsection{Parameter plot}
+Figure~\ref{fig:OLS} shows the OLS parameter plot. 
+A couple things to notice is that the parameter figure does not show the lower degree polynomial coefficients, because the higher degree coefficients blow up in size as the degree increases; this size difference hides the lower degree coefficients in the plot. The higher degree coefficients are explained by the figure on the left, which shows large oscillations around the endpoints $x=-1,1$. This is not the case for the lower degree polynomial fits, as these do not have enough complexity to create such oscillations. The simplest degree shown in the right-hand figure is the degree 3 polynomial fit, which is a parabola with no oscillation around the endpoints. Strangely enough, the degree 2 polynomial is not visible in this right-hand figure; it should be a green parabola. Exploring this further:
+
+\noindent\begin{minipage}[b]{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{Resultater/OLS_D2.png}
+  \captionof{figure}{Parameter plot cut at 9 degrees for scaling}
+  \label{fig:OLS_D2}
+\end{minipage}
+\par\medskip
+\noindent\begin{minipage}[b]{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{Resultater/OLS_D1.png}
+  \captionof{figure}{Degree 2 vs 3 Polynomial fit}
+  \label{fig:OLS_D1}
+\end{minipage}
+\par\medskip
+
+As expected, the degree 2 and 3 polynomial fits overlap. 
+The degree 0 coefficint is close to zero, and probably only affected by the noise.
+The degree 1 coefficient shows a negative trend, this may be a result of the random noise being
+slightly negatively inclined.
+
+\subsubsection{Measure of quality}
+Figure~\ref{fig:OLS_E} show the measure of quality plot.
+The MSE decrease rapidly from a first to second degree polynomial, and
+increases slightly for third degree, this fits with the previous discussion,
+where the second and third order fit overlapped. The MSE and R2 plots
+show correspondence, a low MSE corresponds to a high R2 value, 
+the best MSE and R2 score is for an 8 degree polynomial fit, which 
+has the lowest MSE and highest R2 score. Higher degrees don`t really
+improve the models quality in terms of MSE and $R^2$. 
+The best possible R2 score is 1, which means
+the prediction hits all the true test values, the R2 score in our fit has a limit
+around 0.5, which means that overall half the predicted points hit the 
+target value, this may be a result of the noise ratio $\sigma=0.25$ and
+the form of the runge function, as seen in the coefficient plot in 
+figure~\ref{fig:OLS} and discussed above.
+
+\subsection{Ridge}
+\subsubsection{Regularization}
+Figure~\ref{fig:Ridge_R} and Figure~\ref{fig:Ridge_R1} show the 
+effect of the regularization on test-MSE as a result of different regularization 
+parameters $\lambda$. Figure 5 shows the effect on degrees
+3, 5, 7, 10 and 15, and show that the minimum MSE is caused by 
+different $\lambda$ values for each degree. Degree 5 has a minimum
+around lambda = 0.5, degree 10 and 15 for lambda = 0.001.
+The trend seems to be that higher degree polynomial fits need
+weaker penalty values to reach a better fit(Lower test-MSE). 
+By zooming in on degree 7, as in Figure 6, we see how the different
+coefficients are regularized by an increasing $\lambda$ value.
+We also see that a high penalty $\lambda=100$ shrinks all the coefficients
+close to zero, which proves the initial assumption for ridge regression.
+Testing showed that below 0.001 no positiv effect on Test-MSE happened,
+for all degrees.
+\subsubsection{Measure of Quality}
+Figure~\ref{fig:Ridge_M} show the measure of quality plots for 
+ridge, both MSE and coefficient of determiation. The plots show 
+the same correspondence as OLS, and the $R^2$ limit is still around 0.5
+What we see of importance here is that these results further prove
+the result in figure 5 and 6, the relation between weak penalty and 
+high degree polynomial fit. We see the plateau where an increasing
+polynomial degree dont change the MSE or $R^2$ for the same $\lambda$ value.
+As if a high $\lambda$ affects the higher degree coefficients more strongly
+than the lower degree coefficients, this is further shown in 
+Figure 6 and Figure 3 Left plot, where the lower degree coefficients $\theta_i$,
+are larger and less affected by lambda, as $\theta_2$ in Fig. 6, opposed to $theta_7$,
+\clearpage
+
+\subsection{Bias-Variance tradeoff and Bootstrap}
+Figure~\ref{fig:Fig211} shows the bias variance tradeoff in effect,
+the max degree was tuned to 25 degrees to really show this effect of 
+increasing test error by increasing the degree. This increasing test error 
+is the result of high variance, overfitting. When both training and test
+error is high, this is a result of underfitting, low bias, in this case
+the variance is lower, which is indirectly seen from the low difference
+in MSE between test and training error. 
+The bootstrap figure~\ref{fig:Bootstrap} shows the decomposition of the
+MSE into $bias^2$ and $variance$. Here we see the bias decreasing
+for higher degrees, which is good. The variance increase for higher degrees,
+which is expected. The difference between the test error and bias, and the 
+variance is from the noise which is baked into the data, and the model
+cannot predict, lowering the noise would lower the test error as the bias decrease. 
+\noindent\begin{minipage}[b]{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{Resultater/Bootstrap_0.png}
+  \captionof{figure}{Bias-Variance tradeoff, Bootstrap, 0 noise}
+  \label{fig:Bootstrap_0}
+\end{minipage}
+\par\medskip
+
+\subsection{K-fold Cross validation}
+Figure~\ref{fig:Kfold} show two things, first that the ski-kit learn kfold function agrees
+with the manual kfold function to numerical precision. Secondly, that there is not a noticable
+difference between 5fold and 10fold cross validation. The OLS CV plot
+show that the best polynomial degree for OLS is 12 degres, 8 degrees is second best and can 
+be chosen for simplicity and lower variance. The Ridge plot shows that the best degree and 
+penalty is 8 degrees with $\lambda = 0.01$
+Comparing both the best Ridge model (0.01) and OLS in Figure~\ref{fig:Kfold_VS} shows that
+over 8 degrees OLS gives a better prediction in terms of test MSE than Ridge, for 8 degrees
+they are almost equal. 
+Interestingly, Figure~\ref{fig:Kfold_Bootstrap} and Table~\ref{tab:Kfold_Final} for OLS comparing boostrap and kfold, 
+the bootstrap shows that 8 degrees gives the lowest MSE, while the kfold CV shows that 
+12 degrees gives the lowest MSE. This may indicate that kfold crossvalidation lowers
+the variance of the model. 
+
+\subsection{Gradient Descent}
+\subsubsection{Plain Gradint descent}
+Figure~\ref{fig:Plain_GD} show that the gradient descent converges below the limit $\frac{2}{\lambda_{max}}$
+and diverges above it, can also se that close to the limit, 0.95*lim, the solution reaches the convergence limit
+of $10^{-6}$ for 3500 iterations, while for 0.25*lim, it takes 14000 iterations. 
+\subsubsection{Advanced gradient descent}
+Figre~\ref{fig:Advanced_GD} shows how the different advanced methods act for 
+different learning rates. The limit for converge set is $10^{-8}$. 
+Adam is most robust, converging for all learning rates set, 
+momentum converges for all learning rates except $3*0.95*\eta_{lim}$.
+The best learning rate for adam is $3\times0.356$, this learning rate
+gives the least iterations for convergence, around 300. The best learning
+rate for momentum is $1*0.95*\eta_{lim}$, this learning rate converges
+around 200 iterations, and thus the best optimalization method is momentum.
+Adagrad and rmsprop did not converge sufficiently for the set training rates,
+except adagrad for a learning rate of $3*0.1$, with 7000 iterations. 
+For a convergence limit of $10^{-4}$ rmsprop would have converge with
+a learning rate of $0.1*0.1$. By increasing the total number of iterations,
+adagrad would probably also converge for the lower learning rates, as seen
+from the negative inclination of the graphs in the figure. 
+One obious isse with rmsprop and adagrad, is that both methods recieved 
+lower base learning rates than adam and momentum, as shown in 
+Table~\ref{tab:base_learning_rates}. \newline 
+The RMSprop may be a result of either a low initial learning rate, or a 
+fault in the optimization alghoritm itself.
 
 \subsection{Lasso gradient descent}
+Figure~\ref{fig:Lasso01} to Figure~\ref{fig:Lasso10} show the 
+activity of the different methods in more detail, while solving
+for the optimal parameters. The best overall learning rate is
+$eta=0.03$, which is Figure~\ref{fig:Lasso03}, and the best method 
+is momentum, which converges to the limit $10^{-8}$ after 350 iterations.
+The last figure, Figure~\ref{fig:Lasso10} show what happens with 
+the different methods when the learning rate is set too high. They oscillate
+around the minimum point, since the step size is too large, never reaching
+the required converge limit. 
 
-\subsection{Final}
+\subsection{Final analysis}
+The final figures Figure~\ref{fig:Final_5} and Figure~\ref{fig:Final_10},
+show that the best method for solving the optimization problem is OLS,
+followed closely by ridge, and then Lasso. The reason for this
+may be the simple form of the runge function, which allows for OLS
+to solve this problem with best accuracy, in terms of MSE. 
 
-\bibliography{References} % add  references to this file
+\section{Conclusion}
+The best method for solving this optimization problem is OLS, which is seen
+by the black line describing the OLS regression MSE for different degrees in Figure~\ref{fig:Final_10}.
+The best degre is 12, but 8 degrees can also be chosen for model simplicity. 
+For 8 degrees, ridge with $\lambda=0.01$ have approximately the same test MSE as OLS, and 
+can be chosen as well. The best optimization method for gradient descent, in terms
+of accuracy and cost, is momentum with learning rate $\eta=0.338$, 
+which is $\frac{2}{\lambda_{\max}(H)}$ for both OLS and Ridge.
+
+\section{LLM Declaration}
+Did not create a sufficient LM declaration, to document the full use
+of Codex, with OpenAIs $GPT\_6.1 Sol$. The main alghoritms are
+created with information from \cite{LectureNotes}, and weekly exercises.
+AI was mainly used to display and store data, and for ensuring that 
+the code ran efficiently. For the lasso regression code, codex created 
+the skeleton with inspiration from the lecture notes. Throughout the full project code there is an LLM 
+declaration in the code cells where codex is used.
+Codex was used
+for writing some of the text in the report, such as the \hyperref[subsec:Structure]{Section of the report}. 
+For the next report, the lesson is to do the right LLM declaration during the 
+process of writing the code and report.
+\bibliography{References} 
 \end{document}
