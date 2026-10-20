@@ -1,0 +1,19 @@
+\contentsline {title}{Project 2 on Neural networks}{1}{section*.2}%
+\contentsline {abstract}{Abstract}{1}{section*.1}%
+\tocdepth@munge 
+\contentsline {section}{\numberline {}Contents}{1}{section*.3}%
+\tocdepth@restore 
+\contentsline {section}{\numberline {I}Introduction}{2}{section*.4}%
+\contentsline {section}{\numberline {II}Theory}{2}{section*.5}%
+\contentsline {subsection}{\numberline {A}Cost/ Loss functions and their gradients}{2}{section*.6}%
+\contentsline {subsubsection}{\numberline {1}MSE}{2}{section*.7}%
+\contentsline {subsubsection}{\numberline {2}Binary cross entropy: log loss}{2}{section*.8}%
+\contentsline {subsubsection}{\numberline {3}Multiclass cross entropy cost function}{2}{section*.9}%
+\contentsline {subsection}{\numberline {B}Activation functions}{2}{section*.10}%
+\contentsline {subsubsection}{\numberline {1}Sigmoid logit function}{2}{section*.11}%
+\contentsline {subsubsection}{\numberline {2}RELU function}{2}{section*.12}%
+\contentsline {subsubsection}{\numberline {3}leaky RELU function}{2}{section*.13}%
+\contentsline {section}{\numberline {III}Methods}{2}{section*.14}%
+\contentsline {section}{\numberline {IV}Results}{2}{section*.15}%
+\contentsline {section}{\numberline {V}Discussion}{2}{section*.16}%
+\contentsline {section}{\numberline {VI}Conclusion}{2}{section*.17}%

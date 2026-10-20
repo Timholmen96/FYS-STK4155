@@ -1,0 +1,99 @@
+% Preserve the LaTeX kernel label before REVTeX replaces it.
+\let\ReportKernelLabel\label
+\documentclass[aps,rmp,reprint,raggedbottom,amsmath,amssymb,longbibliography]{revtex4-1}
+
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{wrapfig}
+\usepackage{array}
+\usepackage{listings}
+\usepackage[para,online,flushleft]{threeparttablex}
+\usepackage{booktabs,dcolumn}
+\usepackage{xcolor}
+\usepackage{capt-of}
+
+\usepackage{textpos}
+\usepackage{multirow,bigdelim}
+
+\usepackage{upgreek} %upalpha in Saxena2021 Reference
+
+\usepackage[utf8]{inputenc}
+\usepackage{etoolbox}
+% Allow long URLs to wrap within the narrow bibliography columns.
+\usepackage{xurl}
+% Restore label hooks required by current hyperref/nameref.
+\let\label\ReportKernelLabel
+\usepackage{hyperref}
+\hypersetup{breaklinks=true,colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=magenta,urlcolor=blue}
+% Keep paragraph headings at the expected level in PDF bookmarks.
+\makeatletter
+\def\toclevel@paragraph{4}
+\makeatother
+
+%\newcommand{\contrib}[1]{\textcolor{red}{#1}}
+%\newcommand{\comment}[1]{\textcolor{blue}{#1}}
+
+%\newcommand{\WN}[1]{{\color{red} #1}}
+
+\makeatletter
+% LaTeX Workshop requires a comma after a BibTeX entry key, even with no fields.
+% Patch only the separator to preserve REVTeX's eprint setting and APS hook.
+\patchcmd{\@bibdataout@rev}
+  {\eprint@enable@sw{}{,eprint=""}}
+  {\eprint@enable@sw{}{,eprint=""},}
+  {}
+  {\PackageError{report}{Could not patch REVTeX's BibTeX separator}{}}
+\def\@bibdataout@aps{%
+\immediate\write\@bibdataout{%
+@CONTROL{%
+apsrev41Control%
+% 0x48 keeps initials and journal-style names without dependency warnings.
+\longbibliography@sw{%
+    ,author="48",editor="1",pages="1",title="0",year="1"%
+    }{%
+    ,author="48",editor="1",pages="1",title="",year="1"%
+    }%
+  }%
+}%
+\if@filesw \immediate \write \@auxout {\string \citation {apsrev41Control}}\fi
+}
+\makeatother
+%\usepackage[left]{lineno}
+%\linenumbers
+
+% Page numbering for the preliminary pages and the main text.
+\providecommand{\frontmatter}{\clearpage\pagenumbering{roman}}
+\providecommand{\mainmatter}{\clearpage\pagenumbering{arabic}}
+
+\begin{document}
+\frontmatter
+
+\title{Project 2 on Neural networks}
+
+\author{Tim Herrmann Holmen}
+\affiliation{FYS-STK4155}
+\affiliation{Department of Physics}
+
+\begin{abstract}
+This project ...
+\end{abstract}
+
+\maketitle
+\clearpage
+
+\tableofcontents
+
+\mainmatter
+% Main text starts here, on page 1.
+\input{sections/introduction}
+\input{sections/theory}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/conclusion}
+
+
+
+\bibliography{References} 
+\end{document}
