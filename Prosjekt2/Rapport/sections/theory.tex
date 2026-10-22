@@ -1,20 +1,61 @@
 \section{Theory}
 \label{sec:theory}
-\subsection{Cost/ Loss functions and their gradients}
+\subsection{Cost functions and their gradients}
 The loss function is the most important function 
-for training this model, since training a model
-means to minimize the related cost function of the model.  
+for training, since training a model
+means to minimize the cost function of the model.  
 To minimize the cost function, we use backpropagation
-and gradient descent.
+to find the gradient of the cost, with regards
+to  and gradient descent.
 \subsubsection{MSE}
-with and without $L_1$ and $L_2$ norms, Regression problems.
-L2 norm is for Momentum, L1 is Lasso.
+When we have our calculated output value $\tilde{y}$ and the true
+output value $y$, with n data points, the mean-squared error and its derivative is
+\begin{equation}
+    MSE(y,\tilde{y}) = \frac{1}{n}\sum_{i=0}^{n-1}(y - \tilde{y})^2 \quad 
+    \frac{1}{n}||y - X\Theta||_2^2
+    \label{eq: MSE}
+\end{equation}
+L2 norm which corresponds to the Ridge cost function.
+\begin{equation}
+    MSE + \lambda||\Theta||_2^2 \quad \Theta(W, b)
+    \label{eq: RidgeCost}
+\end{equation}
+L1 norm which corresponds to the Lasso cost function.
+\begin{equation}
+    MSE + \lambda||\Theta|| \quad \Theta(W, b)
+    \label{eq: LassoCost}
+\end{equation}
 \subsubsection{Binary cross entropy: log loss}
 For binary classification problems with and without
 the $L_1$ and $L_2$ norms.
+\begin{align}
+    C(\Theta) &= -\sum_{i=1}^{n}(y_i \log p_i + 
+    (1 - y_i)\log[1 - p_i]) 
+    \label{eq: BinaryCost}\\
+    p_i &= \sigma(\theta_0 + \sum_i^n(\theta_ix_i))
+    \label{eq: BinaryFunc}
+\end{align}
+The cross entropy L1 and L2 norm is supplemented like the ordinary MSE. 
+\cite[p.~(151-154)]{LectureNotes}
 \subsubsection{Multiclass cross entropy cost function}
-Softmaxx cross entropy or softmax loss function.
+aka Softmaxx cross entropy or softmax loss function.
+K classes.
+\begin{equation}
+    C(\Theta) = -\sum_{i=1}^{n}\sum_{k=0}^{K-1}y_{ik}\log p(C=k|x_i)
+    \label{eq: SoftmaxCost}
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        p(C = k \mid x)
+        &= \frac{\exp(x^T\theta_k)}
+                 {\sum_{l=0}^{K-1}\exp(x^T\theta_l)} \\
+        k &= 0, \ldots, K-1
+    \end{aligned}
+    \label{eq: SoftmaxFunc}
+\end{equation}
+\cite[p.~156]{LectureNotes}
 \subsection{Activation functions}
 \subsubsection{Sigmoid logit function}
+
 \subsubsection{RELU function}
 \subsubsection{leaky RELU function}

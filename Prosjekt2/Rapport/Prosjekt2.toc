@@ -5,7 +5,7 @@
 \tocdepth@restore 
 \contentsline {section}{\numberline {I}Introduction}{2}{section*.4}%
 \contentsline {section}{\numberline {II}Theory}{2}{section*.5}%
-\contentsline {subsection}{\numberline {A}Cost/ Loss functions and their gradients}{2}{section*.6}%
+\contentsline {subsection}{\numberline {A}Cost functions and their gradients}{2}{section*.6}%
 \contentsline {subsubsection}{\numberline {1}MSE}{2}{section*.7}%
 \contentsline {subsubsection}{\numberline {2}Binary cross entropy: log loss}{2}{section*.8}%
 \contentsline {subsubsection}{\numberline {3}Multiclass cross entropy cost function}{2}{section*.9}%
@@ -17,3 +17,4 @@
 \contentsline {section}{\numberline {IV}Results}{2}{section*.15}%
 \contentsline {section}{\numberline {V}Discussion}{2}{section*.16}%
 \contentsline {section}{\numberline {VI}Conclusion}{2}{section*.17}%
+\contentsline {section}{\numberline {}References}{2}{section*.18}%
