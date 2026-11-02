@@ -16,8 +16,10 @@
 \@writefile{toc}{\tocdepth@restore}
 \citation{LectureNotes}
 \citation{LectureNotes}
-\bibdata{Prosjekt2Notes,References}
-\bibcite{LectureNotes}{{1}{2016}{{{Hjorth-Jensen}}}{{}}}
+\citation{LectureNotes}
+\citation{LectureNotes}
+\citation{LectureNotes}
+\citation{LectureNotes}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{2}{section*.4}\protected@file@percent }
 \newlabel{sec:introduction}{{I}{2}{}{section*.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Theory}{2}{section*.5}\protected@file@percent }
@@ -25,44 +27,60 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {A}Cost functions and their gradients}{2}{section*.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}MSE}{2}{section*.7}\protected@file@percent }
 \newlabel{eq: MSE}{{1}{2}{}{equation.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {a}L2 norm}{2}{section*.8}\protected@file@percent }
 \newlabel{eq: RidgeCost}{{2}{2}{}{equation.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {b}L1 norm}{2}{section*.9}\protected@file@percent }
 \newlabel{eq: LassoCost}{{3}{2}{}{equation.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Binary cross entropy: log loss}{2}{section*.8}\protected@file@percent }
-\newlabel{eq: BinaryCost}{{4}{2}{}{equation.4}{}}
-\newlabel{eq: BinaryFunc}{{5}{2}{}{equation.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Multiclass cross entropy cost function}{2}{section*.9}\protected@file@percent }
-\newlabel{eq: SoftmaxCost}{{6}{2}{}{equation.6}{}}
-\newlabel{eq: SoftmaxFunc}{{7}{2}{}{equation.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}Activation functions and their gradients}{2}{section*.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Sigmoid logit function}{2}{section*.11}\protected@file@percent }
-\newlabel{eq : Sigma}{{8}{2}{}{equation.8}{}}
-\newlabel{eq : SigmaPrime}{{9}{2}{}{equation.9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}RELU function}{2}{section*.12}\protected@file@percent }
-\newlabel{eq : ReLU}{{10}{2}{}{equation.10}{}}
-\newlabel{eq : ReLUPrime}{{11}{2}{}{equation.11}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}leaky RELU function}{2}{section*.13}\protected@file@percent }
-\newlabel{eq : leakyReLU}{{12}{2}{}{equation.12}{}}
-\newlabel{eq : leakyReLUPrime}{{13}{2}{}{equation.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Binary cross entropy: log loss}{2}{section*.10}\protected@file@percent }
+\newlabel{eq: BinaryCost}{{6}{2}{}{equation.6}{}}
+\newlabel{eq: BinaryCostGradient}{{7}{2}{}{equation.7}{}}
+\newlabel{eq:MeanBinaryCostGradient}{{8}{2}{}{equation.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Multiclass cross entropy cost function}{2}{section*.11}\protected@file@percent }
+\newlabel{eq:SoftmaxFunc}{{9}{2}{}{equation.9}{}}
+\newlabel{eq: SoftmaxCost}{{10}{2}{}{equation.10}{}}
+\newlabel{eq: SoftmaxCostGradient}{{11}{2}{}{equation.11}{}}
+\citation{LectureNotes}
+\citation{LectureNotes}
+\citation{LectureNotes}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Activation functions and their gradients}{3}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Sigmoid logit function}{3}{section*.13}\protected@file@percent }
+\newlabel{eq:Sigmoid}{{12}{3}{}{equation.12}{}}
+\newlabel{eq : SigmaPrime}{{13}{3}{}{equation.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}RELU function}{3}{section*.14}\protected@file@percent }
+\newlabel{eq : ReLU}{{14}{3}{}{equation.14}{}}
+\newlabel{eq : ReLUPrime}{{15}{3}{}{equation.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}leaky RELU function}{3}{section*.15}\protected@file@percent }
+\newlabel{eq : leakyReLU}{{16}{3}{}{equation.16}{}}
+\newlabel{eq : leakyReLUPrime}{{17}{3}{}{equation.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Methods}{3}{section*.16}\protected@file@percent }
+\newlabel{sec:methods}{{III}{3}{}{section*.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}NeuralNetwork}{3}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Feed-forward pass}{3}{section*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Backpropagation}{3}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Analysis}{3}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Comparison with OLS}{3}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C}Activation, depth and width}{3}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Ridge}{3}{section*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Lasso}{3}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D}Classification}{3}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Results}{3}{section*.26}\protected@file@percent }
+\newlabel{sec:results}{{IV}{3}{}{section*.26}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Discussion}{3}{section*.27}\protected@file@percent }
+\newlabel{sec:discussion}{{V}{3}{}{section*.27}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{3}{section*.28}\protected@file@percent }
+\newlabel{sec:conclusion}{{VI}{3}{}{section*.28}{}}
+\@writefile{toc}{\appendix }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{3}{section*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1}Tools used}{3}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2}Text contributions}{3}{section*.31}\protected@file@percent }
+\bibdata{Prosjekt2Notes,References}
+\bibcite{LectureNotes}{{1}{2016}{{{Hjorth-Jensen}}}{{}}}
 \bibstyle{apsrmp4-1}
 \citation{REVTEX41Control}
 \citation{apsrev41Control}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Methods}{3}{section*.14}\protected@file@percent }
-\newlabel{sec:methods}{{III}{3}{}{section*.14}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}NeuralNetwork}{3}{section*.15}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Feed-forward pass}{3}{section*.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Backpropagation}{3}{section*.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}Comparison with OLS}{3}{section*.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {C}Activation, depth and width}{3}{section*.19}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Ridge}{3}{section*.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Lasso}{3}{section*.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D}Classification}{3}{section*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Results}{3}{section*.23}\protected@file@percent }
-\newlabel{sec:results}{{IV}{3}{}{section*.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Discussion}{3}{section*.24}\protected@file@percent }
-\newlabel{sec:discussion}{{V}{3}{}{section*.24}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{3}{section*.25}\protected@file@percent }
-\newlabel{sec:conclusion}{{VI}{3}{}{section*.25}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {}References}{3}{section*.26}\protected@file@percent }
-\newlabel{LastBibItem}{{1}{3}{}{section*.26}{}}
-\newlabel{LastPage}{{}{3}{}{}{}}
-\gdef \@abspage@last{3}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3}Code contributions}{4}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{4}{section*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{4}{section*.34}\protected@file@percent }
+\newlabel{LastBibItem}{{1}{4}{}{section*.34}{}}
+\newlabel{LastPage}{{}{4}{}{}{}}
+\gdef \@abspage@last{4}

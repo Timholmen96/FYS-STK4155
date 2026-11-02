@@ -7,6 +7,7 @@ means to minimize the cost function of the model.
 To minimize the cost function, we use backpropagation
 to find the gradient of the cost, with regards
 to  and gradient descent.
+
 \subsubsection{MSE}
 When we have our calculated output value $\tilde{y}$ and the true
 output value $y$, with n data points, the mean-squared error and its derivative is
@@ -15,44 +16,77 @@ output value $y$, with n data points, the mean-squared error and its derivative 
     \frac{1}{n}||y - X\Theta||_2^2
     \label{eq: MSE}
 \end{equation}
-L2 norm which corresponds to the Ridge cost function.
+\paragraph{L2 norm} which corresponds to the Ridge cost function.
 \begin{equation}
     MSE + \lambda||\Theta||_2^2 \quad \Theta(W, b)
     \label{eq: RidgeCost}
 \end{equation}
-L1 norm which corresponds to the Lasso cost function.
+\cite[p.~86]{LectureNotes}
+\paragraph{L1 norm} which corresponds to the Lasso cost function.
 \begin{equation}
     MSE + \lambda||\Theta|| \quad \Theta(W, b)
     \label{eq: LassoCost}
 \end{equation}
+\cite[p.~90-91]{LectureNotes}
+
 \subsubsection{Binary cross entropy: log loss}
-For binary classification problems with and without
-the $L_1$ and $L_2$ norms.
+With two classes, we assume a binary output $y \in \{0, 1\}$, and a predicted probability $p \in [0, 1]$ which is
+the output of the \hyperref[eq:Sigmoid]{sigmoid function} of $z_i$. 
+Where $z_i = x_i^T\Theta$ is the linear combination of the input features and the model parameters $\Theta$. 
+For a single example, data point $i$, the binary cross entropy cost function is defined as 
 \begin{align}
     C(\Theta) &= -\sum_{i=1}^{n}(y_i \log p_i + 
-    (1 - y_i)\log[1 - p_i]) 
-    \label{eq: BinaryCost}\\
-    p_i &= \sigma(\theta_0 + \sum_i^n(\theta_ix_i))
-    \label{eq: BinaryFunc}
+    (1 - y_i)\log[1 - p_i]) \\
+    p_i &= \sigma(z_i) = \frac{1}{1 + \exp(-z_i)} \\
+    \label{eq: BinaryCost}
 \end{align}
+The cost function is derived from the maximum likelihood estimation of the Bernoulli distribution,
+the negative log likelihood of the Bernoulli distribution. This is known as the cross entropy, and
+it is the loss function used to train binary classification models. \cite[p.~151]{LectureNotes}
+With the linear function $z_i = x_i^T\Theta$, the gradient of the cost function with respect 
+to the model parameters $\Theta$ is given by
+\begin{equation}
+    \frac{dC(\theta)}{d\theta} = -X^T(y - p)
+    \label{eq: BinaryCostGradient}
+\end{equation}
+For N data points, the mean binary cross entropy is defines as $$\frac{1}{N}\sum_{i=1}^{N}C(\theta)_i$$
+And the term $1/N$ follows through te calculations to give the mean binary cross entropy gradient, which is given by
+\begin{equation}
+    \nabla_\Theta C(\Theta) = -\frac{1}{n}X^T(y - p)
+    \label{eq:MeanBinaryCostGradient}
+\end{equation}
 The cross entropy L1 and L2 norm is supplemented like the ordinary MSE. 
 \cite[p.~(151-154)]{LectureNotes}
+
 \subsubsection{Multiclass cross entropy cost function}
-aka Softmaxx cross entropy or softmax loss function.
-K classes.
+For k klasses, one uses the soft max function to calculate the probability of each class.
+Again we have the linear function $z_k = X^T\Theta_k$ for each class, over all features and data points, 
+the softmax functions is defined as
+\begin{equation}
+    p(C = k \mid x) = \frac{\exp(z_k)}
+                 {\sum_{l=0}^{K-1}\exp(z_l)} \\
+        k = 0, \ldots, K-1
+    \label{eq:SoftmaxFunc}
+\end{equation}
+The nominator is for class k, and the denominator is the sum of all classes.
+The multiclass cross entropy cost function is defined as
 \begin{equation}
     C(\Theta) = -\sum_{i=1}^{n}\sum_{k=0}^{K-1}y_{ik}\log p(C=k|x_i)
     \label{eq: SoftmaxCost}
 \end{equation}
+Which is summed over all data points and classes.
+The gradient of the multiclass cross entropy cost function is given by
 \begin{equation}
-    \begin{aligned}
-        p(C = k \mid x)
-        &= \frac{\exp(x^T\theta_k)}
-                 {\sum_{l=0}^{K-1}\exp(x^T\theta_l)} \\
-        k &= 0, \ldots, K-1
-    \end{aligned}
-    \label{eq: SoftmaxFunc}
+    \frac{dC}{d\Theta_k} = -X^T(y_k - p_k)
+    \label{eq: SoftmaxCostGradient}
 \end{equation}
+\cite[p.~156]{LectureNotes}
+The cross entropy L1 and L2 norm is supplemented like the ordinary MSE.  
+Stability:
+The softmax function can be numerically unstable for large values of $z_k$, for a large value the e
+exponential function can overflow. Since the softmax is invariant udner subtracting a constant frome
+every score, one subtracts the largest before exponentiating:
+$$p_k = \frac{\exp(z_k - z_{max})}{\sum_{l}\exp(z_l - z_{max})}$$, $z_k = x^T\Theta_k$. 
 \cite[p.~156]{LectureNotes}
 
 \subsection{Activation functions and their gradients}
@@ -62,12 +96,13 @@ K classes.
 
 \begin{equation}
     \sigma(z) = \frac{1}{1 + \exp(-z)}
-    \label{eq : Sigma}
+    \label{eq:Sigmoid}
 \end{equation}
 \begin{equation}
     \sigma'(z) = \sigma(z)(1 - \sigma(z))
     \label{eq : SigmaPrime}
 \end{equation}
+\cite[p.~214-242]{LectureNotes}
 
 \subsubsection{RELU function}
 
@@ -83,6 +118,7 @@ K classes.
     \end{cases}
     \label{eq : ReLUPrime}
 \end{equation}
+\cite[p.~214-242]{LectureNotes}
 
 \subsubsection{leaky RELU function}
 
@@ -101,3 +137,4 @@ K classes.
     \end{cases}
     \label{eq : leakyReLUPrime}
 \end{equation}
+\cite[p.~214-242]{LectureNotes}

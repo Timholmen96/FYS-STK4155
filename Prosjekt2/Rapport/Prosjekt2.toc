@@ -7,22 +7,31 @@
 \contentsline {section}{\numberline {II}Theory}{2}{section*.5}%
 \contentsline {subsection}{\numberline {A}Cost functions and their gradients}{2}{section*.6}%
 \contentsline {subsubsection}{\numberline {1}MSE}{2}{section*.7}%
-\contentsline {subsubsection}{\numberline {2}Binary cross entropy: log loss}{2}{section*.8}%
-\contentsline {subsubsection}{\numberline {3}Multiclass cross entropy cost function}{2}{section*.9}%
-\contentsline {subsection}{\numberline {B}Activation functions and their gradients}{2}{section*.10}%
-\contentsline {subsubsection}{\numberline {1}Sigmoid logit function}{2}{section*.11}%
-\contentsline {subsubsection}{\numberline {2}RELU function}{2}{section*.12}%
-\contentsline {subsubsection}{\numberline {3}leaky RELU function}{2}{section*.13}%
-\contentsline {section}{\numberline {III}Methods}{3}{section*.14}%
-\contentsline {subsection}{\numberline {A}NeuralNetwork}{3}{section*.15}%
-\contentsline {subsubsection}{\numberline {1}Feed-forward pass}{3}{section*.16}%
-\contentsline {subsubsection}{\numberline {2}Backpropagation}{3}{section*.17}%
-\contentsline {subsection}{\numberline {B}Comparison with OLS}{3}{section*.18}%
-\contentsline {subsection}{\numberline {C}Activation, depth and width}{3}{section*.19}%
-\contentsline {subsubsection}{\numberline {1}Ridge}{3}{section*.20}%
-\contentsline {subsubsection}{\numberline {2}Lasso}{3}{section*.21}%
-\contentsline {subsection}{\numberline {D}Classification}{3}{section*.22}%
-\contentsline {section}{\numberline {IV}Results}{3}{section*.23}%
-\contentsline {section}{\numberline {V}Discussion}{3}{section*.24}%
-\contentsline {section}{\numberline {VI}Conclusion}{3}{section*.25}%
-\contentsline {section}{\numberline {}References}{3}{section*.26}%
+\contentsline {paragraph}{\numberline {a}L2 norm}{2}{section*.8}%
+\contentsline {paragraph}{\numberline {b}L1 norm}{2}{section*.9}%
+\contentsline {subsubsection}{\numberline {2}Binary cross entropy: log loss}{2}{section*.10}%
+\contentsline {subsubsection}{\numberline {3}Multiclass cross entropy cost function}{2}{section*.11}%
+\contentsline {subsection}{\numberline {B}Activation functions and their gradients}{3}{section*.12}%
+\contentsline {subsubsection}{\numberline {1}Sigmoid logit function}{3}{section*.13}%
+\contentsline {subsubsection}{\numberline {2}RELU function}{3}{section*.14}%
+\contentsline {subsubsection}{\numberline {3}leaky RELU function}{3}{section*.15}%
+\contentsline {section}{\numberline {III}Methods}{3}{section*.16}%
+\contentsline {subsection}{\numberline {A}NeuralNetwork}{3}{section*.17}%
+\contentsline {subsubsection}{\numberline {1}Feed-forward pass}{3}{section*.18}%
+\contentsline {subsubsection}{\numberline {2}Backpropagation}{3}{section*.19}%
+\contentsline {subsubsection}{\numberline {3}Analysis}{3}{section*.20}%
+\contentsline {subsection}{\numberline {B}Comparison with OLS}{3}{section*.21}%
+\contentsline {subsection}{\numberline {C}Activation, depth and width}{3}{section*.22}%
+\contentsline {subsubsection}{\numberline {1}Ridge}{3}{section*.23}%
+\contentsline {subsubsection}{\numberline {2}Lasso}{3}{section*.24}%
+\contentsline {subsection}{\numberline {D}Classification}{3}{section*.25}%
+\contentsline {section}{\numberline {IV}Results}{3}{section*.26}%
+\contentsline {section}{\numberline {V}Discussion}{3}{section*.27}%
+\contentsline {section}{\numberline {VI}Conclusion}{3}{section*.28}%
+\appendix 
+\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{3}{section*.29}%
+\contentsline {subsection}{\numberline {1}Tools used}{3}{section*.30}%
+\contentsline {subsection}{\numberline {2}Text contributions}{3}{section*.31}%
+\contentsline {subsection}{\numberline {3}Code contributions}{4}{section*.32}%
+\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{4}{section*.33}%
+\contentsline {section}{\numberline {}References}{4}{section*.34}%
