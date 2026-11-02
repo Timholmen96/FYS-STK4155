@@ -25,13 +25,16 @@
 \contentsline {subsubsection}{\numberline {1}Ridge}{3}{section*.23}%
 \contentsline {subsubsection}{\numberline {2}Lasso}{3}{section*.24}%
 \contentsline {subsection}{\numberline {D}Classification}{3}{section*.25}%
-\contentsline {section}{\numberline {IV}Results}{3}{section*.26}%
-\contentsline {section}{\numberline {V}Discussion}{3}{section*.27}%
-\contentsline {section}{\numberline {VI}Conclusion}{3}{section*.28}%
+\contentsline {subsection}{\numberline {E}Measure of quality}{3}{section*.26}%
+\contentsline {subsubsection}{\numberline {1}Confusion matrix}{3}{section*.27}%
+\contentsline {subsection}{\numberline {F}ROC and AUC}{3}{section*.28}%
+\contentsline {section}{\numberline {IV}Results}{3}{section*.29}%
+\contentsline {section}{\numberline {V}Discussion}{3}{section*.30}%
+\contentsline {section}{\numberline {VI}Conclusion}{3}{section*.31}%
 \appendix 
-\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{3}{section*.29}%
-\contentsline {subsection}{\numberline {1}Tools used}{3}{section*.30}%
-\contentsline {subsection}{\numberline {2}Text contributions}{3}{section*.31}%
-\contentsline {subsection}{\numberline {3}Code contributions}{4}{section*.32}%
-\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{4}{section*.33}%
-\contentsline {section}{\numberline {}References}{4}{section*.34}%
+\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{3}{section*.32}%
+\contentsline {subsection}{\numberline {1}Tools used}{3}{section*.33}%
+\contentsline {subsection}{\numberline {2}Text contributions}{3}{section*.34}%
+\contentsline {subsection}{\numberline {3}Code contributions}{4}{section*.35}%
+\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{4}{section*.36}%
+\contentsline {section}{\numberline {}References}{4}{section*.37}%
