@@ -54,8 +54,50 @@ K classes.
     \label{eq: SoftmaxFunc}
 \end{equation}
 \cite[p.~156]{LectureNotes}
-\subsection{Activation functions}
+
+\subsection{Activation functions and their gradients}
+% Equations for the activation functions and their gradients.
+% LLM Declaration: Equations generated with Codex assistance.
 \subsubsection{Sigmoid logit function}
 
+\begin{equation}
+    \sigma(z) = \frac{1}{1 + \exp(-z)}
+    \label{eq : Sigma}
+\end{equation}
+\begin{equation}
+    \sigma'(z) = \sigma(z)(1 - \sigma(z))
+    \label{eq : SigmaPrime}
+\end{equation}
+
 \subsubsection{RELU function}
+
+\begin{equation}
+    ReLU(z) = \max(0, z)
+    \label{eq : ReLU}
+\end{equation}
+
+\begin{equation}
+    ReLU'(z) = \begin{cases}
+        0 & z < 0 \\
+        1 & z > 0
+    \end{cases}
+    \label{eq : ReLUPrime}
+\end{equation}
+
 \subsubsection{leaky RELU function}
+
+\begin{equation}
+    leakyReLU(z) = \begin{cases}
+        0.01z & z < 0 \\
+        z & z > 0
+    \end{cases}
+    \label{eq : leakyReLU}
+\end{equation}
+
+\begin{equation}
+    leakyReLU'(z) = \begin{cases}
+        0.01 & z < 0 \\
+        1 & z > 0
+    \end{cases}
+    \label{eq : leakyReLUPrime}
+\end{equation}
