@@ -1,10 +1,15 @@
+import numpy as np
+# LLM declaration: NumPy converts training data, shuffles sample indices, and applies regularization.
+from .Optimizer import Optimizer
+# LLM declaration: The SGD training function updates network layers with Optimizer.
+
 def step_length(t, t0, t1):
     """A decaying learning-rate schedule."""
     return t0 / (t + t1)
 
 def train_sgd(
     network, X, y, method="adam",
-    epochs=set_epoch, batch_size=5, gamma=0.001, lmb = 0.0, penalty ="l2", schedule=None, seed=2026
+    epochs=10, batch_size=5, gamma=0.001, lmb = 0.0, penalty ="l2", schedule=None, seed=2026
 ):
     "LLM Assisted: Using the class netowrk"
     rng = np.random.default_rng(seed)
@@ -58,8 +63,9 @@ def train_sgd(
             network.layers = optimizer.step(network.layers, layer_grads)
 
         # Kostnaden etter at hele treningssettet har vært gjennom én gang.
-        epoch_cost = float(network.cost(X, y))
-        history.append(epoch_cost)
+        if epoch % 50 == 0 or epoch == epochs - 1:
+            epoch_cost = float(network.cost(X, y))
+            history.append(epoch_cost)
     
 
     return history, network.layers

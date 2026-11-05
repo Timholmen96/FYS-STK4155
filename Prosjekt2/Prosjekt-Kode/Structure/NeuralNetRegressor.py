@@ -1,9 +1,25 @@
+import numpy as np
+# LLM declaration: NumPy converts network predictions to arrays for scikit-learn.
+from sklearn.base import BaseEstimator, RegressorMixin
+# LLM declaration: These scikit-learn base classes make the regressor compatible with estimators and model selection.
+from .Act_Cost import ACTIVATIONS, identity, identity_der, mse, mse_der
+# LLM declaration: The regressor uses these activation functions and mean-squared-error objective.
+from .NeuralNetwork import NeuralNetwork
+# LLM declaration: The regressor constructs and uses the project neural network.
+from .PGD import train_plain
+# LLM declaration: The regressor supports training with the project's plain-gradient implementation.
+from .SGD import train_sgd
+# LLM declaration: The regressor supports training with the project's SGD implementation.
+
 class NeuralNetRegressor(BaseEstimator, RegressorMixin):
     """Your Project 2 network with the scikit-learn estimator interface."""
 
-    def __init__(self, hidden=(50,), activation="sigmoid", 
-    gamma=0.01, lmbd=0.0, penalty=None, method = "plain",
-    epochs=set_epoch, batch_size=10, seed=2026):
+    def __init__(self, 
+                hidden=(50,), activation="sigmoid", 
+                gamma=0.01, lmbd=0.0, 
+                penalty=None, method = "plain", 
+                epochs=10, batch_size=10, 
+                descent = "sgd", seed=2026):
         # store the hyperparameters under the same names; no computation here
         self.hidden = hidden
         self.activation = activation
@@ -13,9 +29,10 @@ class NeuralNetRegressor(BaseEstimator, RegressorMixin):
         self.method = method
         self.epochs = epochs
         self.batch_size = batch_size
+        self.descent = descent # This is a new parameter to choose between SGD and plain gradient descent
         self.seed = seed
 
-    def fit(self, X, y, m_descent = "sgd"):
+    def fit(self, X, y):
         # X has shape (n, 1), y shape (n,): build the layers from self.seed,
         # train with your SGD for self.epochs epochs, store the layers in self.layers_
 
@@ -34,14 +51,14 @@ class NeuralNetRegressor(BaseEstimator, RegressorMixin):
             seed=self.seed
         )
 
-        if m_descent == "sgd":
+        if self.descent == "sgd":
             self.history, self.layer = train_sgd(self.network_, X, y, method = self.method,
                                 epochs = self.epochs, batch_size = self.batch_size, 
                                 gamma = self.gamma, lmb = self.lmbd, penalty=self.penalty, seed = self.seed)
-        elif m_descent == "plain":
+        elif self.descent == "plain":
             self.history, self.layer = train_plain(self.network_, X, y, gamma = self.gamma, lmb = self.lmbd, penalty=self.penalty, epochs = self.epochs, seed = self.seed)
         else:
-            raise ValueError("m_descent must be 'sgd' or 'plain'")
+            raise ValueError("descent must be 'sgd' or 'plain'")
         return self
 
     def predict(self, X):

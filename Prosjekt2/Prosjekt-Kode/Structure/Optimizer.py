@@ -1,3 +1,6 @@
+import numpy as np
+# LLM declaration: NumPy provides the array operations used by the optimizer updates.
+
 class Optimizer:
     """Oppdaterer nettverkslag med plain gradient descent, Adam eller RMSprop."""
 

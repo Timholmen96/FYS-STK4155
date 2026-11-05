@@ -1,5 +1,10 @@
+import numpy as np
+# LLM declaration: NumPy converts training data and applies regularization operations.
+from .Optimizer import Optimizer
+# LLM declaration: The plain-gradient training function updates network layers with Optimizer.
+
 def train_plain(
-    network, X, y, gamma=0.001, lmb = 0.0, penalty = None, epochs=set_epoch, seed = 2026
+    network, X, y, gamma=0.001, lmb = 0.0, penalty = None, epochs=10, seed = 2026
     ):
     rng = np.random.default_rng(seed)
     inputs = np.asarray(X)
@@ -12,8 +17,7 @@ def train_plain(
     
 
     for i in range(epochs):
-        layers_grad = network.compute_gradient(inputs, targets)
-        network.layers = optimizer.step(network.layers, layers_grad)
+        layer_grads = network.compute_gradient(inputs, targets)
         
         "Cope from SGD_train()"
         if penalty == "l2":
@@ -28,12 +32,10 @@ def train_plain(
         elif penalty is not None:
             raise ValueError("penalty må være 'l1', 'l2' eller None")
         
-        "Bør jeg flytte denne ut som SGD?"
-        if i % 50 == 0 or i == epochs - 1:
-            predictions = network.predict(inputs)
-            history.append(
-                (i, float(network.cost(inputs, targets)), 
-                network.accuracy(predictions,targets)))
+        network.layers = optimizer.step(network.layers, layer_grads)
+        if epoch % 50 == 0 or epoch == epochs - 1:
+            epoch_cost = float(network.cost(X, y))
+            history.append(epoch_cost)
             
 
-    return network.layers, history
+    return history, network.layers

@@ -1,3 +1,8 @@
+import numpy as np
+# LLM declaration: NumPy is used for array operations in activation and cost functions.
+import jax.numpy as jnp
+# LLM declaration: JAX NumPy provides array operations for the differentiable activation and cost functions.
+
 def sigmoid(z):
     return 1 / (1 + jnp.exp(-z))
 def sigmoid_der(z):
@@ -41,12 +46,13 @@ def cross_entropy(predict, target):
         jnp.sum(target * jnp.log(predict), axis=1)
     )
 
-set_epoch = 100
 
 ACTIVATIONS = {"sigmoid": (sigmoid, sigmoid_der),
-               "relu": (relu, relu_der),
+               "relu": (ReLU, ReLU_der),
                "identity": (identity, identity_der),
                "softmax": (softmax, None)}
 
 
 OUTPUT = {"mse": identity, "binary": sigmoid, "softmax": softmax} 
+
+set_epoch = 100

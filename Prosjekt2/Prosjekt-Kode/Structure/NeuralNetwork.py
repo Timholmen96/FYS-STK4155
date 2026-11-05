@@ -1,8 +1,13 @@
 import numpy as np
+# LLM declaration: NumPy provides array operations used by the network and its gradients.
 import jax
-jax.config.update("jax_enable_x64", True) 
+# LLM declaration: JAX provides automatic differentiation for jax_gradient.
 import jax.numpy as jnp
-
+# LLM declaration: JAX NumPy provides array operations used in forward propagation.
+from sklearn.metrics import accuracy_score
+# LLM declaration: Scikit-learn computes classification accuracy.
+from .Act_Cost import softmax
+# LLM declaration: The network uses softmax to detect the classification output layer.
 
 class NeuralNetwork:
     def __init__(
