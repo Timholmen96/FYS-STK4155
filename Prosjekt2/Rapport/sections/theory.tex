@@ -21,13 +21,12 @@ output value $y$, with n data points, the mean-squared error and its derivative 
     MSE + \lambda||\Theta||_2^2 \quad \Theta(W, b)
     \label{eq: RidgeCost}
 \end{equation}
-\cite[p.~86]{LectureNotes}
 \paragraph{L1 norm} which corresponds to the Lasso cost function.
 \begin{equation}
     MSE + \lambda||\Theta|| \quad \Theta(W, b)
     \label{eq: LassoCost}
 \end{equation}
-\cite[p.~90-91]{LectureNotes}
+\cite[p.~86-91]{LectureNotes}
 
 \subsubsection{Binary cross entropy: log loss}
 With two classes, we assume a binary output $y \in \{0, 1\}$, and a predicted probability $p \in [0, 1]$ which is
@@ -42,7 +41,7 @@ For a single example, data point $i$, the binary cross entropy cost function is 
 \end{align}
 The cost function is derived from the maximum likelihood estimation of the Bernoulli distribution,
 the negative log likelihood of the Bernoulli distribution. This is known as the cross entropy, and
-it is the loss function used to train binary classification models. \cite[p.~151]{LectureNotes}
+it is the loss function used to train binary classification models. 
 With the linear function $z_i = x_i^T\Theta$, the gradient of the cost function with respect 
 to the model parameters $\Theta$ is given by
 \begin{equation}
@@ -56,7 +55,6 @@ And the term $1/N$ follows through te calculations to give the mean binary cross
     \label{eq:MeanBinaryCostGradient}
 \end{equation}
 The cross entropy L1 and L2 norm is supplemented like the ordinary MSE. 
-\cite[p.~(151-154)]{LectureNotes}
 
 \subsubsection{Multiclass cross entropy cost function}
 For k klasses, one uses the soft max function to calculate the probability of each class.
@@ -80,14 +78,13 @@ The gradient of the multiclass cross entropy cost function is given by
     \frac{dC}{d\Theta_k} = -X^T(y_k - p_k)
     \label{eq: SoftmaxCostGradient}
 \end{equation}
-\cite[p.~156]{LectureNotes}
 The cross entropy L1 and L2 norm is supplemented like the ordinary MSE.  
 Stability:
 The softmax function can be numerically unstable for large values of $z_k$, for a large value the e
 exponential function can overflow. Since the softmax is invariant udner subtracting a constant frome
 every score, one subtracts the largest before exponentiating:
 $$p_k = \frac{\exp(z_k - z_{max})}{\sum_{l}\exp(z_l - z_{max})}$$, $z_k = x^T\Theta_k$. 
-\cite[p.~156]{LectureNotes}
+\cite[p.~151-156]{LectureNotes}
 
 \subsection{Activation functions and their gradients}
 % Equations for the activation functions and their gradients.
@@ -102,7 +99,6 @@ $$p_k = \frac{\exp(z_k - z_{max})}{\sum_{l}\exp(z_l - z_{max})}$$, $z_k = x^T\Th
     \sigma'(z) = \sigma(z)(1 - \sigma(z))
     \label{eq : SigmaPrime}
 \end{equation}
-\cite[p.~214-242]{LectureNotes}
 
 \subsubsection{RELU function}
 
@@ -120,21 +116,4 @@ $$p_k = \frac{\exp(z_k - z_{max})}{\sum_{l}\exp(z_l - z_{max})}$$, $z_k = x^T\Th
 \end{equation}
 \cite[p.~214-242]{LectureNotes}
 
-\subsubsection{leaky RELU function}
 
-\begin{equation}
-    leakyReLU(z) = \begin{cases}
-        0.01z & z < 0 \\
-        z & z > 0
-    \end{cases}
-    \label{eq : leakyReLU}
-\end{equation}
-
-\begin{equation}
-    leakyReLU'(z) = \begin{cases}
-        0.01 & z < 0 \\
-        1 & z > 0
-    \end{cases}
-    \label{eq : leakyReLUPrime}
-\end{equation}
-\cite[p.~214-242]{LectureNotes}

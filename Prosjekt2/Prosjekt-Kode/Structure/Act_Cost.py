@@ -31,7 +31,7 @@ def mse_der(predict, target): # Derivative of cost function
 
 def softmax(z):
     """Eq. (8.75) with the shift of Eq. (5.30): rows are samples, columns classes."""
-    e = np.exp(z - np.max(z, axis=1, keepdims=True))
+    e = np.exp(z - np.max(z, axis=1, keepdims=True)) # subtract max value for stability
     return e / np.sum(e, axis=1, keepdims=True)
 
 def softmax_vec(z):

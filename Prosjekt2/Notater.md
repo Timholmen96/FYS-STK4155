@@ -23,3 +23,5 @@ Gamma: 4
 Penalty none: 1
 Penalty: 6
 
+
+# Skriv over Tekst fra R & C til python objekter ( )
