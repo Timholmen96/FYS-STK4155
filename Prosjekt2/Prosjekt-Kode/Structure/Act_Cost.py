@@ -55,4 +55,4 @@ ACTIVATIONS = {"sigmoid": (sigmoid, sigmoid_der),
 
 OUTPUT = {"mse": identity, "binary": sigmoid, "softmax": softmax} 
 
-set_epoch = 100
+#set_epoch = 100

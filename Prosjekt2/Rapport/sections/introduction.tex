@@ -1,2 +1,64 @@
 \section{Introduction}
 \label{sec:introduction}
+
+\subsection{Motivation} 
+Aritficial neural networks have shown great results
+and improvements in the last years, impacting fields such 
+as science, poltics and philosophy. Large language models, image detection,
+drones and autonomous systems, all have variations of 
+artificial neural networks as its basis. In politics we can hear
+about intelligent machines, aritificial intelligence and super intelligence.
+The motivation for this project is to learn about neural networks, demistify
+its supernatural appearance, and understand the mechanics
+and its capacity to learn and solve known functions and data relations.  
+The method and results will be compared to known methods of linear
+regression and classification. As a test of strength and calibration.
+% Dette må enten videreutvikles eller fjernes.
+
+
+\subsection{What i have done}
+\subsubsection{Regression problem}
+We have created a feed forward neural network; FFNN, used stochastic gradient descent; SGD,
+to find the minimum of the cost function, which is the MSE for the regression problem. 
+The gradients are calculated using backpropagation, which uses the kernal rule of derivation
+on the FFNN in reverse; from the output and target MSE derivative to the
+derivative of the parameters of the first layer. 
+The gradients are compared with jax, automatic differentiation,
+to ensure agreement. In the SGD the descent method used on the parameters and gradients
+is the Plain gradient descent; regular updating, 
+RMSprop; complex updating, Adam; best updating.  
+Different layer width and depths are explored, along with the activation functions
+in the hidden layers, different learning rates are explored and compared. 
+The output layer has the identity as activaiton function.
+The choice of activation function is the identity since the problem of choice is a 
+regression problem. This network is compared with OLS for the one dimensional runge function.
+Further L1 and L2 penalties are applied to the cost function, with a variable
+penalty value $\lambda$, and these models are compared with Lasso and Ridge.  
+\subsubsection{Classification problem}
+For the classification problem the difference is the output activation function
+and the cost function. The output function is the softmax function, which..
+The cost function is the cross entropy, and the derivative of this function
+changes the backpropagation algorithm accordingly. This and the data set and following
+problem is the difference between this network and the regression network.
+The study problem is the multiclass MNIST problem of handwritten digits 
+(LeCun, Cortes and Burges), the description of the data set is found at 
+https://www.tensorflow.org/datasets/catalog/mnist. 
+For the classification network the explored parameters
+are whidth of the hidden layer, the learning rate $\gamma$, 
+the gradient methods plain, rmsprop and adam. Also
+the L1 and L2 penalties on the cost function are applied
+with different penalty values $\lambda$.  
+%QUESTION: Since the cost function is different, how does
+%the penalty affect this? Am i misunderstanding something. 
+
+\subsection{In this report}
+\ref{sec:theory}
+\ref{sec:methods}
+%FFNN
+%Regression
+%Classification
+\ref{sec:results}
+\ref{sec:discussion}
+\ref{sec:conclusion}
+
+

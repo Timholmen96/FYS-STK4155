@@ -14,3 +14,12 @@
   
 - Jax.Grad blir testet men ikke implementert, jeg vet dette ville spart mye datakraft, men ikke hvor mye det ville spart,
 * Jeg fikk ikke implementert dette da koden baserer seg på vanlig backpropagation, som muligens krever mer krefter og tid. 
+
+
+## Tidtakning
+Classification: 107m11.2s
+Hidden: 5
+Gamma: 4
+Penalty none: 1
+Penalty: 6
+
