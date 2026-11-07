@@ -34,6 +34,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Binary cross entropy: log loss}{2}{section*.15}\protected@file@percent }
 \citation{LectureNotes}
 \citation{LectureNotes}
+\citation{Codex}
 \newlabel{eq: BinaryCost}{{6}{3}{}{equation.6}{}}
 \newlabel{eq: BinaryCostGradient}{{7}{3}{}{equation.7}{}}
 \newlabel{eq:MeanBinaryCostGradient}{{8}{3}{}{equation.8}{}}
@@ -50,36 +51,42 @@
 \newlabel{eq : ReLUPrime}{{15}{3}{}{equation.15}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}Methods}{3}{section*.20}\protected@file@percent }
 \newlabel{sec:methods}{{III}{3}{}{section*.20}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}NeuralNetwork}{3}{section*.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Feed-forward pass}{4}{section*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Backpropagation}{4}{section*.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}Stochastic Gradient Descent}{4}{section*.24}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {C}Comparison with OLS}{4}{section*.25}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D}Activation, depth and width}{4}{section*.26}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Ridge}{4}{section*.27}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Lasso}{4}{section*.28}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E}Classification}{4}{section*.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {F}Measure of quality}{4}{section*.30}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Confusion matrix}{4}{section*.31}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {G}ROC and AUC}{4}{section*.32}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Results}{4}{section*.33}\protected@file@percent }
-\newlabel{sec:results}{{IV}{4}{}{section*.33}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Discussion}{4}{section*.34}\protected@file@percent }
-\newlabel{sec:discussion}{{V}{4}{}{section*.34}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{4}{section*.35}\protected@file@percent }
-\newlabel{sec:conclusion}{{VI}{4}{}{section*.35}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}The Data: Regression}{3}{section*.21}\protected@file@percent }
+\citation{LectureNotes}
+\citation{LectureNotes}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Reshaping the data}{4}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}The algorithm}{4}{section*.23}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The index convention for the equations below, seen from a single node $a_j^{(l)}$. The node $j$ in layer $l$ collects the outputs $a_i^{(l-1)}$ of all $M_{l-1}$ nodes in the previous layer, weighted by $w_{ij}^{(l)}$, adds its own bias $b_j^{(l)}$ to form the pre-activation $z_j^{(l)}$, and applies its activation function $\sigma $ to obtain $a_j^{(l)}$, which it then sends on to every node of layer $l+1$ through the weights $w_{jk}^{(l+1)}$.}}{4}{figure.1}\protected@file@percent }
+\newlabel{fig:Indexconvention}{{1}{4}{The index convention for the equations below, seen from a single node $a_j^{(l)}$. The node $j$ in layer $l$ collects the outputs $a_i^{(l-1)}$ of all $M_{l-1}$ nodes in the previous layer, weighted by $w_{ij}^{(l)}$, adds its own bias $b_j^{(l)}$ to form the pre-activation $z_j^{(l)}$, and applies its activation function $\sigma $ to obtain $a_j^{(l)}$, which it then sends on to every node of layer $l+1$ through the weights $w_{jk}^{(l+1)}$}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Backpropagation}{4}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C}Stochastic Gradient Descent}{5}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D}Comparison with OLS}{5}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E}Activation, depth and width}{5}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Ridge}{5}{section*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Lasso}{5}{section*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {F}Classification}{5}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G}Measure of quality}{5}{section*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Confusion matrix}{5}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H}ROC and AUC}{5}{section*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Results}{5}{section*.34}\protected@file@percent }
+\newlabel{sec:results}{{IV}{5}{}{section*.34}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Discussion}{5}{section*.35}\protected@file@percent }
+\newlabel{sec:discussion}{{V}{5}{}{section*.35}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{5}{section*.36}\protected@file@percent }
+\newlabel{sec:conclusion}{{VI}{5}{}{section*.36}{}}
 \@writefile{toc}{\appendix }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{4}{section*.36}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1}Tools used}{4}{section*.37}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2}Text contributions}{4}{section*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{5}{section*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1}Tools used}{5}{section*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2}Text contributions}{5}{section*.39}\protected@file@percent }
 \bibdata{Prosjekt2Notes,References}
 \bibcite{LectureNotes}{{1}{2016}{{{Hjorth-Jensen}}}{{}}}
+\bibcite{Codex}{{2}{????}{{OpenAI}}{{}}}
 \bibstyle{apsrmp4-1}
 \citation{REVTEX41Control}
 \citation{apsrev41Control}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3}Code contributions}{5}{section*.39}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{5}{section*.40}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {}References}{5}{section*.41}\protected@file@percent }
-\newlabel{LastBibItem}{{1}{5}{}{section*.41}{}}
-\newlabel{LastPage}{{}{5}{}{}{}}
-\gdef \@abspage@last{5}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3}Code contributions}{6}{section*.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{6}{section*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{6}{section*.42}\protected@file@percent }
+\newlabel{LastBibItem}{{2}{6}{}{section*.42}{}}
+\newlabel{LastPage}{{}{6}{}{}{}}
+\gdef \@abspage@last{6}

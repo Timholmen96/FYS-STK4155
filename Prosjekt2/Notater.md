@@ -25,3 +25,42 @@ Penalty: 6
 
 
 # Skriv over Tekst fra R & C til python objekter ( )
+
+
+# Ubrukt tekst:
+\subsection{NeuralNetwork}
+The Neural network creates the architecture, predicts by feed forward, 
+and calculates the cost function based on the input values and the target values.  
+It is a class which is initiated with input size, output sizes,
+activation functions and its derivatives, the cost function and
+its derivative, and the seed which ensures consistency when
+creating the random initial values (rng) of the weights. The chosen
+seed is 2026 for the regression problem.  
+The layer architecture is created inside the class and saved as an attribute.
+For each layer, the class creates initial weights and biases, then uses the
+current layer's output size as the next layer's input size:
+\begin{align}
+    W^{(l)} &\sim
+        \frac{\operatorname{standard\_normal}
+        (n_{\mathrm{in}}^{(l)}, n_{\mathrm{out}}^{(l)})}
+        {\sqrt{n_{\mathrm{in}}^{(l)}}}, \\
+    b^{(l)} &= 0.01, \\
+    n_{\mathrm{in}}^{(l+1)} &= n_{\mathrm{out}}^{(l)}.
+\end{align}
+\subsubsection{Feed-forward pass}
+This first part of the network is the feed forward,
+it sends he input values through the layers, each layers 
+activation function is applied and the output layer is
+calculated by the chosen activaiton function, which is the
+identity for the regression problem. 
+% LLM Declaration: Edit skeleton
+The feed-forward procedure is as follows:
+\begin{align}
+    \mathbf{a}^{(0)} &= \mathbf{x}, \\
+    \mathbf{z}^{(l)} &= \mathbf{a}^{(l-1)} W^{(l)} + \mathbf{b}^{(l)}, \\
+    \mathbf{a}^{(l)} &= \phi^{(l)}\!\left(\mathbf{z}^{(l)}\right),
+    \qquad l = 1, \ldots, L, \\
+    \hat{\mathbf{y}} &= \mathbf{a}^{(L)}.
+\end{align}
+For backpropagation, it is important to save the input values,
+the z values and the output values a during the feed forward.

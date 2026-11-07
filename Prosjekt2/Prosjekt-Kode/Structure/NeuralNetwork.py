@@ -114,10 +114,11 @@ class NeuralNetwork:
         for l in reversed(range(len(self.layers))):
             layer_input = layer_inputs[l]
 
-            if l == len(self.layers) - 1:
+            if l == len(self.layers) - 1: # Last layer
                 # Softmax + mean cross entropy
                 dC_dz  = (predict - targets)/n
-            else:
+ 
+            else: # Hidden layer
                 (W, b) = self.layers[l + 1] # W_next, b_next
                 z = sz[l]
                 activation_der = self.activation_ders[l]
