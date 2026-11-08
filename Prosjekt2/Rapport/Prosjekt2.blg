@@ -23,45 +23,45 @@ Control: page (1) range
 Control: year (1) truncated
 Control: production of eprint (0) enabled
 Warning--empty year in Codex; set to ????
-You've used 4 entries,
+You've used 6 entries,
             5876 wiz_defined-function locations,
-            1613 strings with 14843 characters,
-and the built_in function-call counts, 2310 in all, are:
-= -- 115
-> -- 44
-< -- 40
-+ -- 22
-- -- 30
-* -- 291
-:= -- 243
-add.period$ -- 3
-call.type$ -- 4
-change.case$ -- 11
-chr.to.int$ -- 14
-cite$ -- 5
-duplicate$ -- 260
-empty$ -- 123
-format.name$ -- 12
-if$ -- 378
-int.to.chr$ -- 1
+            1623 strings with 15214 characters,
+and the built_in function-call counts, 3594 in all, are:
+= -- 229
+> -- 68
+< -- 44
++ -- 31
+- -- 36
+* -- 463
+:= -- 407
+add.period$ -- 7
+call.type$ -- 6
+change.case$ -- 23
+chr.to.int$ -- 15
+cite$ -- 7
+duplicate$ -- 374
+empty$ -- 213
+format.name$ -- 24
+if$ -- 622
+int.to.chr$ -- 2
 int.to.str$ -- 8
-missing$ -- 40
-newline$ -- 58
-num.names$ -- 8
-pop$ -- 133
+missing$ -- 50
+newline$ -- 64
+num.names$ -- 16
+pop$ -- 179
 preamble$ -- 1
-purify$ -- 11
+purify$ -- 23
 quote$ -- 0
-skip$ -- 85
+skip$ -- 140
 stack$ -- 0
-substring$ -- 38
-swap$ -- 196
+substring$ -- 66
+swap$ -- 288
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 40
+type$ -- 70
 warning$ -- 1
-while$ -- 17
+while$ -- 23
 width$ -- 0
-write$ -- 67
+write$ -- 83
 (There was 1 warning)

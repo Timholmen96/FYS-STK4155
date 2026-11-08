@@ -141,8 +141,8 @@ Cross entropy, classification.
     \begin{aligned}
         \Delta^{(l)}
         &= \frac{\partial C}{\partial Z^{(l)}} \\
-        &= \left(\Delta^{(l+1)} (W^{(l+1)})^\top\right)
-           \odot \sigma'\!\left(Z^{(l)}\right), \\
+        &= \left(\Delta^{(l+1)} (W^{(l+1)})^\top\right) \\
+        &\qquad \odot \sigma'\!\left(Z^{(l)}\right), \\
         &\qquad l = L-1,\ldots,1.
     \end{aligned}
 \end{align}
@@ -162,20 +162,23 @@ L1 or L2 penalty terms can also be added to the weight gradients, corresponding 
 The optimizer is selected separately from the mini-batch training procedure.
 % LLM Declaration, some text generated with ChatGPT-Sol 6.1
 \subsection{Neuralnetregressor}
-a \texttt{NeuralNetwork} with the requested number of input features and
-hidden units. It also supplies the mean squared error (MSE) cost function
-and its derivative.
-Training is delegated to either \texttt{train\_sgd} or \texttt{train\_plain},
-depending on the \texttt{descent} parameter. With \texttt{train\_sgd}, the
-\texttt{method} parameter selects the weight-update rule, such as plain
-gradient descent, Adam, or RMSprop. The chosen training function updates the
-network's weights and biases and returns the training history and final
-network layers. The fitted network is stored in the regressor.
-After fitting, \texttt{predict} passes new input data through the network.
-The resulting predictions are converted to a NumPy array and reshaped to a
-one-dimensional array, with one continuous prediction per input example.
+This estimator wraps the network in a scikit-learn-compatible interface. Its
+\texttt{fit} method creates the network using the requested input size and
+hidden-layer architecture. It selects the hidden activation function and its
+derivative, uses the identity function at the output layer, and supplies the
+mean squared error cost and its derivative.
+
+Training is delegated to \texttt{train\_sgd} or \texttt{train\_plain},
+according to the \texttt{descent} parameter. For SGD, the \texttt{method}
+parameter selects plain gradient descent, Adam, or RMSprop. The training
+function updates the weights and biases; the fitted network and training
+history are retained by the regressor.
+
+The \texttt{predict} method passes new inputs through the fitted network and
+returns a one-dimensional NumPy array with one continuous prediction per
+example.
 % LLM Generated text: Copilot GPT Luna 6.0
-\subsection{Implementation and analysis}
+\subsection{Implementation and analysis of Regressor}
 \subsubsection{Model verification}
 The neuralnetregressor is implemented as an object, and verified against manually 
 creating a neural network object and using stochastic gradient descent
@@ -187,12 +190,12 @@ automatic differentiation using jax. Jax is a verified solution
 used by scientists and data analysists, thus this verification ensures
 that the backpropagation calculates the correct gradients.
 \paragraph{Gradient and training validation}
-The network was tested with one hidden layer containing 50 nodes, 
-and two hidden layers cointaing 50 and 100 nodes, 
-the hidden layer activation was sigmoid.
-For all three training methods, the manually calculated gradients was compared
-with the gradients from \texttt{jax.grad}, using \texttt{np.allclose}. The neuralnetregressor and 
-manual use of sgd both agreed.
+We tested a network with one hidden layer of 50 nodes and a network with two
+hidden layers of 50 and 100 nodes. Both used sigmoid hidden-layer
+activations. For all three training methods, the manually calculated
+gradients matched those from \texttt{jax.grad} according to
+\texttt{np.allclose}. The regressor and manual SGD implementations also
+produced matching predictions.
 
 \begin{table}[htbp]
     \centering
@@ -226,19 +229,101 @@ manual use of sgd both agreed.
 \end{table}
 The gradient validation passed for all methods, and both the regressor and the
 manual use of sgd agreed. Adam and RMSprop achieved lower training 
-MSE than plain stochastic gradient descent.
-
+MSE than plain stochastic gradient descent. The code can be found at
+\cite{FYSSTK4155Prosjekt2ProsjektKode}
 % Link to code?
 
-
-\subsection{Choosing the best model}
+\subsection{Model selection}
+\subsubsection{Skicit Learn}
+Scikit-learn has multiple classes that can be used to validate and
+select between different models. The following classes have been utilised
+in the analysis of the Neuralnetwork regressor, 
+\begin{enumerate}
+    \item $\mathbf{KFold}$: Creates k folds with shuffled values, k is set to 5 in this project. With random state = 2026.
+    \item $\mathbf{make_pipeline}$: Creates a pipeline with scikit`s StandardScaler() from the training data, with the NeuralNetRegressor as a chosen model.
+    \item $\mathbf{cross_val_score}$: Splits the input data and target values, using the Kfold splitter, fits the pipeline on the training portion of each split, and evaluates it on the validation set of the split. Returns one score per split, with standard deviation.
+    \item $\mathbf{cross_validate}$: Does the same operation as cross val score, returns the training score in addition to the validation score for each fold, with standard deviation. Both classes should return the same validation score.
+    \item $\mathbf{GridSearchCV}$: The GridSearchCV is the most extensively used class in this project. It uses the same Kfold class and pipeline as the previous cross validation classes. 
+    It has an additional $parameter_grid$ input, which uses the input values of the neuralnetregressor as variable model parameters, this allows for models selection on different parameters, such as 
+    the learning rate, number of hidden layers and gradient descent methods, plain, adam and rmsprop. This class creates and stores models for all chosen parameters within the grid, and fits on the chosen data using the regressor, and returns the cross validation scores on the training and validation set, the chosen score for the regressor is the negative mean squared error.
+\end{enumerate}
 \subsubsection{Cross Validation}
-\subsubsection{SearchCV crossvalidation}
-\subsubsection{One SE}
-\subsubsection{Heatmap}
-\subsubsection{Activation, depth and width}
-\subsubsection{Ridge}
-\subsubsection{Lasso}
+The first $\mathbf{make_pipeline}$ is created with the NeuralNetRegressor class with
+one hidden layer of 50 nodes, sigmoid as activaiton function of the hidden layer,
+a learning rate of $0.01$ with plain gradient descent as the standard method, 
+the epoch is set to $100$ with stochastic gradient descent with a batch size of $10$. 
+The seed is set to $2026$. 
+$\mathbf{KFold}$ is set with 5 folds, shuffle and random state with seed $2026$.
+Both cross validation methods on this particular regressor model, is chosen with negative mean squared error
+as the scoring value. 
+\subsubsection{GridSearchCV}
+The gridsearch cross validation is done using the chosen Kfold and neural network regression class
+as input variables. The cross validation is done with a different parameter
+grid and GridSearchCV model for each step, after each step the best model parameters within one standard error
+of the mean squared error is chosen, and used in the next neural regressor model, which in turn is 
+the chosen model for the new GridSearchCV model.  
+GridSearchCV stores the best model and its scorer, the best model corresponds to the lowest validation mean squared error of all the models.
+The first parameter grid is. 
+\begin{table}[htbp]
+    \centering
+    \caption{Parameter grid 1}
+    \label{tab:ParamGrid1}
+    \begin{tabular}{lccccc}
+        \hline
+        Parameter & \multicolumn{5}{c}{Values}\\
+        \hline
+        Gamma  & 0.001 & 0.003 & 0.01 & 0.03 & 0.01\\
+        Method & rmsprop & adam & plain \\
+        Hidden & (50,) & (50, 100)\\
+        \hline
+    \end{tabular}
+\end{table}[htbp]
+Best model parameters within ONE-SE is found through analysing the results of the GridSearchCV,
+the best model parameters gamma $- learning rate$, method and hidden layers are chosen for the next
+neuralnetregressor model input of the next GridSearch. The second parameter grid is.  
+\begin{table}[htbp]
+    \centering
+    \caption{Parameter grid 2}
+    \label{tab:ParamGrid2}
+    \begin{tabular}{lccccc}
+        \hline
+        Parameter & \multicolumn{4}{c}{Values}\\
+        \hline
+        Activation  & sigmoid & relu\\
+        Hidden & (50,) & (30,) & (50, 100,) &(50, 100, 100,)\\
+        \hline
+    \end{tabular}
+\end{table}[htbp]
+\begin{table}[htbp]
+    \centering
+    \caption{Parameter grid 3}
+    \label{tab:ParamGrid3}
+    \begin{tabular}{lccccc}
+        \hline
+        Parameter & \multicolumn{4}{c}{Values}\\
+        \hline
+        Penalty  & None   & L1    & L2 \\
+        Lambda   & 0.0001 & 0.001 & 0.01 & 0.1 \\
+        Gamma    & 0.003  & 0.01  & 0.03 & 0.1 \\
+        \hline
+    \end{tabular}
+\end{table}[htbp]
+Here lambda equals the value of the penalty, L1 and L2 are the norms. 
+The last parameter grid is split in half, where lambda is set to zero 
+when the penalty is None, else the lambda values are as shown in the table.
+\paragraph{One SE}
+It is important to specify what is meant by a one se model in this project. 
+When a model is chosen during cross validation, based on the lowest mean squared
+error, if another model has a mse is within one standard error of the lowest, 
+the choice between these two models would be arbitrary if mse was the only qualification,
+since one cannot tell, which model actually has the lowest mse, because the standard
+error reaches around both models mse. Thus, between these two models 
+the least complex, most efficient model is chosen, this is also true
+if more than two models are within one se of the best. What model to choose then
+within one se of the best model, is then dependent on the model and the
+parameters which are varied during the cross validation.
+\subsubsection{OLS, Ridge and Lasso}
+
 \subsection{Final test}
 
 

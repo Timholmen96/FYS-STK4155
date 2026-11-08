@@ -35,19 +35,14 @@ regression problem. This network is compared with OLS for the one dimensional ru
 Further L1 and L2 penalties are applied to the cost function, with a variable
 penalty value $\lambda$, and these models are compared with Lasso and Ridge.  
 \subsubsection{Classification problem}
-For the classification problem the difference is the output activation function
-and the cost function. The output function is the softmax function, which..
-The cost function is the cross entropy, and the derivative of this function
-changes the backpropagation algorithm accordingly. This and the data set and following
-problem is the difference between this network and the regression network.
-The study problem is the multiclass MNIST problem of handwritten digits 
-(LeCun, Cortes and Burges), the description of the data set is found at 
-https://www.tensorflow.org/datasets/catalog/mnist. 
-For the classification network the explored parameters
-are whidth of the hidden layer, the learning rate $\gamma$, 
-the gradient methods plain, rmsprop and adam. Also
-the L1 and L2 penalties on the cost function are applied
-with different penalty values $\lambda$.  
+For classification, the network uses the softmax function in its output layer
+and cross-entropy as its cost function. These choices, together with the
+dataset, distinguish this network from the regression network. The task is
+multiclass classification of handwritten digits from MNIST; see
+\url{https://www.tensorflow.org/datasets/catalog/mnist}. We investigate the
+hidden-layer width, learning rate $\gamma$, and the plain, RMSprop, and Adam
+update methods. We also apply L1 and L2 penalties with different values of
+the regularisation parameter $\lambda$.
 %QUESTION: Since the cost function is different, how does
 %the penalty affect this? Am i misunderstanding something. 
 
@@ -60,5 +55,4 @@ with different penalty values $\lambda$.
 \ref{sec:results}
 \ref{sec:discussion}
 \ref{sec:conclusion}
-
-
+The full project can be found at \cite{FYSSTK4155Prosjekt2Main} 
