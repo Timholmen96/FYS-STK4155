@@ -5,6 +5,8 @@ from sklearn.model_selection import train_test_split
 
 def Data_process(x, y,
     test_size = 0.3, Process=None):
+    """
+    """
     X = np.asarray(x).reshape(-1, 1) # make X a column vector for the network
     y = np.asarray(y).reshape(-1, 1) # make y a column vector for the network
 

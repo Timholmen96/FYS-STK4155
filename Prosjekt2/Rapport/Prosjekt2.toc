@@ -25,21 +25,30 @@
 \contentsline {subsection}{\numberline {B}The algorithm}{4}{section*.23}%
 \contentsline {subsubsection}{\numberline {1}Backpropagation}{4}{section*.24}%
 \contentsline {subsection}{\numberline {C}Stochastic Gradient Descent}{5}{section*.25}%
-\contentsline {subsection}{\numberline {D}Comparison with OLS}{5}{section*.26}%
-\contentsline {subsection}{\numberline {E}Activation, depth and width}{5}{section*.27}%
-\contentsline {subsubsection}{\numberline {1}Ridge}{5}{section*.28}%
-\contentsline {subsubsection}{\numberline {2}Lasso}{5}{section*.29}%
-\contentsline {subsection}{\numberline {F}Classification}{5}{section*.30}%
-\contentsline {subsection}{\numberline {G}Measure of quality}{5}{section*.31}%
-\contentsline {subsubsection}{\numberline {1}Confusion matrix}{5}{section*.32}%
-\contentsline {subsection}{\numberline {H}ROC and AUC}{5}{section*.33}%
-\contentsline {section}{\numberline {IV}Results}{5}{section*.34}%
-\contentsline {section}{\numberline {V}Discussion}{5}{section*.35}%
-\contentsline {section}{\numberline {VI}Conclusion}{5}{section*.36}%
+\contentsline {subsection}{\numberline {D}Neuralnetregressor}{5}{section*.26}%
+\contentsline {subsection}{\numberline {E}Implementation and analysis}{5}{section*.27}%
+\contentsline {subsubsection}{\numberline {1}Model verification}{5}{section*.28}%
+\contentsline {paragraph}{\numberline {a}Gradient and training validation}{5}{section*.29}%
+\contentsline {subsection}{\numberline {F}Choosing the best model}{6}{section*.30}%
+\contentsline {subsubsection}{\numberline {1}Cross Validation}{6}{section*.31}%
+\contentsline {subsubsection}{\numberline {2}SearchCV crossvalidation}{6}{section*.32}%
+\contentsline {subsubsection}{\numberline {3}One SE}{6}{section*.33}%
+\contentsline {subsubsection}{\numberline {4}Heatmap}{6}{section*.34}%
+\contentsline {subsubsection}{\numberline {5}Activation, depth and width}{6}{section*.35}%
+\contentsline {subsubsection}{\numberline {6}Ridge}{6}{section*.36}%
+\contentsline {subsubsection}{\numberline {7}Lasso}{6}{section*.37}%
+\contentsline {subsection}{\numberline {G}Final test}{6}{section*.38}%
+\contentsline {subsection}{\numberline {H}Neuralnetclassifier}{6}{section*.39}%
+\contentsline {subsection}{\numberline {I}Neuralnetclassifier}{6}{section*.40}%
+\contentsline {subsection}{\numberline {J}Measure of quality}{6}{section*.41}%
+\contentsline {subsubsection}{\numberline {1}Confusion matrix}{6}{section*.42}%
+\contentsline {section}{\numberline {IV}Results}{6}{section*.43}%
+\contentsline {section}{\numberline {V}Discussion}{6}{section*.44}%
+\contentsline {section}{\numberline {VI}Conclusion}{6}{section*.45}%
 \appendix 
-\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{5}{section*.37}%
-\contentsline {subsection}{\numberline {1}Tools used}{5}{section*.38}%
-\contentsline {subsection}{\numberline {2}Text contributions}{5}{section*.39}%
-\contentsline {subsection}{\numberline {3}Code contributions}{6}{section*.40}%
-\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{6}{section*.41}%
-\contentsline {section}{\numberline {}References}{6}{section*.42}%
+\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{6}{section*.46}%
+\contentsline {subsection}{\numberline {1}Tools used}{6}{section*.47}%
+\contentsline {subsection}{\numberline {2}Text contributions}{6}{section*.48}%
+\contentsline {subsection}{\numberline {3}Code contributions}{6}{section*.49}%
+\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{6}{section*.50}%
+\contentsline {section}{\numberline {}References}{6}{section*.51}%

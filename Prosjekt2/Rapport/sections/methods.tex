@@ -161,11 +161,91 @@ and the selected optimizer, plain, adam or rmsprop, updates the weights and bias
 L1 or L2 penalty terms can also be added to the weight gradients, corresponding to Lasso and Ridge. 
 The optimizer is selected separately from the mini-batch training procedure.
 % LLM Declaration, some text generated with ChatGPT-Sol 6.1
-\subsection{Comparison with OLS}
-\subsection{Activation, depth and width}
+\subsection{Neuralnetregressor}
+a \texttt{NeuralNetwork} with the requested number of input features and
+hidden units. It also supplies the mean squared error (MSE) cost function
+and its derivative.
+Training is delegated to either \texttt{train\_sgd} or \texttt{train\_plain},
+depending on the \texttt{descent} parameter. With \texttt{train\_sgd}, the
+\texttt{method} parameter selects the weight-update rule, such as plain
+gradient descent, Adam, or RMSprop. The chosen training function updates the
+network's weights and biases and returns the training history and final
+network layers. The fitted network is stored in the regressor.
+After fitting, \texttt{predict} passes new input data through the network.
+The resulting predictions are converted to a NumPy array and reshaped to a
+one-dimensional array, with one continuous prediction per input example.
+% LLM Generated text: Copilot GPT Luna 6.0
+\subsection{Implementation and analysis}
+\subsubsection{Model verification}
+The neuralnetregressor is implemented as an object, and verified against manually 
+creating a neural network object and using stochastic gradient descent
+to train the model, both objects predict on the same data and the 
+mean squared error are calculated on the same data, to ensure they agree. 
+The gradients calculated by the backpropagation algorithm, 
+are valified by calculating the gradient on the same data by
+automatic differentiation using jax. Jax is a verified solution
+used by scientists and data analysists, thus this verification ensures
+that the backpropagation calculates the correct gradients.
+\paragraph{Gradient and training validation}
+The network was tested with one hidden layer containing 50 nodes, 
+and two hidden layers cointaing 50 and 100 nodes, 
+the hidden layer activation was sigmoid.
+For all three training methods, the manually calculated gradients was compared
+with the gradients from \texttt{jax.grad}, using \texttt{np.allclose}. The neuralnetregressor and 
+manual use of sgd both agreed.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Gradient validation and training MSE for a network with one
+    hidden layer of 50 nodes.}
+    \label{tab:regressor-val}
+    \begin{tabular}{lccc}
+        \hline
+        Method & Gradient val. & Regressor val. & SGD train MSE\\
+        \hline
+        Plain   & Passed & Passed & 0.1031 \\
+        Adam    & Passed & Passed & 0.02404  \\
+        RMSprop & Passed & Passed & 0.02142  \\
+        \hline
+    \end{tabular}
+\end{table}
+\begin{table}[htbp]
+    \centering
+    \caption{Gradient validation and SGD training MSE for a network with
+    two hidden layers containing 50 and 100 nodes, respectively.}
+    \label{tab:regressor-val-two-layers}
+    \begin{tabular}{lccc}
+        \hline
+        Method & Gradient val. & Regressor val. & SGD train MSE \\
+        \hline
+        Plain   & Passed & Passed & 0.1084  \\
+        Adam    & Passed & Passed & 0.01873 \\
+        RMSprop & Passed & Passed & 0.01394 \\
+        \hline
+    \end{tabular}
+\end{table}
+The gradient validation passed for all methods, and both the regressor and the
+manual use of sgd agreed. Adam and RMSprop achieved lower training 
+MSE than plain stochastic gradient descent.
+
+% Link to code?
+
+
+\subsection{Choosing the best model}
+\subsubsection{Cross Validation}
+\subsubsection{SearchCV crossvalidation}
+\subsubsection{One SE}
+\subsubsection{Heatmap}
+\subsubsection{Activation, depth and width}
 \subsubsection{Ridge}
 \subsubsection{Lasso}
-\subsection{Classification}
+\subsection{Final test}
+
+
+\subsection{Neuralnetclassifier}
+
+
+
+\subsection{Neuralnetclassifier}
 \subsection{Measure of quality}
 \subsubsection{Confusion matrix}
-\subsection{ROC and AUC}

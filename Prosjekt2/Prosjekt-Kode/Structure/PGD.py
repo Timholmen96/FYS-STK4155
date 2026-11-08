@@ -33,7 +33,7 @@ def train_plain(
             raise ValueError("penalty må være 'l1', 'l2' eller None")
         
         network.layers = optimizer.step(network.layers, layer_grads)
-        if epoch % 50 == 0 or epoch == epochs - 1:
+        if i % 50 == 0 or i == epochs - 1:
             epoch_cost = float(network.cost(X, y))
             history.append(epoch_cost)
             

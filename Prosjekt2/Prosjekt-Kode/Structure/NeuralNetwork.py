@@ -8,6 +8,31 @@ from sklearn.metrics import accuracy_score
 # LLM declaration: Scikit-learn computes classification accuracy.
 from .Act_Cost import softmax
 # LLM declaration: The network uses softmax to detect the classification output layer.
+"""
+### LLM Declaration: 
+#### NeuralNetwork()
+I am using LLM chatgpt GPT-6 Luna for learning about the usage of classes.  
+The skeleton is from "Exercisesweek42.ipynb" Exercise 8 of repository MachinelearningUiO. 
+I am using this skeleton, along with the solution of exerciseweek42.ipynb, to create the class. 
+
+OpenAI assistance with translating the functions 
+into working class functions.
+OpenAI help with debugging the jax gradients.
+OpenAI help with debugging the compute_gradients.
+
+#### Data_processing()
+--> Changed y = np.asarray(y) into y = npasarray(y).reshape(-1,1) to get y into the right shape (n,) - > (n,1) : Why this is so i do not understand, but i do understand that without this change, the code wont work in the feed forward saver as the dimensions of the last layer get off.
+
+
+### Caution
+Gradient methods should by handled outside, by performing
+general operations on layer_grad list using functions
+or classes seperate from the neural network.  
+I still chose to include a short plain gradient descent
+method for evolving the gradients, for testing.
+"""
+
+
 
 class NeuralNetwork:
     def __init__(
