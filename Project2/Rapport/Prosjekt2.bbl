@@ -49,6 +49,9 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
+\bibitem [{Con(????)}]{Confusion_matrix}%
+  \BibitemOpen
+   (????),\ \href@noop {} {\enquote {\bibinfo {title} {Confusion\_matrix},}\ }\bibinfo {howpublished} {https://scikit-learn/stable/modules/generated/sklearn.metrics.confusion\_matrix.html}\BibitemShut {NoStop}%
 \bibitem [{FYS(????{\natexlab{a}})}]{FYSSTK4155Prosjekt2Main}%
   \BibitemOpen
    (????{\natexlab{a}}),\ \href@noop {} {\enquote {\bibinfo {title} {{{FYS-STK4155}}/{{Prosjekt2}} at main {$\cdot$} {{Timholmen96}}/{{FYS-STK4155}}},}\ }\bibinfo {howpublished} {https://github.com/Timholmen96/FYS-STK4155/tree/main/Prosjekt2}\BibitemShut {NoStop}%
@@ -64,7 +67,4 @@
 \bibitem [{\citenamefont {{Hjorth-Jensen}}(2026)}]{Project2}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {{Hjorth-Jensen}}}} (\bibinfo {year} {2026}),\ \href@noop {} {\enquote {\bibinfo {title} {Project 2 on {{Machine Learning}}},}\ }\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {OpenAI}(????)}]{Codex}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibnamefont {OpenAI}}} (????),\ \href@noop {} {\enquote {\bibinfo {title} {Codex},}\ }\BibitemShut {NoStop}%
 \end{thebibliography}%

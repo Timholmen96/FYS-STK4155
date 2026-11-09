@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex Prosjekt2"] 1794235073.54663 "Prosjekt2.aux" "Prosjekt2.bbl" "Prosjekt2" 1794235120.69979 0
-  "./Prosjekt2Notes.bib" 1794235119.70729 105 80595bdd06aff168c391c5d1e4c919e5 ""
-  "./References.bib" 1794234721.53823 2479 4a879948d0e4025f8644ae33438ab48d ""
+["bibtex Prosjekt2"] 1794250867.29088 "Prosjekt2.aux" "Prosjekt2.bbl" "Prosjekt2" 1794251006.64541 0
+  "./Prosjekt2Notes.bib" 1794251005.59396 105 80595bdd06aff168c391c5d1e4c919e5 ""
+  "./References.bib" 1794249376.56666 3445 d92e4a4a4d2308ba9f84ac2e0b2bd438 ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/revtex4-1/apsrmp4-1.bst" 1602107945 71748 f711d7df172771f6dc44f5fb891e6757 ""
-  "Prosjekt2.aux" 1794235119.70152 17756 1cc9f0ae417491d1562737f09a944a9a "pdflatex"
+  "Prosjekt2.aux" 1794251005.58869 17546 88368ecc5e0d28741d77391b60e4c6b9 "pdflatex"
   (generated)
   "Prosjekt2.bbl"
   "Prosjekt2.blg"
   (rewritten before read)
-["pdflatex"] 1794235115.33117 "/Users/timholmen/FYS-STK4155/Project2/Rapport/Prosjekt2.tex" "Prosjekt2.pdf" "Prosjekt2" 1794235120.70019 0
+["pdflatex"] 1794251003.05786 "/Users/timholmen/FYS-STK4155/Project2/Rapport/Prosjekt2.tex" "Prosjekt2.pdf" "Prosjekt2" 1794251006.64651 0
   "/Users/timholmen/FYS-STK4155/Project2/Rapport/Prosjekt2.tex" 1794225796.66153 2687 8b78ac94e56438344caa6d430cf96e52 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -167,12 +167,11 @@
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "Figures/Fig8_6.png" 1794054281.02959 39779 9f8217c976a5d3a1e5743496e8939e00 ""
   "Figures/MNIST.png" 1794233618.47312 120797 ddf03bcc6ae5570c801aa1296a559726 ""
-  "Prosjekt2.aux" 1794235119.70152 17756 1cc9f0ae417491d1562737f09a944a9a "pdflatex"
-  "Prosjekt2.bbl" 1794235073.89308 3931 48eb970ff61fda15a0479e3d5fc63b57 "bibtex Prosjekt2"
-  "Prosjekt2.out" 1794235119.70662 9001 d4de36de8db61fda60a114a9311ad378 "pdflatex"
+  "Prosjekt2.aux" 1794251005.58869 17546 88368ecc5e0d28741d77391b60e4c6b9 "pdflatex"
+  "Prosjekt2.bbl" 1794250867.52791 3982 e28a797b4ff2442ad5055c2dbdaeccee "bibtex Prosjekt2"
+  "Prosjekt2.out" 1794251005.59324 8804 6c62afde947daf9bf6c0763368ac47e8 "pdflatex"
   "Prosjekt2.tex" 1794225796.66153 2687 8b78ac94e56438344caa6d430cf96e52 ""
-  "Prosjekt2.toc" 1794235119.70746 4911 3da31f0397d0d86ef6f553f0a96990b5 "pdflatex"
-  "Results/Class/CM1.png" 1794231158.65696 32236 fa94f7d8bb6a8608c9177924f8ea94ca ""
+  "Prosjekt2.toc" 1794251005.59414 4819 31edc93c82ce5306a5c06a0b6868764e "pdflatex"
   "Results/Class/CM2.png" 1794231357.42903 38802 bffccffe88b8ffb06a4a645160375cf4 ""
   "Results/Class/HMC_2.png" 1794231429.17368 112376 5787699d947c7834f07a6ecddb5b0ca0 ""
   "Results/Class/HMC_3.png" 1794231446.8471 297474 812f6055fa6541a3faaaf668eb244c30 ""
@@ -189,8 +188,8 @@
   "sections/conclusion.tex" 1792420609.64091 43 06c56dd356068170bb7962e6bc2ce560 ""
   "sections/discussion.tex" 1792420623.35628 43 9cbd9c0e0d4c1f954ccbff5be913a445 ""
   "sections/introduction.tex" 1794136684.49484 3056 e05b122a7179054498e591d443d92470 ""
-  "sections/methods.tex" 1794235111.13118 20726 e7c71165e5189c16f74b9400bc1c5c3a ""
-  "sections/results.tex" 1794232453.86106 4684 681e8e1f58e6b3eb3f413db45b42fc12 ""
+  "sections/methods.tex" 1794250585.87802 22943 dff3f9b5691544bf26b090b45b2cd42e ""
+  "sections/results.tex" 1794251000.35105 8057 5004c2e6261af9469b0ee1e9b35a0904 ""
   "sections/theory.tex" 1793992087.06057 4741 3a9a8b1812b6413a54f4dcd2480ae8de ""
   (generated)
   "Prosjekt2.aux"

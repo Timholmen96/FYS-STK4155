@@ -41,25 +41,24 @@
 \contentsline {subsection}{\numberline {G}Neuralnetclassifier}{7}{section*.39}%
 \contentsline {subsubsection}{\numberline {1}The data}{7}{section*.40}%
 \contentsline {subsubsection}{\numberline {2}GridSearchCV}{8}{section*.41}%
-\contentsline {subsubsection}{\numberline {3}Measure of quality}{8}{section*.42}%
-\contentsline {subsubsection}{\numberline {4}Confusion matrix}{8}{section*.43}%
-\contentsline {section}{\numberline {IV}Results}{8}{section*.44}%
-\contentsline {subsection}{\numberline {A}NeuralNetRegressor}{8}{section*.45}%
-\contentsline {subsubsection}{\numberline {1}First CV GridSearch}{8}{section*.46}%
-\contentsline {subsubsection}{\numberline {2}OLS comparison and test set}{8}{section*.47}%
-\contentsline {subsubsection}{\numberline {3}Second CV Gridsearch}{9}{section*.48}%
-\contentsline {subsubsection}{\numberline {4}Third CV Gridsearch}{9}{section*.49}%
-\contentsline {subsection}{\numberline {B}NeuralNetClassifier}{10}{section*.50}%
-\contentsline {subsubsection}{\numberline {1}StratifiedKfold}{10}{section*.51}%
-\contentsline {subsubsection}{\numberline {2}Logistic Regression}{10}{section*.52}%
-\contentsline {subsubsection}{\numberline {3}GridsearchCV}{10}{section*.53}%
-\contentsline {subsubsection}{\numberline {4}Test Set once}{10}{section*.54}%
-\contentsline {section}{\numberline {V}Discussion}{10}{section*.55}%
-\contentsline {section}{\numberline {VI}Conclusion}{10}{section*.56}%
+\contentsline {subsubsection}{\numberline {3}Confusion matrix}{8}{section*.42}%
+\contentsline {section}{\numberline {IV}Results}{8}{section*.43}%
+\contentsline {subsection}{\numberline {A}NeuralNetRegressor}{8}{section*.44}%
+\contentsline {subsubsection}{\numberline {1}First CV GridSearch}{8}{section*.45}%
+\contentsline {subsubsection}{\numberline {2}OLS comparison and test set}{9}{section*.46}%
+\contentsline {subsubsection}{\numberline {3}Second CV Gridsearch}{9}{section*.47}%
+\contentsline {subsubsection}{\numberline {4}Last CV Gridsearch}{9}{section*.48}%
+\contentsline {subsubsection}{\numberline {5}Ridge and Lasso}{10}{section*.49}%
+\contentsline {subsubsection}{\numberline {6}Final Test}{10}{section*.50}%
+\contentsline {subsection}{\numberline {B}NeuralNetClassifier}{10}{section*.51}%
+\contentsline {subsubsection}{\numberline {1}GridsearchCV}{10}{section*.52}%
+\contentsline {subsubsection}{\numberline {2}Test Set once}{11}{section*.53}%
+\contentsline {section}{\numberline {V}Discussion}{11}{section*.54}%
+\contentsline {section}{\numberline {VI}Conclusion}{11}{section*.55}%
 \appendix 
-\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{10}{section*.57}%
-\contentsline {subsection}{\numberline {1}Tools used}{10}{section*.58}%
-\contentsline {subsection}{\numberline {2}Text contributions}{10}{section*.59}%
-\contentsline {subsection}{\numberline {3}Code contributions}{11}{section*.60}%
-\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{11}{section*.61}%
-\contentsline {section}{\numberline {}References}{11}{section*.62}%
+\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{11}{section*.56}%
+\contentsline {subsection}{\numberline {1}Tools used}{11}{section*.57}%
+\contentsline {subsection}{\numberline {2}Text contributions}{11}{section*.58}%
+\contentsline {subsection}{\numberline {3}Code contributions}{11}{section*.59}%
+\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{12}{section*.60}%
+\contentsline {section}{\numberline {}References}{12}{section*.61}%

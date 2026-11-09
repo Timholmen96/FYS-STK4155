@@ -82,3 +82,33 @@ a One SE threshod $0.02345$, the models with a $CV-MSE$ below the threshold are 
         \hline
     \end{tabular}
 \end{table}[htbp]
+
+# CV2
+This can be observed in the table below, which is from the 
+model with lowest CV MSE; three hidden layer $(50,100,100)$.
+\begin{table}[htbp]
+    \centering
+    \caption{Vanishing Gradients}
+    \label{tab:VanishGrad}
+    \begin{tabular}{lc}
+        \hline
+        Layer & L2 Norm$(dW, db)$ \\
+        \hline
+        1 & $0.00976$ \\
+        2 & $0.01524$ \\
+        3 & $0.01065$ \\
+        4 & $0.03032$ \\
+    \end{tabular}
+\end{table}
+\FloatBarrier
+We see signs of vanishing gradients, as the L2 norm of the gradients in
+the first layer, which is furtherst away from the output,
+is smaller by a magnitude of around 3, than the fourth layer, which is the output layer,
+the cross entropy, although none of these are close to zero, a trend can be observed 
+which corresponds to the idea of vanishing gradients.
+
+# CV2 Discussion
+There is the problem of vanishing
+gradients with sigmoid, as the network deepens, with more layers,
+the gradient in the layers far away from the output can apporach zero,
+and the weights stop updating, halting the learning process in those layers. 

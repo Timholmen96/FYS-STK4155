@@ -35,7 +35,6 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Binary cross entropy: log loss}{2}{section*.15}\protected@file@percent }
 \citation{LectureNotes}
 \citation{LectureNotes}
-\citation{Codex}
 \newlabel{eq: BinaryCost}{{6}{3}{}{equation.6}{}}
 \newlabel{eq: BinaryCostGradient}{{7}{3}{}{equation.7}{}}
 \newlabel{eq:MeanBinaryCostGradient}{{8}{3}{}{equation.8}{}}
@@ -91,70 +90,68 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}The data}{7}{section*.40}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The canonical split of the data set and the subset of the training data, flattening and scaling of input data}}{7}{figure.2}\protected@file@percent }
 \newlabel{fig:MNIST}{{2}{7}{The canonical split of the data set and the subset of the training data, flattening and scaling of input data}{figure.2}{}}
+\citation{Confusion_matrix}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2}GridSearchCV}{8}{section*.41}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Measure of quality}{8}{section*.42}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4}Confusion matrix}{8}{section*.43}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Results}{8}{section*.44}\protected@file@percent }
-\newlabel{sec:results}{{IV}{8}{}{section*.44}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}NeuralNetRegressor}{8}{section*.45}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}First CV GridSearch}{8}{section*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Confusion matrix}{8}{section*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Results}{8}{section*.43}\protected@file@percent }
+\newlabel{sec:results}{{IV}{8}{}{section*.43}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}NeuralNetRegressor}{8}{section*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}First CV GridSearch}{8}{section*.45}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces $\mathbf  {First CVGridSearch}:$ First 10 model scores with standard error and mean fit time.}}{8}{figure.3}\protected@file@percent }
 \newlabel{fig:MS11}{{3}{8}{$\mathbf {First CVGridSearch}:$ First 10 model scores with standard error and mean fit time}{figure.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces $\mathbf  {Heatmap}$ for methods rmsprop, adam and plain, showing learning rate and hidden layers as axis values, with the color bar showing cross validation MSE. The dotted lines show all models within one standard error of the best, and the red dotted line shows the chosen model, which is the model with least hidden layers and nodes}}{8}{figure.4}\protected@file@percent }
 \newlabel{fig:HM1}{{4}{8}{$\mathbf {Heatmap}$ for methods rmsprop, adam and plain, showing learning rate and hidden layers as axis values, with the color bar showing cross validation MSE. The dotted lines show all models within one standard error of the best, and the red dotted line shows the chosen model, which is the model with least hidden layers and nodes}{figure.4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}OLS comparison and test set}{8}{section*.47}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The best model and the One SE selected model for both the neural network and the linear regression models, OLS. Including the cross validated parameter values in the architecture, number of parameters in the model and the fit time in ms}}{8}{figure.5}\protected@file@percent }
-\newlabel{fig:MS1}{{5}{8}{The best model and the One SE selected model for both the neural network and the linear regression models, OLS. Including the cross validated parameter values in the architecture, number of parameters in the model and the fit time in ms}{figure.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Test MSE for the lowest mse model and the chosen one se model}}{8}{figure.6}\protected@file@percent }
-\newlabel{fig:TS1}{{6}{8}{Test MSE for the lowest mse model and the chosen one se model}{figure.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Vanishing Gradients}}{9}{table.6}\protected@file@percent }
-\newlabel{tab:VanishGrad}{{VI}{9}{Vanishing Gradients}{table.6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Second CV Gridsearch}{9}{section*.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}OLS comparison and test set}{9}{section*.46}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The best model and the One SE selected model for both the neural network and the linear regression models, OLS. Including the cross validated parameter values in the architecture, number of parameters in the model and the fit time in ms}}{9}{figure.5}\protected@file@percent }
+\newlabel{fig:MS1}{{5}{9}{The best model and the One SE selected model for both the neural network and the linear regression models, OLS. Including the cross validated parameter values in the architecture, number of parameters in the model and the fit time in ms}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Test MSE for the lowest mse model and the chosen one se model}}{9}{figure.6}\protected@file@percent }
+\newlabel{fig:TS1}{{6}{9}{Test MSE for the lowest mse model and the chosen one se model}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Second CV Gridsearch}{9}{section*.47}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces $\mathbf  {Second CVGridSearch}:$ All model scores with standard error and mean fit time, along with a One SE validation for each model, with the lowest CV MSE as reference}}{9}{figure.7}\protected@file@percent }
 \newlabel{fig:MS21}{{7}{9}{$\mathbf {Second CVGridSearch}:$ All model scores with standard error and mean fit time, along with a One SE validation for each model, with the lowest CV MSE as reference}{figure.7}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4}Third CV Gridsearch}{9}{section*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4}Last CV Gridsearch}{9}{section*.48}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces $\mathbf  {Third CVGridSearch}:$ The 10 first model scores with standard error and mean fit time, along with a One SE validation for each model, with the lowest CV MSE as reference}}{9}{figure.8}\protected@file@percent }
 \newlabel{fig:MS31}{{8}{9}{$\mathbf {Third CVGridSearch}:$ The 10 first model scores with standard error and mean fit time, along with a One SE validation for each model, with the lowest CV MSE as reference}{figure.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces $\mathbf  {Ridge and Lasso}:$ All models within one One SE, with the lowest CV MSE as reference}}{9}{figure.9}\protected@file@percent }
-\newlabel{fig:LR1}{{9}{9}{$\mathbf {Ridge and Lasso}:$ All models within one One SE, with the lowest CV MSE as reference}{figure.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces $\mathbf  {Test set}:$ All chosen One SE models evaluated on the test set, once}}{9}{figure.10}\protected@file@percent }
-\newlabel{fig:TS2}{{10}{9}{$\mathbf {Test set}:$ All chosen One SE models evaluated on the test set, once}{figure.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces $\mathbf  {Heatmap}:$ Containing the best model from cross validation, in red roddet lines, and two One-SE models}}{9}{figure.11}\protected@file@percent }
-\newlabel{fig:HMCB}{{11}{9}{$\mathbf {Heatmap}:$ Containing the best model from cross validation, in red roddet lines, and two One-SE models}{figure.11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}NeuralNetClassifier}{10}{section*.50}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}StratifiedKfold}{10}{section*.51}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Logistic Regression}{10}{section*.52}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}GridsearchCV}{10}{section*.53}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Selected neural network parameters after the three grid-search stages.}}{10}{table.6}\protected@file@percent }
+\newlabel{tab:selected-nn-parameters}{{VI}{10}{Selected neural network parameters after the three grid-search stages}{table.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5}Ridge and Lasso}{10}{section*.49}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces $\mathbf  {Ridge and Lasso}:$ All models within one One SE, with the lowest CV MSE as reference}}{10}{figure.9}\protected@file@percent }
+\newlabel{fig:LR1}{{9}{10}{$\mathbf {Ridge and Lasso}:$ All models within one One SE, with the lowest CV MSE as reference}{figure.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6}Final Test}{10}{section*.50}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces $\mathbf  {Test set}:$ All chosen One SE models evaluated on the test set, once}}{10}{figure.10}\protected@file@percent }
+\newlabel{fig:TS2}{{10}{10}{$\mathbf {Test set}:$ All chosen One SE models evaluated on the test set, once}{figure.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}NeuralNetClassifier}{10}{section*.51}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}GridsearchCV}{10}{section*.52}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces $\mathbf  {Heatmap}:$ Containing the best model from cross validation, in red dotted lines, and two One-SE models in black}}{10}{figure.11}\protected@file@percent }
+\newlabel{fig:HMCB}{{11}{10}{$\mathbf {Heatmap}:$ Containing the best model from cross validation, in red dotted lines, and two One-SE models in black}{figure.11}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces $\mathbf  {Heatmap}:$ Containing one One-SE model}}{10}{figure.12}\protected@file@percent }
 \newlabel{fig:HMC1}{{12}{10}{$\mathbf {Heatmap}:$ Containing one One-SE model}{figure.12}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces $\mathbf  {Heatmap}:$ Containing two One-SE models}}{10}{figure.13}\protected@file@percent }
 \newlabel{fig:HMC2}{{13}{10}{$\mathbf {Heatmap}:$ Containing two One-SE models}{figure.13}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4}Test Set once}{10}{section*.54}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {V}Discussion}{10}{section*.55}\protected@file@percent }
-\newlabel{sec:discussion}{{V}{10}{}{section*.55}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{10}{section*.56}\protected@file@percent }
-\newlabel{sec:conclusion}{{VI}{10}{}{section*.56}{}}
-\@writefile{toc}{\appendix }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{10}{section*.57}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1}Tools used}{10}{section*.58}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces $\mathbf  {Confusion Matrix}:$ cross val predict}}{10}{figure.14}\protected@file@percent }
-\newlabel{fig:CM1}{{14}{10}{$\mathbf {Confusion Matrix}:$ cross val predict}{figure.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces $\mathbf  {Confusion Matrix}:$ Best model applied on test data}}{10}{figure.15}\protected@file@percent }
-\newlabel{fig:CM2}{{15}{10}{$\mathbf {Confusion Matrix}:$ Best model applied on test data}{figure.15}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2}Text contributions}{10}{section*.59}\protected@file@percent }
 \bibdata{Prosjekt2Notes,References}
-\bibcite{FYSSTK4155Prosjekt2Main}{{1}{????{a}}{{FYS}}{{}}}
-\bibcite{FYSSTK4155Prosjekt2ProsjektKode}{{2}{????{b}}{{FYS}}{{}}}
-\bibcite{StratifiedKFold}{{3}{????}{{Str}}{{}}}
-\bibcite{LectureNotes}{{4}{2016}{{{Hjorth-Jensen}}}{{}}}
-\bibcite{Project2}{{5}{2026}{{{Hjorth-Jensen}}}{{}}}
-\bibcite{Codex}{{6}{????}{{OpenAI}}{{}}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Test Set once}{11}{section*.53}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces $\mathbf  {Confusion Matrix}:$ Best model applied on separate test data}}{11}{figure.14}\protected@file@percent }
+\newlabel{fig:CM2}{{14}{11}{$\mathbf {Confusion Matrix}:$ Best model applied on separate test data}{figure.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Discussion}{11}{section*.54}\protected@file@percent }
+\newlabel{sec:discussion}{{V}{11}{}{section*.54}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{11}{section*.55}\protected@file@percent }
+\newlabel{sec:conclusion}{{VI}{11}{}{section*.55}{}}
+\@writefile{toc}{\appendix }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{11}{section*.56}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1}Tools used}{11}{section*.57}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2}Text contributions}{11}{section*.58}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3}Code contributions}{11}{section*.59}\protected@file@percent }
+\bibcite{Confusion_matrix}{{1}{????}{{Con}}{{}}}
+\bibcite{FYSSTK4155Prosjekt2Main}{{2}{????{a}}{{FYS}}{{}}}
+\bibcite{FYSSTK4155Prosjekt2ProsjektKode}{{3}{????{b}}{{FYS}}{{}}}
+\bibcite{StratifiedKFold}{{4}{????}{{Str}}{{}}}
+\bibcite{LectureNotes}{{5}{2016}{{{Hjorth-Jensen}}}{{}}}
+\bibcite{Project2}{{6}{2026}{{{Hjorth-Jensen}}}{{}}}
 \bibstyle{apsrmp4-1}
 \citation{REVTEX41Control}
 \citation{apsrev41Control}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3}Code contributions}{11}{section*.60}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{11}{section*.61}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {}References}{11}{section*.62}\protected@file@percent }
-\newlabel{LastBibItem}{{6}{11}{}{section*.62}{}}
-\newlabel{LastPage}{{}{11}{}{}{}}
-\gdef \@abspage@last{11}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{12}{section*.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{12}{section*.61}\protected@file@percent }
+\newlabel{LastBibItem}{{6}{12}{}{section*.61}{}}
+\newlabel{LastPage}{{}{12}{}{}{}}
+\gdef \@abspage@last{12}

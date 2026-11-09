@@ -13,7 +13,7 @@ standard deviation of $0.1$.
 \subsubsection{Reshaping the data}
 The input and output data are reshaped into column vectors, (100,1),
 this is useful since most machine learning tools expect input features
-as a 2D array. \cite{Codex} 
+as a 2D array. 
 For linear regression problems, the input data is expressed
 in terms of polynomial features, which is done
 by creating the design matrix of variable degree with the input data x,
@@ -396,5 +396,25 @@ with penalty values:
 $$lambda = [0.0001, 0.001, 0.01]$$
 The Gridsearch is created with these parameter values, the Stratified Kfold, the NeuralNetClassification class
 with standard values and scoring = "accuracy". 
-\subsubsection{Measure of quality}
+The best model is chosen by CV validation accuracy, using the output of the GridSearch. The highest accuracy corresponds to the best model.
+If there exist some models in the One SE threshold of the best, the most simple and accurate network is chosen.
+The best model is chosen from the GridSearchCV is fitted on the full test data, and the accuracy
+is calculated using scikit learn \texttt{accuracy\_score} with the predictions and the target data, 
+each correct classification is summed up and divided by the total number of data points, which equals $10 000$.
 \subsubsection{Confusion matrix}
+The confusion matrice uses the predicted values and the true target values,
+to create a $n_{class} x n_{class}$ matrix, with 10 classes corresponding to the numbers $[0,9]$
+the result is a $10 x 10$ matrix where each point in the matrice corresponds to one of four possibilites,
+true positive $(tp)$; false negative $(fn)$, false positive $(fp)$, true negative $(tn)$. The confusion matrix
+evaluates the accuracy of a classification, where the goal is to achieve true positive values, which are
+the values along the diagonal of the matrix and corresponds to a correct claccification; the true classification
+corresponds to the predicted classificaiton, and both are positive that the classification is the same number. 
+False negative corresponds to a wrong classification, the true value is positive for the particular number,
+but the predicted value is negative, and classifies another number. False positive is when the 
+true value is negative for the particular number, and the predicted value is positive, and classifies the
+particular number wrongly. True negative corresponds to a correct negative classification,
+both the target and the predicted classification classifies the number negatively, it is not this particular number.
+A positive classification is given the number 1, and a negative classification corresponds to 0, true and false. 
+When summing over all data points, each point in the matrix is added 1, diagonally for true positive,
+and off diaogonally for the false negative and false positive, false negatives are horisontal, and false positive are vertical along the matrix.
+This matrix gives a visual representation of the accuracy of the chosen model. \cite{Confusion_matrix}

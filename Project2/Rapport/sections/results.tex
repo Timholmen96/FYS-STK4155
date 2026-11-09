@@ -10,8 +10,6 @@
     \label{fig:MS11}
 \end{figure}
 The first GridSearchCV results are plotted in a heatmap.
-As seen from the heatmap, the best model within one se has one hidden layer with 50 nodes, adam as gradient descent method and a
-learning rate of $0.01$. The model with the lowest score has a higher learning rate of $0.1$ and two hidden layers with 50 and 100 nodes.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{Results/Regressor/HM1.png}
@@ -20,7 +18,15 @@ learning rate of $0.01$. The model with the lowest score has a higher learning r
     and the red dotted line shows the chosen model, which is the model with least hidden layers and nodes}
     \label{fig:HM1}
 \end{figure}
+As seen from the heatmap, the best model within one se has one hidden layer with 50 nodes, adam as gradient descent method and a
+learning rate of $0.01$. The model with the lowest CV MSE has two hidden layers, with 150 nodes in total, since four models are
+within One-SE of the lowest, the model with least nodes is chosen.
+\FloatBarrier
 \subsubsection{OLS comparison and test set}
+The chosen model from the first gridsearch cross validation is compared to a
+linear regression model, where the linear regression model is crossvalidated over
+chosen degrees with Gridsearch, the lowest CV MSE models and the chosen ONE-SE models
+are shown below, along with their fit time and number of parameters.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{Results/Regressor/MS1.png}
@@ -28,44 +34,73 @@ learning rate of $0.01$. The model with the lowest score has a higher learning r
     Including the cross validated parameter values in the architecture, number of parameters in the model and the fit time in ms}
     \label{fig:MS1}
 \end{figure}
+The neuralnetwork achieves a better CV MSE than ols, but the number of parameters
+and the average fit time is substantially larger. Strangely enough the 8 degree polynomial has
+a longer fit time than the 11 degree polynomial fit. The average fit time for the
+neural network is halved for the one-se model, the choice pays off in data cost.
+Both one-se models are then fitted to test data and the test mse is calculated from
+the target data.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{Results/Regressor/TS1.png}
     \caption{Test MSE for the lowest mse model and the chosen one se model}
     \label{fig:TS1}
 \end{figure}
+The best test mse is the neural network with two hidden layers, which
+beats both ols models. Of the One SE models the network beats OLS,
+but the 11 degree ols has a lower mse than the one-se network. Still
+the One-SE network parameters are chosen for further crossvalidation. 
+The parameters are: $hidden = (50, )$, learning rate $\gamma = 0.01$ 
+and method is adam.
 \FloatBarrier
 \subsubsection{Second CV Gridsearch}
+The next Gridsearch is cross validated for depth, width and activation fuctions
+for the hidden layers.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{Results/Regressor/MS21.png}
     \caption{$\mathbf{Second CVGridSearch}:$ All model scores with standard error and mean fit time, along with a One SE validation for each model, with the lowest CV MSE as reference}
     \label{fig:MS21}
 \end{figure}
-\begin{table}
-    \centering
-    \caption{Vanishing Gradients}
-    \label{tab:VanishGrad}
-    \begin{tabular}{lc}
-        \hline
-        Layer & L2 Norm$(dW, db)$ \\
-        \hline
-        1 & $0.00976$ \\
-        2 & $0.01524$ \\
-        3 & $0.01065$ \\
-        4 & $0.03032$ \\
-    \end{tabular}
-\end{table}
-
 \FloatBarrier
-\subsubsection{Third CV Gridsearch}
+From this \hyperref[fig:MS21]{figure} we see that there are four models which are witin
+One-SE of the lowest CV-MSE, interestingly with a varied choice
+of activation functions and hidden layers. By choosing for 
+the least amount of nodes, the choise is one hidden layer with 50 nodes
+and sigmoid as activation function. 
+\FloatBarrier
+\subsubsection{Last CV Gridsearch}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{Results/Regressor/MS31.png}
     \caption{$\mathbf{Third CVGridSearch}:$ The 10 first model scores with standard error and mean fit time, along with a One SE validation for each model, with the lowest CV MSE as reference}
     \label{fig:MS31}
 \end{figure}
-
+In this last cross validation, the One-SE chosen model
+is also the model with the lowest MSE. The L1 penalty model
+with a penalty value of $0.0001$ is within One-SE of the lowest, which
+corresponds to Lasso. Both models have the same learning rate $0.01$. 
+The best model is chosen on basis of the 
+mean fit time in seconds, where the best model have no penalty. 
+To sum up the chosen parameters over all three GridSearch cross validation results are:
+\begin{table}[htbp]
+    \centering
+    \caption{Selected neural network parameters after the three grid-search stages.}
+    \label{tab:selected-nn-parameters}
+    \begin{tabular}{lc}
+        \hline
+        Parameter & Selected value \\
+        \hline
+        Method & Adam \\
+        Learning rate $\gamma$ & $0.01$ \\
+        Hidden-layer architecture & $(50,)$ \\
+        Activation function & Sigmoid \\
+        Penalty & None \\
+        \hline
+    \end{tabular}
+\end{table}
+% LLM Copilot Luna: Create Table
+\subsubsection{Ridge and Lasso}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{Results/Regressor/LR1.png}
@@ -73,22 +108,32 @@ learning rate of $0.01$. The model with the lowest score has a higher learning r
     \label{fig:LR1}
 \end{figure}
 
-
+The chosen degrees are thus the same as for linear regression, 8 degree polynomial,
+which corresponds to 9 parameters with the intercept.
+\FloatBarrier
+\subsubsection{Final Test}
+The best models are fitted on the same full data set with a different $seed=1$, 
+and mse is calculated from the traget values.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{Results/Regressor/TS2.png}
     \caption{$\mathbf{Test set}:$ All chosen One SE models evaluated on the test set, once}
     \label{fig:TS2}
 \end{figure}
+The neural network achieves the best test MSE, although the 
+fit time is substantially larger than the linear models. 
+If the fit time were taken into account, and the fact
+that the difference in mse is of order $1e-4$, the best
+model is either linear regression or Ridge, on the basis of 
+both fit time and test mse.
 \FloatBarrier
 \subsection{NeuralNetClassifier}
-\subsubsection{StratifiedKfold}
-\subsubsection{Logistic Regression}
+
 \subsubsection{GridsearchCV}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{\detokenize{Results/Class/HMC_B.png}}
-    \caption{$\mathbf{Heatmap}:$ Containing the best model from cross validation, in red roddet lines, and two One-SE models}
+    \caption{$\mathbf{Heatmap}:$ Containing the best model from cross validation, in red dotted lines, and two One-SE models in black}
     \label{fig:HMCB}
 \end{figure}
 \begin{figure}[htbp]
@@ -103,18 +148,19 @@ learning rate of $0.01$. The model with the lowest score has a higher learning r
     \caption{$\mathbf{Heatmap}:$ Containing two One-SE models}
     \label{fig:HMC2}
 \end{figure}
-
+From Fig $11-13$ we see that the model with the lowest cv mse is also the model within
+one standard error with the least parameters, one hidden layer of 32 nodes. The activation
+function in the hidden layer is \texttt{ReLU}, with L2 penalty with value $\lambda = 0.001$,
+the learning rate is $\gamma = 0.01$ and the gradient descent method is adam. The CV accuracy
+is $84.4 \%$ with standard error $1.17 \%$ which corresponds to $CV accuracy = 84.4\% +/- 1.17 \%$.
 \FloatBarrier
 \subsubsection{Test Set once}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\linewidth]{\detokenize{Results/Class/CM1.png}}
-    \caption{$\mathbf{Confusion Matrix}:$ cross val predict}
-    \label{fig:CM1}
-\end{figure}
+The best model, chosen from the GridSearchCV, is applied to the separate test data and the accuracy
+is calculated with the target data, along with a confusion matrix for visual represenation.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{\detokenize{Results/Class/CM2.png}}
-    \caption{$\mathbf{Confusion Matrix}:$ Best model applied on test data}
+    \caption{$\mathbf{Confusion Matrix}:$ Best model applied on separate test data}
     \label{fig:CM2}
 \end{figure}
+The overall accuracy is $89.22 \% $
