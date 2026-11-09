@@ -51,10 +51,10 @@
 %</preamble>
 \bibitem [{Con(2026)}]{Confusion_matrix}%
   \BibitemOpen
-   (\bibinfo {year} {2026}),\ \href@noop {} {\enquote {\bibinfo {title} {Confusion\_matrix},}\ }\bibinfo {howpublished} {https://scikit-learn/stable/modules/generated/sklearn.metrics.confusion\_matrix.html}\BibitemShut {NoStop}%
+   (\bibinfo {year} {2026}),\ \href@noop {} {\enquote {\bibinfo {title} {Confusion\_matrix},}\ }\bibinfo {howpublished} {\url{https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html}}\BibitemShut {NoStop}%
 \bibitem [{Str(2026)}]{StratifiedKFold}%
   \BibitemOpen
-   (\bibinfo {year} {2026}),\ \href@noop {} {\enquote {\bibinfo {title} {{{StratifiedKFold}}},}\ }\bibinfo {howpublished} {https://scikit-learn/stable/modules/generated/sklearn.model\_selection.StratifiedKFold.html}\BibitemShut {NoStop}%
+   (\bibinfo {year} {2026}),\ \href@noop {} {\enquote {\bibinfo {title} {{{StratifiedKFold}}},}\ }\bibinfo {howpublished} {\url{https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html}}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {{Hjorth-Jensen}}(2016)}]{LectureNotes}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {{Hjorth-Jensen}}}} (\bibinfo {year} {2016}),\ \href@noop {} {\emph {\bibinfo {title} {Machine {{Learning}} and the {{Physical Sciences}}}}}\ (\bibinfo  {publisher} {Springer})\BibitemShut {NoStop}%
