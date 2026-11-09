@@ -27,7 +27,7 @@ Includes the data for the classification problem
 Includes all modules from which 
 the notebooks import the functions and classes.
 
-## Test-Code
+## \Test-Code
 Includes test code used to develop the final project.
 
 
