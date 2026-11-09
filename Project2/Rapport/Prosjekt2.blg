@@ -13,6 +13,9 @@ Database file #1: Prosjekt2Notes.bib
 Database file #2: References.bib
 control{REVTEX41Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
 control{apsrev41Control}, control.key{N/A}, control.author{48}, control.editor{1}, control.title{0}, control.pages{1}, control.year{1}, control.eprint{N/A}, 
+Warning--to sort, need author or key in FYSSTK4155Prosjekt2Main
+Warning--to sort, need author or key in FYSSTK4155Prosjekt2ProsjektKode
+Warning--to sort, need author or key in StratifiedKFold
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 merlin.mbs apsrmp4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
 Control: key (0) 
@@ -22,46 +25,49 @@ Control: production of article title (0) allowed
 Control: page (1) range
 Control: year (1) truncated
 Control: production of eprint (0) enabled
+Warning--empty year in FYSSTK4155Prosjekt2Main; set to ????
+Warning--empty year in FYSSTK4155Prosjekt2ProsjektKode; set to ????
+Warning--empty year in StratifiedKFold; set to ????
 Warning--empty year in Codex; set to ????
-You've used 6 entries,
+You've used 8 entries,
             5876 wiz_defined-function locations,
-            1623 strings with 15214 characters,
-and the built_in function-call counts, 3594 in all, are:
-= -- 229
-> -- 68
-< -- 44
-+ -- 31
-- -- 36
-* -- 463
-:= -- 407
-add.period$ -- 7
-call.type$ -- 6
-change.case$ -- 23
-chr.to.int$ -- 15
-cite$ -- 7
-duplicate$ -- 374
-empty$ -- 213
-format.name$ -- 24
-if$ -- 622
+            1630 strings with 15546 characters,
+and the built_in function-call counts, 4372 in all, are:
+= -- 312
+> -- 56
+< -- 46
++ -- 30
+- -- 33
+* -- 548
+:= -- 484
+add.period$ -- 11
+call.type$ -- 8
+change.case$ -- 32
+chr.to.int$ -- 17
+cite$ -- 21
+duplicate$ -- 451
+empty$ -- 290
+format.name$ -- 18
+if$ -- 775
 int.to.chr$ -- 2
 int.to.str$ -- 8
-missing$ -- 50
-newline$ -- 64
-num.names$ -- 16
-pop$ -- 179
+missing$ -- 54
+newline$ -- 70
+num.names$ -- 12
+pop$ -- 242
 preamble$ -- 1
-purify$ -- 23
+purify$ -- 29
 quote$ -- 0
-skip$ -- 140
+skip$ -- 171
 stack$ -- 0
-substring$ -- 66
-swap$ -- 288
-text.length$ -- 1
+substring$ -- 97
+swap$ -- 323
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 70
-warning$ -- 1
-while$ -- 23
+type$ -- 97
+warning$ -- 7
+while$ -- 20
 width$ -- 0
-write$ -- 83
-(There was 1 warning)
+write$ -- 95
+(There were 7 warnings)

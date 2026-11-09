@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.14)  9 NOV 2026 12:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.14)  9 NOV 2026 15:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -231,6 +231,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 \WF@box=\box70
 \WF@everypar=\toks26
 Package: wrapfig 2003/01/31  v 3.6
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen161
@@ -433,36 +435,36 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip61
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 28.
-Package hyperref Info: Option `colorlinks' set `true' on input line 28.
-Class revtex4-1 Info: Unrecognized array package. Please update this document class! (Proceeding with fingers crossed.) on input line 69.
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 69.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 69.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 69.
+Package hyperref Info: Option `breaklinks' set `true' on input line 29.
+Package hyperref Info: Option `colorlinks' set `true' on input line 29.
+Class revtex4-1 Info: Unrecognized array package. Please update this document class! (Proceeding with fingers crossed.) on input line 70.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 70.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 70.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 70.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count329
 ) (./Prosjekt2.aux)
 \openout1 = `Prosjekt2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
  (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count330
@@ -478,12 +480,12 @@ LaTeX Font Info:    ... okay on input line 69.
 \everyMPtoPDFconversion=\toks33
 )
 \c@lstlisting=\count336
-Package hyperref Info: Link coloring ON on input line 69.
+Package hyperref Info: Link coloring ON on input line 70.
  (./Prosjekt2.out) (./Prosjekt2.out)
 \@outlinefile=\write4
 \openout4 = `Prosjekt2.out'.
 
-Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 69.
+Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 70.
 \openout3 = `Prosjekt2Notes.bib'.
 
  (./Prosjekt2.toc)
@@ -499,50 +501,184 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )) (./sections/theory.tex [2]) (./sections/methods.tex [3]
-<Figures/Fig8_6.png, id=321, 309.155pt x 163.61125pt>
+<Figures/Fig8_6.png, id=370, 309.155pt x 163.61125pt>
 File: Figures/Fig8_6.png Graphic file (type png)
 <use Figures/Fig8_6.png>
 Package pdftex.def Info: Figures/Fig8_6.png  used on input line 41.
 (pdftex.def)             Requested size: 246.0pt x 130.19264pt.
- [4 <./Figures/Fig8_6.png>] [5] [6]) (./sections/results.tex
-Underfull \hbox (badness 1442) in paragraph at lines 5--6
+ [4 <./Figures/Fig8_6.png>] [5] [6]
+<Figures/MNIST.png, id=434, 763.85374pt x 209.78375pt>
+File: Figures/MNIST.png Graphic file (type png)
+<use Figures/MNIST.png>
+Package pdftex.def Info: Figures/MNIST.png  used on input line 376.
+(pdftex.def)             Requested size: 246.0pt x 67.5611pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--383
+[]\OT1/cmr/m/n/10 The data used in the clas-si-fi-ca-tion prob-lem
+ []
+
+
+Underfull \hbox (badness 8094) in paragraph at lines 368--383
+\OT1/cmr/m/n/10 is the mul-ti-class MNIST data set of han-drit-
+ []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 368--383
+\OT1/cmr/m/n/10 ten dig-its, see the de-scrip-tion of the data set at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--383
+\OT1/cmr/m/n/10 https://www.tensorflow.org/datasets/catalog/mnist.
+ []
+
+[7 <./Figures/MNIST.png>]) (./sections/results.tex
+<Results/Regressor/MS11.png, id=448, 594.22pt x 264.99pt>
+File: Results/Regressor/MS11.png Graphic file (type png)
+<use Results/Regressor/MS11.png>
+Package pdftex.def Info: Results/Regressor/MS11.png  used on input line 8.
+(pdftex.def)             Requested size: 246.0pt x 109.70193pt.
+<Results/Regressor/HM1.png, id=449, 1089.8316pt x 297.0297pt>
+File: Results/Regressor/HM1.png Graphic file (type png)
+<use Results/Regressor/HM1.png>
+Package pdftex.def Info: Results/Regressor/HM1.png  used on input line 17.
+(pdftex.def)             Requested size: 246.0pt x 67.04634pt.
+
+Underfull \hbox (badness 1442) in paragraph at lines 12--23
 []\OT1/cmr/m/n/10 The first Grid-SearchCV re-sults are plot-ted in a
  []
 
-<Results/Regressor/HM1.png, id=385, 1089.8316pt x 297.0297pt>
-File: Results/Regressor/HM1.png Graphic file (type png)
-<use Results/Regressor/HM1.png>
-Package pdftex.def Info: Results/Regressor/HM1.png  used on input line 9.
-(pdftex.def)             Requested size: 246.0pt x 67.04634pt.
-<Results/Regressor/MS1.png, id=386, 641.39626pt x 199.74625pt>
+<Results/Regressor/MS1.png, id=450, 641.39626pt x 199.74625pt>
 File: Results/Regressor/MS1.png Graphic file (type png)
 <use Results/Regressor/MS1.png>
-Package pdftex.def Info: Results/Regressor/MS1.png  used on input line 21.
+Package pdftex.def Info: Results/Regressor/MS1.png  used on input line 26.
 (pdftex.def)             Requested size: 246.0pt x 76.60841pt.
-) (./sections/discussion.tex) (./sections/conclusion.tex) (./sections/appendix.tex [7 <./Results/Regressor/HM1.png> <./Results/Regressor/MS1.png>]
+<Results/Regressor/TS1.png, id=451, 242.9075pt x 136.51pt>
+File: Results/Regressor/TS1.png Graphic file (type png)
+<use Results/Regressor/TS1.png>
+Package pdftex.def Info: Results/Regressor/TS1.png  used on input line 33.
+(pdftex.def)             Requested size: 246.0pt x 138.24686pt.
+<Results/Regressor/MS21.png, id=452, 549.05125pt x 209.78375pt>
+File: Results/Regressor/MS21.png Graphic file (type png)
+<use Results/Regressor/MS21.png>
+Package pdftex.def Info: Results/Regressor/MS21.png  used on input line 41.
+(pdftex.def)             Requested size: 246.0pt x 93.99207pt.
+[8 <./Results/Regressor/MS11.png> <./Results/Regressor/HM1.png> <./Results/Regressor/MS1.png> <./Results/Regressor/TS1.png>]
+<Results/Regressor/MS31.png, id=467, 612.2875pt x 265.99374pt>
+File: Results/Regressor/MS31.png Graphic file (type png)
+<use Results/Regressor/MS31.png>
+Package pdftex.def Info: Results/Regressor/MS31.png  used on input line 64.
+(pdftex.def)             Requested size: 246.0pt x 106.86642pt.
+<Results/Regressor/LR1.png, id=468, 421.575pt x 246.9225pt>
+File: Results/Regressor/LR1.png Graphic file (type png)
+<use Results/Regressor/LR1.png>
+Package pdftex.def Info: Results/Regressor/LR1.png  used on input line 71.
+(pdftex.def)             Requested size: 246.0pt x 144.08925pt.
+<Results/Regressor/TS2.png, id=469, 317.185pt x 139.52126pt>
+File: Results/Regressor/TS2.png Graphic file (type png)
+<use Results/Regressor/TS2.png>
+Package pdftex.def Info: Results/Regressor/TS2.png  used on input line 79.
+(pdftex.def)             Requested size: 246.0pt x 108.213pt.
+<Results/Class/HMC_B.png, id=470, 1089.1089pt x 875.1897pt>
+File: Results/Class/HMC_B.png Graphic file (type png)
+<use Results/Class/HMC_B.png>
+Package pdftex.def Info: Results/Class/HMC_B.png  used on input line 90.
+(pdftex.def)             Requested size: 246.0pt x 197.68373pt.
+<Results/Class/HMC_2.png, id=471, 1089.8316pt x 297.0297pt>
+File: Results/Class/HMC_2.png Graphic file (type png)
+<use Results/Class/HMC_2.png>
+Package pdftex.def Info: Results/Class/HMC_2.png  used on input line 96.
+(pdftex.def)             Requested size: 246.0pt x 67.04634pt.
+<Results/Class/HMC_3.png, id=472, 1089.1089pt x 875.1897pt>
+File: Results/Class/HMC_3.png Graphic file (type png)
+<use Results/Class/HMC_3.png>
+Package pdftex.def Info: Results/Class/HMC_3.png  used on input line 102.
+(pdftex.def)             Requested size: 246.0pt x 197.68373pt.
+ [9 <./Results/Regressor/MS21.png> <./Results/Regressor/MS31.png> <./Results/Regressor/LR1.png> <./Results/Regressor/TS2.png> <./Results/Class/HMC_B.png>]
+<Results/Class/CM1.png, id=488, 309.3156pt x 312.9291pt>
+File: Results/Class/CM1.png Graphic file (type png)
+<use Results/Class/CM1.png>
+Package pdftex.def Info: Results/Class/CM1.png  used on input line 111.
+(pdftex.def)             Requested size: 246.0pt x 248.87292pt.
+<Results/Class/CM2.png, id=489, 309.3156pt x 312.9291pt>
+File: Results/Class/CM2.png Graphic file (type png)
+<use Results/Class/CM2.png>
+Package pdftex.def Info: Results/Class/CM2.png  used on input line 117.
+(pdftex.def)             Requested size: 246.0pt x 248.87292pt.
+) (./sections/discussion.tex) (./sections/conclusion.tex) (./sections/appendix.tex [10{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./Results/Class/HMC_2.png> <./Results/Class/HMC_3.png> <./Results/Class/CM1.png> <./Results/Class/CM2.png>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 43.
-) (./Prosjekt2.bbl) [8{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./Prosjekt2.aux)
+) (./Prosjekt2.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+ []\OT1/cmr/m/n/9 (????a), ``FYS-STK4155/Prosjekt2 at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+ \OT1/cmr/m/n/9 main $\OMS/cmsy/m/n/9 ^^A$ \OT1/cmr/m/n/9 Timholmen96/FYS-STK4155,''
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+ \OT1/cmr/m/n/9 https://github.com/Timholmen96/FYS-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+ []\OT1/cmr/m/n/9 (????b), ``FYS-STK4155/Prosjekt2/Prosjekt-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+ \OT1/cmr/m/n/9 Kode/Project2[]Test[]Regressor.ipynb at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+ \OT1/cmr/m/n/9 main $\OMS/cmsy/m/n/9 ^^A$ \OT1/cmr/m/n/9 Timholmen96/FYS-STK4155,''
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+ \OT1/cmr/m/n/9 https://github.com/Timholmen96/FYS-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+ \OT1/cmr/m/n/9 STK4155/blob/main/Prosjekt2/Prosjekt-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+ []\OT1/cmr/m/n/9 (????), ``Strat-i-fied-K-Fold,'' https://scikit-
+ []
+
+
+Overfull \hbox (80.73958pt too wide) in paragraph at lines 60--61
+ \OT1/cmr/m/n/9 learn/stable/modules/generated/sklearn.model[]selection.StratifiedKFold.html. 
+ []
+
+) [11] (./Prosjekt2.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `Prosjekt2.out' has not changed.
-(rerunfilecheck)             Checksum: A1C6AC0106CA7BE69FA9A8B0B1DAEFAF;7621.
+(rerunfilecheck)             Checksum: D4DE36DE8DB61FDA60A114A9311AD378;9001.
  ) 
 Here is how much of TeX's memory you used:
- 14664 strings out of 467525
- 220925 string characters out of 5418982
- 667288 words of memory out of 5000000
- 43207 multiletter control sequences out of 15000+600000
- 642415 words of font info for 93 fonts, out of 8000000 for 9000
+ 14831 strings out of 467525
+ 224781 string characters out of 5418982
+ 667834 words of memory out of 5000000
+ 43343 multiletter control sequences out of 15000+600000
+ 642248 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,15n,79p,640b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Prosjekt2.pdf (8 pages, 513508 bytes).
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Prosjekt2.pdf (11 pages, 1590789 bytes).
 PDF statistics:
- 558 PDF objects out of 1000 (max. 8388607)
- 479 compressed objects within 5 object streams
- 110 named destinations out of 1000 (max. 500000)
- 432 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 661 PDF objects out of 1000 (max. 8388607)
+ 554 compressed objects within 6 object streams
+ 138 named destinations out of 1000 (max. 500000)
+ 572 words of extra memory for PDF output out of 10000 (max. 10000000)
 

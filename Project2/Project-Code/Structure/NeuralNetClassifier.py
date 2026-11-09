@@ -17,7 +17,7 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
     hidden=(64,), activation="relu", 
     gamma=0.1, lmbd=0.0, 
     penalty=None, method = "plain",
-    epochs=10, batch_size=20, # batch_size var 100 
+    epochs=100, batch_size=20, # batch_size var 100 
     seed=2026):
         self.hidden = hidden
         self.activation = activation
