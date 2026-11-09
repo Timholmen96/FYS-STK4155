@@ -1,2 +1,60 @@
 \section{Discussion}
 \label{sec:discussion}
+\subsection{NeuralNetRegressor}
+\subsubsection{GridSearchCV}
+One problem with the implementation of the GridSearchCV was the step wise
+implementation, the first implmentation established 
+the best method, the second implementation established the 
+best activation function and hidden layers, and the third
+established the penalty and the learning rate. If all
+these values were tested in the same grid search, 
+some other model parameter values may have been proven best,
+as they vary according to the other model parameters. This
+information was lost in the step wise implementation. What
+was gained in this implementation is increased control,
+data visualisation and shorter fit time per model, which made the implementation
+more flexible. 
+\subsubsection{Vanishing gradients}
+The problem of vanishing gradients, when using sigmoid
+in the hidden layers in deeper networks was not explored
+sufficiently. There are two reasons for this, the first
+is that the code updating the gradients, does not
+include a method to store the gradients, such that one
+could plot the evolving gradients, and compare them between the different layers.
+One knows that it is the layers that are furthest from the 
+output layer that are most affected by this, so an L2 norm
+of the gradients in each layer could express, if the 
+gradients were stored. \cite{VanishingGradient2024}
+Also this project did not really explore networks with deep layers
+as the deepest network included three hidden layers, this
+could be explored in a seperate section by looking at the
+gradients of the different layers, of a deeper network,
+with sigmoid as activation function. The chosen network
+in this project, based one the lowest one SE CV MSE, had one hidden layer, and was not affected
+by this problem as strongly as a deeper network would. 
+\subsubsection{Data cost}
+The final test concluded that the neural network had the 
+lowest test MSE, and by this criterion it was also the best
+model. When looking at the fit time, the neural network does
+not compare with the linear models, and the small difference
+in test mse does not pay for the large difference in data cost.
+This problem could be solved by code optimization, but was
+not a part of this project. 
+
+\subsection{NeuralNetclassifier}
+For the neuralnetclassifier, and the GridSearchCV over
+all model parameters, the data cost was the largest issue 
+of this part of the project. The total data set was shortened into
+1000 data points, 1000 data points out of a total 60 0000 training data.
+This could lead one to think that the network would not 
+have enough data to become sufficiently accurate, but an
+accuracy of $89.22\%$ for the final model on the test data
+shows that the model did learn, and classifies the unkown digits
+with a rather high accuracy. 
+Adding a simple logistic regression model, and 
+fitting the model on the same data, would have further shown
+how well the network actually performed, and this is a 
+problem with this classification problem, it lacks models
+for comparison, as we had with the regression problem.
+ 
+

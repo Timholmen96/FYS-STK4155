@@ -9,4 +9,7 @@ The rapport is found in
 The test code is found in
 \Prosjekt1\Test-kode
 
-# Prosjekt 2
+# Project 2
+The full answer to project 2 can be found in
+/Project2
+Which inclused a README.md file explaining the content

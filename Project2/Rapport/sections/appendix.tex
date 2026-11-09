@@ -1,36 +1,35 @@
 \appendix
-\section{Use of AI/LLM Tools}
+\section{LLM Declaration}
 
 \subsection{Tools used}
 
-List every LLM tool used for the project, including its model or version, how it
-was accessed, and the approximate dates of use.
-
 \begin{itemize}
-    \item \textit{[Tool/version; access method; date used]}
-    \item \textit{GPT 6-Luna (codex), used 22.10--06.11.2026}
-    \item \textit{[GPT 6-Luna/version; GitHub Copilot (coding assistant session); $22.10-06.11.2026$]}
+    \item \textit{[Tool/version; access method; $22.10-9.11.2026$]}
+    \item \textit{GPT 6-Luna (codex), $22.10-9.11.2026$}
+    \item \textit{[GPT 6-Luna/version; GitHub Copilot (coding assistant session); $22.10-9.11.2026$]}
 \end{itemize}
 \subsection{Text contributions}
 
-For each report section, enter the highest applicable contribution level and
-briefly describe the assistance. Use level 0 for no assistance, level 1 for
-language-only edits, level 2 for editorial changes, and level 3 for substantial
-drafting. Replace the placeholders with an accurate record.
+level 0 for no assistance.  
+Level 1 for language-only edits
+Level 2 for editorial changes and structural drafting
+Level 3 for substantial drafting. 
 
 \begin{description}
-    \item[Abstract:] Level \textit{[0--3]}; \textit{[Describe assistance, or write ``none'']}
-    \item[Introduction:] Level \textit{[0--3]}; \textit{[Describe assistance, or write ``none'']}
-    \item[Theory:] Level \textit{[0--3]}; \textit{[Describe assistance, or write ``none'']}
-    \item[Methods:] Level \textit{[0--3]}; \textit{[Describe assistance, or write ``none'']}
-    \item[Results:] Level \textit{[0--3]}; \textit{[Describe assistance, or write ``none'']}
-    \item[Discussion:] Level \textit{[0--3]}; \textit{[Describe assistance, or write ``none'']}
-    \item[Conclusion:] Level \textit{[0--3]}; \textit{[Describe assistance, or write ``none'']}
+    \item[Abstract:] Level \textit{[3]}; \textit{[Copilot read through the rapport and the project, and wrote a summary which i verified and rewrote into the final abstract]}
+    \item[Introduction:] Level \textit{[1]}; \textit{[Copilot created a basic motivation text which i used for inspiration, for the Motivation section.]}
+    \item[Theory:] Level \textit{[2]}; \textit{[Copilot created the skeleton for equations, help with formatting and spacing of equations. Rewrote some equation descriptions]}
+    \item[Backpropagation:] Level \textit{[2]}; \textit{[Copilot rewrote all equations describing backpropagation]}
+    \item[Methods:] Level \textit{[2]}; \textit{[Copilot help with lists, figures and tables, formatting and structuring]}
+    \item[Methods Subsections:] 
+    \item[SGD:] Level \textit{[3]}; \textit{[ChatGPT-Sol 6.1 generated text describing the functions.]}
+    \item[NNRegressor:] Level \textit{[3]}; \textit{[ChatGPT-Sol 6.1 generated text describing the functions.]} 
+    \item[NNClassifier:] Level \textit{[3]}; \textit{[ChatGPT-Sol 6.1 generated text describing the functions.]}
+    \item[Results:] Level \textit{[2]}; \textit{[Copilot help with lists, figures and tables, formatting and structuring]}
+    \item[Discussion:] Level \textit{[0]}; \textit{[Describe assistance, or write ``none'']}
+    \item[Conclusion:] Level \textit{[0]}; \textit{[Describe assistance, or write ``none'']}
 \end{description}
 
-\noindent\textit{Level 3 prompt and revision note (delete if not applicable):}
-\textit{[Summarise the prompt or task, how the generated text was changed, and
-how it was checked.]}
 
 \subsection{Code contributions}
 
@@ -38,20 +37,21 @@ List each code file or notebook included in the submission. Use level 0 for no
 assistance, level 1 for debugging, level 2 for a snippet, level 3 for a
 skeleton, and level 4 for substantial generation. Include what was tested,
 adapted, or verified.
-
 \begin{description}
-    \item[\texttt{[Path / filename]}:] Level \textit{[0--4]};
-    \textit{[Describe assistance and your testing/adaptations]}
+    \item[\texttt{[Project2/Strucutre*]}:] Level \textit{[3]};
+    \textit{[Copilot imported all neccesary classes and functions for the python files to function]}
 \end{description}
 
-\noindent\textit{Duplicate the code entry above for every submitted code file or
-notebook.}
+\begin{description}
+    \item[\texttt{[Project2/Code/Project2\_Classification\_Init.ipynb]}:] Level \textit{[2-3]};
+    \textit{[Usage of classes objects. Translating functions into classes. Generated the one hot encoding of the target valeus, edited \texttt{predict\_proba} and predict to function properly. Editorial changes and shape errors in training. Generate Heatmaps and Display of data using GridSearchCV. Usage of and retrieving data from GridsearchCV]}
+\end{description}
 
-\noindent For every LLM-assisted function at level 2 or above, add an
-\texttt{LLM-assisted} note to its docstring. Add an inline note for assisted
-code blocks shorter than a function, and a Markdown note above assisted
-notebook cells.
+\begin{description}
+    \item[\texttt{[Project2/Code/Project2\_Regression\_Init.ipynb]}:] Level \textit{[2-3]};
+    \textit{[Usage pf classes and objects. Translating functions into classes. Debugging jax gradients and \texttt{compute\_gradients}. Creating activation functions inside NeuralNetRegressor. Editorial changes and shape errors in training. Generate Heatmaps and Display of data using GridSearchCV. Usage of and retrieving data from GridsearchCV. ]}
+\end{description}
 
 \subsubsection{LLM Declaration this section:}
 The skeleton of this section was created using GitHub Copilot.  
-(modelversion unknown; coding-assistant session, \today). 
+(GPT Luna 6.0; coding-assistant session). 

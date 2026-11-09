@@ -12,10 +12,8 @@ The motivation for this project is to learn about neural networks, demistify
 its supernatural appearance, and understand the mechanics
 and its capacity to learn and solve known functions and data relations.  
 The method and results will be compared to known methods of linear
-regression and classification. As a test of strength and calibration.
+regression and classification. 
 % Dette må enten videreutvikles eller fjernes.
-
-
 \subsection{What i have done}
 \subsubsection{Regression problem}
 We have created a feed forward neural network; FFNN, used stochastic gradient descent; SGD,
@@ -47,12 +45,25 @@ the regularisation parameter $\lambda$.
 %the penalty affect this? Am i misunderstanding something. 
 
 \subsection{In this report}
-\ref{sec:theory}
-\ref{sec:methods}
-%FFNN
-%Regression
-%Classification
-\ref{sec:results}
-\ref{sec:discussion}
-\ref{sec:conclusion}
-The full project can be found at \cite{FYSSTK4155Prosjekt2Main} 
+The theory section \ref{sec:theory}, explains the 
+cost functions and their gradients, and the activation functions
+with their gradients. Which are used in this project.
+The method section \ref{sec:methods}, explains the data used in this
+project, along with the neccesary alghoritms for creating
+a neural network, with emphasis on the backpropagation alghorithm
+used for creating the gradients neccesary for training the network,
+for both the regression problem and the classification ppoblem.
+For training stochastic gradient descent is explained briefly.
+The neuralnetregressor class is explained along with the
+implemenation, model selection and analysis. The neuralnet classifier
+and its data are explained in the last section of the methods,
+along with its implementation, model selection and analysis. 
+The results section \ref{sec:results}, shows the 
+results of the regression and classification network
+implementation, the model selection and analysis of the results 
+using tables, figures and heatmaps. The \ref{sec:discussion}
+discusses the results, the implementation, and the models used 
+along with its parameters. The \ref{sec:conclusion} rounds up everything discussed
+and explored in this project.  
+
+The full project can be found at \url{https://github.com/Timholmen96/FYS-STK4155/tree/467585f0bfdbf69ab54de5daa74d59e5d528582a/Project2/Project-Code} 

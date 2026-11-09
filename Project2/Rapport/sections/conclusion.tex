@@ -1,2 +1,31 @@
 \section{Conclusion}
 \label{sec:conclusion}
+Applied to the regression problem, the neural network
+showed a slightly lower test mse than the linear models, which is an
+impressive result. Although this is impressive, and shows 
+that the neural network works, the data cost of the neural network,
+pushes the weight in favor of the linear models for solving
+this particular problem, the runge function on normal randomly distributed data.
+When applying the same model structure to 
+the classification problem, with the only significant difference being
+the output activation function, the cost function
+and the backpropagation. The model showed a great accuracy
+in predicting unknown digits, when trained on only 1000 digits.
+With code optimization or a computer with more power, the 
+model could be trained on more data, and thus achieve a higher overall accuracy.
+A large portion of this project was 
+used in interpreting the results of the
+GridSearchCV class created by
+Scikit learn, using different 
+cross validation methods, and
+a better understanding of this class,
+would have further improved this project
+and the results of the training and
+cross validation. 
+A large part of the success in this process
+can be attributed to stochastic gradient descent,
+the backpropagation alghoritm and the 
+gradient updating method adam. Great methods
+for randomizing and increasing the training data, 
+calculating gradients with a low data cost and for 
+optimizing the gradients in an effective manner.

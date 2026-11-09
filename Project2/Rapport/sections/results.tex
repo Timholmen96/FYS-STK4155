@@ -99,6 +99,7 @@ To sum up the chosen parameters over all three GridSearch cross validation resul
         \hline
     \end{tabular}
 \end{table}
+$$CV MSE = 0.01846 \pm 0.00135$$
 % LLM Copilot Luna: Create Table
 \subsubsection{Ridge and Lasso}
 \begin{figure}[htbp]
@@ -107,10 +108,9 @@ To sum up the chosen parameters over all three GridSearch cross validation resul
     \caption{$\mathbf{Ridge and Lasso}:$ All models within one One SE, with the lowest CV MSE as reference}
     \label{fig:LR1}
 \end{figure}
-
+\FloatBarrier
 The chosen degrees are thus the same as for linear regression, 8 degree polynomial,
 which corresponds to 9 parameters with the intercept.
-\FloatBarrier
 \subsubsection{Final Test}
 The best models are fitted on the same full data set with a different $seed=1$, 
 and mse is calculated from the traget values.
@@ -128,8 +128,12 @@ model is either linear regression or Ridge, on the basis of
 both fit time and test mse.
 \FloatBarrier
 \subsection{NeuralNetClassifier}
-
-\subsubsection{GridsearchCV}
+\FloatBarrier
+GridsearchCV implemenation on the NeuralNetclassifier
+produced several heatmaps, only the heatmaps
+including the best CV MSE and the One-SE CV Mse results
+are shown below. The full result can be found at:
+\url{https://github.com/Timholmen96/FYS-STK4155/blob/467585f0bfdbf69ab54de5daa74d59e5d528582a/Project2/Project-Code/Project2_Classification_Init.ipynb} 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{\detokenize{Results/Class/HMC_B.png}}
@@ -148,11 +152,13 @@ both fit time and test mse.
     \caption{$\mathbf{Heatmap}:$ Containing two One-SE models}
     \label{fig:HMC2}
 \end{figure}
+\FloatBarrier
 From Fig $11-13$ we see that the model with the lowest cv mse is also the model within
 one standard error with the least parameters, one hidden layer of 32 nodes. The activation
 function in the hidden layer is \texttt{ReLU}, with L2 penalty with value $\lambda = 0.001$,
 the learning rate is $\gamma = 0.01$ and the gradient descent method is adam. The CV accuracy
-is $84.4 \%$ with standard error $1.17 \%$ which corresponds to $CV accuracy = 84.4\% +/- 1.17 \%$.
+is $84.4 \%$ with standard error $1.17 \%$ which corresponds to $CV accuracy = 84.4\% \pm 1.17 \%$.
+
 \FloatBarrier
 \subsubsection{Test Set once}
 The best model, chosen from the GridSearchCV, is applied to the separate test data and the accuracy
@@ -163,4 +169,7 @@ is calculated with the target data, along with a confusion matrix for visual rep
     \caption{$\mathbf{Confusion Matrix}:$ Best model applied on separate test data}
     \label{fig:CM2}
 \end{figure}
+\FloatBarrier
 The overall accuracy is $89.22 \% $
+The model has the highest accuracy with the digit
+1 and lowest accuracy with the digit 5. 

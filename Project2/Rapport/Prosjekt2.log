@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.14)  9 NOV 2026 20:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.14)  9 NOV 2026 22:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -488,57 +488,32 @@ Package hyperref Info: Link coloring ON on input line 70.
 Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 70.
 \openout3 = `Prosjekt2Notes.bib'.
 
- (./Prosjekt2.toc)
-\tf@toc=\write5
-\openout5 = `Prosjekt2.toc'.
-
- (./sections/introduction.tex [1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 92.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 92.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) (./sections/theory.tex [2]) (./sections/methods.tex [3]
-<Figures/Fig8_6.png, id=363, 309.155pt x 163.61125pt>
+) (./sections/introduction.tex [1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./sections/theory.tex [2]) (./sections/methods.tex
+<Figures/Fig8_6.png, id=315, 309.155pt x 163.61125pt>
 File: Figures/Fig8_6.png Graphic file (type png)
 <use Figures/Fig8_6.png>
 Package pdftex.def Info: Figures/Fig8_6.png  used on input line 41.
 (pdftex.def)             Requested size: 246.0pt x 130.19264pt.
- [4 <./Figures/Fig8_6.png>] [5] [6]
-<Figures/MNIST.png, id=426, 763.85374pt x 209.78375pt>
+ [3 <./Figures/Fig8_6.png>] [4] [5] [6]
+<Figures/MNIST.png, id=388, 763.85374pt x 209.78375pt>
 File: Figures/MNIST.png Graphic file (type png)
 <use Figures/MNIST.png>
-Package pdftex.def Info: Figures/MNIST.png  used on input line 376.
+Package pdftex.def Info: Figures/MNIST.png  used on input line 374.
 (pdftex.def)             Requested size: 246.0pt x 67.5611pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 368--383
-[]\OT1/cmr/m/n/10 The data used in the clas-si-fi-ca-tion prob-lem
- []
-
-
-Underfull \hbox (badness 8094) in paragraph at lines 368--383
-\OT1/cmr/m/n/10 is the mul-ti-class MNIST data set of han-drit-
- []
-
-
-Underfull \hbox (badness 1521) in paragraph at lines 368--383
-\OT1/cmr/m/n/10 ten dig-its, see the de-scrip-tion of the data set at
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 368--383
-\OT1/cmr/m/n/10 https://www.tensorflow.org/datasets/catalog/mnist.
- []
-
-[7 <./Figures/MNIST.png>]) (./sections/results.tex
-<Results/Regressor/MS11.png, id=442, 594.22pt x 264.99pt>
+) (./sections/results.tex [7 <./Figures/MNIST.png>]
+<Results/Regressor/MS11.png, id=405, 594.22pt x 264.99pt>
 File: Results/Regressor/MS11.png Graphic file (type png)
 <use Results/Regressor/MS11.png>
 Package pdftex.def Info: Results/Regressor/MS11.png  used on input line 8.
 (pdftex.def)             Requested size: 246.0pt x 109.70193pt.
-<Results/Regressor/HM1.png, id=443, 1089.8316pt x 297.0297pt>
+<Results/Regressor/HM1.png, id=406, 1089.8316pt x 297.0297pt>
 File: Results/Regressor/HM1.png Graphic file (type png)
 <use Results/Regressor/HM1.png>
 Package pdftex.def Info: Results/Regressor/HM1.png  used on input line 15.
@@ -548,68 +523,104 @@ Underfull \hbox (badness 1442) in paragraph at lines 12--24
 []\OT1/cmr/m/n/10 The first Grid-SearchCV re-sults are plot-ted in a
  []
 
-[8 <./Results/Regressor/MS11.png> <./Results/Regressor/HM1.png>]
-<Results/Regressor/MS1.png, id=455, 641.39626pt x 199.74625pt>
+<Results/Regressor/MS1.png, id=407, 641.39626pt x 199.74625pt>
 File: Results/Regressor/MS1.png Graphic file (type png)
 <use Results/Regressor/MS1.png>
 Package pdftex.def Info: Results/Regressor/MS1.png  used on input line 32.
 (pdftex.def)             Requested size: 246.0pt x 76.60841pt.
-<Results/Regressor/TS1.png, id=456, 242.9075pt x 136.51pt>
+<Results/Regressor/TS1.png, id=408, 242.9075pt x 136.51pt>
 File: Results/Regressor/TS1.png Graphic file (type png)
 <use Results/Regressor/TS1.png>
 Package pdftex.def Info: Results/Regressor/TS1.png  used on input line 45.
 (pdftex.def)             Requested size: 246.0pt x 138.24686pt.
-<Results/Regressor/MS21.png, id=457, 549.05125pt x 209.78375pt>
+[8 <./Results/Regressor/MS11.png> <./Results/Regressor/HM1.png> <./Results/Regressor/MS1.png> <./Results/Regressor/TS1.png>]
+<Results/Regressor/MS21.png, id=423, 549.05125pt x 209.78375pt>
 File: Results/Regressor/MS21.png Graphic file (type png)
 <use Results/Regressor/MS21.png>
 Package pdftex.def Info: Results/Regressor/MS21.png  used on input line 61.
 (pdftex.def)             Requested size: 246.0pt x 93.99207pt.
-<Results/Regressor/MS31.png, id=459, 612.2875pt x 265.99374pt>
+<Results/Regressor/MS31.png, id=425, 612.2875pt x 265.99374pt>
 File: Results/Regressor/MS31.png Graphic file (type png)
 <use Results/Regressor/MS31.png>
 Package pdftex.def Info: Results/Regressor/MS31.png  used on input line 75.
 (pdftex.def)             Requested size: 246.0pt x 106.86642pt.
-<Results/Regressor/LR1.png, id=460, 421.575pt x 246.9225pt>
+<Results/Regressor/LR1.png, id=426, 421.575pt x 246.9225pt>
 File: Results/Regressor/LR1.png Graphic file (type png)
 <use Results/Regressor/LR1.png>
-Package pdftex.def Info: Results/Regressor/LR1.png  used on input line 106.
+Package pdftex.def Info: Results/Regressor/LR1.png  used on input line 107.
 (pdftex.def)             Requested size: 246.0pt x 144.08925pt.
- [9 <./Results/Regressor/MS1.png> <./Results/Regressor/TS1.png> <./Results/Regressor/MS21.png> <./Results/Regressor/MS31.png>]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 110.
-
-<Results/Regressor/TS2.png, id=473, 317.185pt x 139.52126pt>
+<Results/Regressor/TS2.png, id=427, 317.185pt x 139.52126pt>
 File: Results/Regressor/TS2.png Graphic file (type png)
 <use Results/Regressor/TS2.png>
 Package pdftex.def Info: Results/Regressor/TS2.png  used on input line 119.
 (pdftex.def)             Requested size: 246.0pt x 108.213pt.
-<Results/Class/HMC_B.png, id=474, 1089.1089pt x 875.1897pt>
+ [9 <./Results/Regressor/MS21.png> <./Results/Regressor/MS31.png> <./Results/Regressor/LR1.png> <./Results/Regressor/TS2.png>]
+<Results/Class/HMC_B.png, id=442, 1089.1089pt x 875.1897pt>
 File: Results/Class/HMC_B.png Graphic file (type png)
 <use Results/Class/HMC_B.png>
-Package pdftex.def Info: Results/Class/HMC_B.png  used on input line 135.
+Package pdftex.def Info: Results/Class/HMC_B.png  used on input line 139.
 (pdftex.def)             Requested size: 246.0pt x 197.68373pt.
-<Results/Class/HMC_2.png, id=475, 1089.8316pt x 297.0297pt>
+<Results/Class/HMC_2.png, id=443, 1089.8316pt x 297.0297pt>
 File: Results/Class/HMC_2.png Graphic file (type png)
 <use Results/Class/HMC_2.png>
-Package pdftex.def Info: Results/Class/HMC_2.png  used on input line 141.
+Package pdftex.def Info: Results/Class/HMC_2.png  used on input line 145.
 (pdftex.def)             Requested size: 246.0pt x 67.04634pt.
-<Results/Class/HMC_3.png, id=476, 1089.1089pt x 875.1897pt>
+<Results/Class/HMC_3.png, id=444, 1089.1089pt x 875.1897pt>
 File: Results/Class/HMC_3.png Graphic file (type png)
 <use Results/Class/HMC_3.png>
-Package pdftex.def Info: Results/Class/HMC_3.png  used on input line 147.
+Package pdftex.def Info: Results/Class/HMC_3.png  used on input line 151.
 (pdftex.def)             Requested size: 246.0pt x 197.68373pt.
-[10 <./Results/Regressor/LR1.png> <./Results/Regressor/TS2.png> <./Results/Class/HMC_B.png> <./Results/Class/HMC_2.png> <./Results/Class/HMC_3.png>]
-<Results/Class/CM2.png, id=492, 309.3156pt x 312.9291pt>
+<Results/Class/CM2.png, id=445, 309.3156pt x 312.9291pt>
 File: Results/Class/CM2.png Graphic file (type png)
 <use Results/Class/CM2.png>
-Package pdftex.def Info: Results/Class/CM2.png  used on input line 162.
+Package pdftex.def Info: Results/Class/CM2.png  used on input line 168.
 (pdftex.def)             Requested size: 246.0pt x 248.87292pt.
-) (./sections/discussion.tex) (./sections/conclusion.tex) (./sections/appendix.tex
+ [10 <./Results/Class/HMC_B.png> <./Results/Class/HMC_2.png> <./Results/Class/HMC_3.png>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 172.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 172.
+
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+) (./sections/discussion.tex) (./sections/conclusion.tex) (./sections/appendix.tex [11 <./Results/Class/CM2.png>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 43.
-) (./Prosjekt2.bbl [11{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./Results/Class/CM2.png>]
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 41.
+
+Overfull \hbox (23.94656pt too wide) in paragraph at lines 46--48
+ []
+ []
+
+
+Overfull \hbox (2.94675pt too wide) in paragraph at lines 51--53
+ []
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 51--53
+ \OT1/cmr/m/it/10 lat-ing func-tions into classes. De-bug-ging jax
+ []
+
+
+Underfull \hbox (badness 4193) in paragraph at lines 51--53
+ \OT1/cmr/m/it/10 gra-di-ents and \OT1/cmtt/m/it/10 compute[]gradients\OT1/cmr/m/it/10 . Cre-at-ing
+ []
+
+
+Underfull \hbox (badness 2486) in paragraph at lines 51--53
+ \OT1/cmr/m/it/10 ac-ti-va-tion func-tions in-side Neu-ral-Ne-tRe-gres-sor.
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 51--53
+ \OT1/cmr/m/it/10 Gen-er-ate Heatmaps and Dis-play of data us-ing
+ []
+
+) (./Prosjekt2.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 54--55
- []\OT1/cmr/m/n/9 (????), ``Con-fu-sion[]matrix,'' https://scikit-
+ []\OT1/cmr/m/n/9 (2026), ``Con-fu-sion[]matrix,'' https://scikit-
  []
 
 
@@ -619,75 +630,35 @@ Overfull \hbox (53.69606pt too wide) in paragraph at lines 54--55
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 57--58
- []\OT1/cmr/m/n/9 (????a), ``FYS-STK4155/Prosjekt2 at
+ []\OT1/cmr/m/n/9 (2026), ``Strat-i-fied-K-Fold,'' https://scikit-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
- \OT1/cmr/m/n/9 main $\OMS/cmsy/m/n/9 ^^A$ \OT1/cmr/m/n/9 Timholmen96/FYS-STK4155,''
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
- \OT1/cmr/m/n/9 https://github.com/Timholmen96/FYS-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
- []\OT1/cmr/m/n/9 (????b), ``FYS-STK4155/Prosjekt2/Prosjekt-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
- \OT1/cmr/m/n/9 Kode/Project2[]Test[]Regressor.ipynb at
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
- \OT1/cmr/m/n/9 main $\OMS/cmsy/m/n/9 ^^A$ \OT1/cmr/m/n/9 Timholmen96/FYS-STK4155,''
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
- \OT1/cmr/m/n/9 https://github.com/Timholmen96/FYS-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
- \OT1/cmr/m/n/9 STK4155/blob/main/Prosjekt2/Prosjekt-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
- []\OT1/cmr/m/n/9 (????), ``Strat-i-fied-K-Fold,'' https://scikit-
- []
-
-
-Overfull \hbox (80.73958pt too wide) in paragraph at lines 63--64
+Overfull \hbox (80.73958pt too wide) in paragraph at lines 57--58
  \OT1/cmr/m/n/9 learn/stable/modules/generated/sklearn.model[]selection.StratifiedKFold.html. 
  []
 
-) [12] (./Prosjekt2.aux)
+[12{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) [13] (./Prosjekt2.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `Prosjekt2.out' has not changed.
-(rerunfilecheck)             Checksum: 6C62AFDE947DAF9BF6C0763368AC47E8;8804.
+(rerunfilecheck)             Checksum: FE2463B0EC4F413B80CAEEF78CCCD08D;9239.
  ) 
 Here is how much of TeX's memory you used:
- 14820 strings out of 467525
- 224596 string characters out of 5418982
- 667838 words of memory out of 5000000
- 43333 multiletter control sequences out of 15000+600000
- 642248 words of font info for 92 fonts, out of 8000000 for 9000
+ 14817 strings out of 467525
+ 224344 string characters out of 5418982
+ 673792 words of memory out of 5000000
+ 43323 multiletter control sequences out of 15000+600000
+ 644867 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,15n,79p,640b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Prosjekt2.pdf (12 pages, 1569930 bytes).
+ 71i,15n,79p,640b,633s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Prosjekt2.pdf (13 pages, 1593863 bytes).
 PDF statistics:
- 658 PDF objects out of 1000 (max. 8388607)
- 552 compressed objects within 6 object streams
- 137 named destinations out of 1000 (max. 500000)
- 559 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 531 compressed objects within 6 object streams
+ 140 named destinations out of 1000 (max. 500000)
+ 583 words of extra memory for PDF output out of 10000 (max. 10000000)
 

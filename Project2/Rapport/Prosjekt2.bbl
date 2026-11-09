@@ -6,7 +6,7 @@
 %Control: page (1) range
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{6}%
+\begin{thebibliography}{5}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -49,22 +49,19 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
-\bibitem [{Con(????)}]{Confusion_matrix}%
+\bibitem [{Con(2026)}]{Confusion_matrix}%
   \BibitemOpen
-   (????),\ \href@noop {} {\enquote {\bibinfo {title} {Confusion\_matrix},}\ }\bibinfo {howpublished} {https://scikit-learn/stable/modules/generated/sklearn.metrics.confusion\_matrix.html}\BibitemShut {NoStop}%
-\bibitem [{FYS(????{\natexlab{a}})}]{FYSSTK4155Prosjekt2Main}%
+   (\bibinfo {year} {2026}),\ \href@noop {} {\enquote {\bibinfo {title} {Confusion\_matrix},}\ }\bibinfo {howpublished} {https://scikit-learn/stable/modules/generated/sklearn.metrics.confusion\_matrix.html}\BibitemShut {NoStop}%
+\bibitem [{Str(2026)}]{StratifiedKFold}%
   \BibitemOpen
-   (????{\natexlab{a}}),\ \href@noop {} {\enquote {\bibinfo {title} {{{FYS-STK4155}}/{{Prosjekt2}} at main {$\cdot$} {{Timholmen96}}/{{FYS-STK4155}}},}\ }\bibinfo {howpublished} {https://github.com/Timholmen96/FYS-STK4155/tree/main/Prosjekt2}\BibitemShut {NoStop}%
-\bibitem [{FYS(????{\natexlab{b}})}]{FYSSTK4155Prosjekt2ProsjektKode}%
-  \BibitemOpen
-   (????{\natexlab{b}}),\ \href@noop {} {\enquote {\bibinfo {title} {{{FYS-STK4155}}/{{Prosjekt2}}/{{Prosjekt-Kode}}/{{Project2}}\_{{Test}}\_{{Regressor}}.ipynb at main {$\cdot$} {{Timholmen96}}/{{FYS-STK4155}}},}\ }\bibinfo {howpublished} {https://github.com/Timholmen96/FYS-STK4155/blob/main/Prosjekt2/Prosjekt-Kode/Project2\_Test\_Regressor.ipynb}\BibitemShut {NoStop}%
-\bibitem [{Str(????)}]{StratifiedKFold}%
-  \BibitemOpen
-   (????),\ \href@noop {} {\enquote {\bibinfo {title} {{{StratifiedKFold}}},}\ }\bibinfo {howpublished} {https://scikit-learn/stable/modules/generated/sklearn.model\_selection.StratifiedKFold.html}\BibitemShut {NoStop}%
+   (\bibinfo {year} {2026}),\ \href@noop {} {\enquote {\bibinfo {title} {{{StratifiedKFold}}},}\ }\bibinfo {howpublished} {https://scikit-learn/stable/modules/generated/sklearn.model\_selection.StratifiedKFold.html}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {{Hjorth-Jensen}}(2016)}]{LectureNotes}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {{Hjorth-Jensen}}}} (\bibinfo {year} {2016}),\ \href@noop {} {\emph {\bibinfo {title} {Machine {{Learning}} and the {{Physical Sciences}}}}}\ (\bibinfo  {publisher} {Springer})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {{Hjorth-Jensen}}(2026)}]{Project2}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {{Hjorth-Jensen}}}} (\bibinfo {year} {2026}),\ \href@noop {} {\enquote {\bibinfo {title} {Project 2 on {{Machine Learning}}},}\ }\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kashyap}(2024)}]{VanishingGradient2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Kashyap}}} (\bibinfo {year} {2024}),\ \href@noop {} {\enquote {\bibinfo {title} {Understanding the {{Vanishing Gradient Problem}} in {{Deep Learning}}},}\ }\BibitemShut {NoStop}%
 \end{thebibliography}%

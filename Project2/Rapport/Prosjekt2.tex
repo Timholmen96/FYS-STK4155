@@ -1,6 +1,6 @@
 % Preserve the LaTeX kernel label before REVTeX replaces it.
 \let\ReportKernelLabel\label
-\documentclass[aps,rmp,reprint,raggedbottom,amsmath,amssymb,longbibliography]{revtex4-1}
+\documentclass[aps,rmp,reprint,raggedbottom,amsmath,amssymb,longbibliography,floatfix]{revtex4-1}
 
 \usepackage{bm}
 \usepackage{graphicx}
@@ -77,13 +77,30 @@ apsrev41Control%
 \affiliation{Department of Physics}
 
 \begin{abstract}
-This project ...
+This project investigates feed-forward neural networks for regression 
+and classification. For regression, a network trained with stochastic
+gradient descent is used to approximate the Runge function and compared 
+with ordinary least squares, Ridge, and Lasso regression. 
+For classification, a neural network is trained to recognise 
+handwritten digits from the MNIST dataset. 
+Backpropagation gradients are checked against automatic differentiation, 
+and model parameters are selected using cross-validation, using
+scikit learns GridSearchCV. 
+The selected regression network achieves impressive test performance, 
+although linear models offer shorter training times. 
+For the regression problem, the selected neural network achieves
+a CV MSE of $0.01846 \pm 0.00135$ and a test MSE of $0.01434$. Compared
+with 8 degree ridge, rasso and linear regression with respectively $0.01477, 0.01478, 0.01495$ in test MSE.
+The neural network had the longest mean fit time with $2593 ms$ and linear regression the shortest with $3 ms$, a substantial difference.
+For digit classification, the selected model achieves 
+$84.4\%$ cross-validation accuracy and $89.22\%$ 
+accuracy on the test set. 
+The results illustrate how neural-network performance 
+depends on model architecture, optimisation, the data and the task being considered.
 \end{abstract}
 
 \maketitle
 \clearpage
-
-\tableofcontents
 
 \mainmatter
 % Main text starts here, on page 1.

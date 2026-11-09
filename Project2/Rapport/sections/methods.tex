@@ -230,9 +230,7 @@ produced matching predictions.
 The gradient validation passed for all methods, and both the regressor and the
 manual use of sgd agreed. Adam and RMSprop achieved lower training 
 MSE than plain stochastic gradient descent. The code can be found at
-\cite{FYSSTK4155Prosjekt2ProsjektKode}
-% Link to code?
-
+\url{https://github.com/Timholmen96/FYS-STK4155/blob/467585f0bfdbf69ab54de5daa74d59e5d528582a/Project2/Project-Code/Project2_Test_Regressor.ipynb}
 \subsection{Model selection}
 \subsubsection{Skicit Learn}
 Scikit-learn has multiple classes that can be used to validate and
@@ -272,12 +270,12 @@ The first parameter grid is.
         \hline
         Parameter & \multicolumn{5}{c}{Values}\\
         \hline
-        Gamma  & 0.001 & 0.003 & 0.01 & 0.03 & 0.01\\
-        Method & rmsprop & adam & plain \\
-        Hidden & (50,) & (50, 100)\\
+        Gamma  & 0.001 & 0.003 & 0.01  & 0.03  & 0.01  \\
+        Method & rmsprop & adam    & plain   \\
+        Hidden & (50,)    & (50, 100)\\
         \hline
     \end{tabular}
-\end{table}[htbp]
+\end{table}
 Best model parameters within ONE-SE is found through analysing the results of the GridSearchCV,
 the best model parameters gamma $- learning rate$, method and hidden layers are chosen for the next
 neuralnetregressor model input of the next GridSearch. The second parameter grid is.  
@@ -290,10 +288,10 @@ neuralnetregressor model input of the next GridSearch. The second parameter grid
         Parameter & \multicolumn{4}{c}{Values}\\
         \hline
         Activation  & sigmoid & relu\\
-        Hidden & (50,) & (30,) & (50, 100,) &(50, 100, 100,)\\
+        Hidden & (50,) & (30,) & (50, 100,) & (50, 100, 100,) \\
         \hline
     \end{tabular}
-\end{table}[htbp]
+\end{table}
 \begin{table}[htbp]
     \centering
     \caption{Parameter grid 3}
@@ -307,7 +305,7 @@ neuralnetregressor model input of the next GridSearch. The second parameter grid
         Gamma    & 0.003  & 0.01  & 0.03 & 0.1 \\
         \hline
     \end{tabular}
-\end{table}[htbp]
+\end{table}
 Here lambda equals the value of the penalty, L1 and L2 are the norms. 
 The last parameter grid is split in half, where lambda is set to zero 
 when the penalty is None, else the lambda values are as shown in the table.
@@ -366,7 +364,7 @@ is the cross entropy, as mentioned earlier.
 % LLM Declaration: Generated with Copilot using GPT Luna 6.0
 \subsubsection{The data}
 The data used in the classification problem is the multiclass MNIST data set of handritten digits,
-see the description of the data set at https://www.tensorflow.org/datasets/catalog/mnist. 
+see the description of the data set at \url{https://www.tensorflow.org/datasets/catalog/mnist}. 
 The data set comes with a canonical split into 60 000 training images and 10 000 test images, 
 each a $28 x 28$ array of grey scale pixel values between 0 and 255. 
 The training data is separated randomly into two smalles subsets with 1000 data points each, 
@@ -378,7 +376,8 @@ as shown in the code section below:
     \label{fig:MNIST}
 \end{figure}
 The network takes a vector as input, so the image is flattened to a vector of 784 features and scaled
-to the interval $[0,1]$. \cite{Project2} The full test data is kept aside for the last test, so that no
+to the interval $[0,1]$. \cite{Project2}.   
+The full test data is kept aside for the last test, so that no
 data leaks into the training.
 \subsubsection{GridSearchCV}
 The pipeline for the classification problem is established with Scikit-learns NeuralNetClassifier
@@ -403,7 +402,7 @@ is calculated using scikit learn \texttt{accuracy\_score} with the predictions a
 each correct classification is summed up and divided by the total number of data points, which equals $10 000$.
 \subsubsection{Confusion matrix}
 The confusion matrice uses the predicted values and the true target values,
-to create a $n_{class} x n_{class}$ matrix, with 10 classes corresponding to the numbers $[0,9]$
+to create a $n_{classes} x n_{classes}$ matrix, with 10 classes corresponding to the numbers $[0,9]$
 the result is a $10 x 10$ matrix where each point in the matrice corresponds to one of four possibilites,
 true positive $(tp)$; false negative $(fn)$, false positive $(fp)$, true negative $(tn)$. The confusion matrix
 evaluates the accuracy of a classification, where the goal is to achieve true positive values, which are
