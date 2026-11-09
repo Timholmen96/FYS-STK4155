@@ -1,11 +1,9 @@
-mentioning
-what the code is, what dependencies it has, and how to run it
+# Dependencies
+numpy pandas matplotlib jax scikit-learn jupyter ipykernel 
+
 # \Rapport
 The rapport can be found as
 "Prosjekt2.pdf"
-
-# Dependencies
-numpy pandas matplotlib jax scikit-learn jupyter ipykernel 
 
 # \Code
 
