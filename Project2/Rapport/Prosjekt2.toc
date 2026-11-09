@@ -42,12 +42,14 @@
 \contentsline {subsection}{\numberline {I}Measure of quality}{7}{section*.40}%
 \contentsline {subsubsection}{\numberline {1}Confusion matrix}{7}{section*.41}%
 \contentsline {section}{\numberline {IV}Results}{7}{section*.42}%
-\contentsline {section}{\numberline {V}Discussion}{7}{section*.43}%
-\contentsline {section}{\numberline {VI}Conclusion}{7}{section*.44}%
+\contentsline {subsection}{\numberline {A}NeuralNetRegressor}{7}{section*.43}%
+\contentsline {subsubsection}{\numberline {1}OLS comparison and test set}{7}{section*.44}%
+\contentsline {section}{\numberline {V}Discussion}{8}{section*.45}%
+\contentsline {section}{\numberline {VI}Conclusion}{8}{section*.46}%
 \appendix 
-\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{7}{section*.45}%
-\contentsline {subsection}{\numberline {1}Tools used}{7}{section*.46}%
-\contentsline {subsection}{\numberline {2}Text contributions}{7}{section*.47}%
-\contentsline {subsection}{\numberline {3}Code contributions}{8}{section*.48}%
-\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{8}{section*.49}%
-\contentsline {section}{\numberline {}References}{8}{section*.50}%
+\contentsline {section}{\numberline {A}Use of AI/LLM Tools}{8}{section*.47}%
+\contentsline {subsection}{\numberline {1}Tools used}{8}{section*.48}%
+\contentsline {subsection}{\numberline {2}Text contributions}{8}{section*.49}%
+\contentsline {subsection}{\numberline {3}Code contributions}{8}{section*.50}%
+\contentsline {subsubsection}{\numberline {a}LLM Declaration this section:}{8}{section*.51}%
+\contentsline {section}{\numberline {}References}{8}{section*.52}%

@@ -64,3 +64,21 @@ The feed-forward procedure is as follows:
 \end{align}
 For backpropagation, it is important to save the input values,
 the z values and the output values a during the feed forward.
+
+# OLS
+The linear regression model with the lowest $CV-MSE$ had degree 11, with a score $CV-MSE = 0.0211 +/- 0.00324$, $SE = 0.00324$ which gives
+a One SE threshod $0.02345$, the models with a $CV-MSE$ below the threshold are listed below.  
+\begin{table}[htbp]
+    \centering
+    \caption{Linear Regression CV Results}
+    \label{tab:OLS}
+    \begin{tabular}{lccccc}
+        \multicolumn{3}{c}{One SE Scores}\\
+        \hline
+        Degree & CV MSE   & SE       \\
+        8      & 0.02253  & 0.00172  \\
+        9      & 0.02376  & 0.00121  \\
+        10     & 0.02400  & 0.00285  \\
+        \hline
+    \end{tabular}
+\end{table}[htbp]
