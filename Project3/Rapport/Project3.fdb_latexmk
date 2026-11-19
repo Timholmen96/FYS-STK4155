@@ -1,14 +1,15 @@
 # Fdb version 4
-["bibtex Project3"] 1795086355.73272 "Project3.aux" "Project3.bbl" "Project3" 1795086358.32085 0
-  "./Project3Notes.bib" 1795086357.40853 105 80595bdd06aff168c391c5d1e4c919e5 ""
-  "./References.bib" 1794261492.9677 3386 7ada3a97b6c475b11e31116505844a15 ""
+["bibtex Project3"] 1795116067.61357 "Project3.aux" "Project3.bbl" "Project3" 1795116117.37872 0
+  "./Project3Notes.bib" 1795116115.23574 105 80595bdd06aff168c391c5d1e4c919e5 ""
+  "./References.bib" 1795115969.72912 29511 1ca987e167157604dff735fec99da26c ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/revtex4-1/apsrmp4-1.bst" 1602107945 71748 f711d7df172771f6dc44f5fb891e6757 ""
-  "Project3.aux" 1795086357.40711 4841 8ab1dcb9e85e376a17d54c6d7035c4ee "pdflatex"
+  "Project3.aux" 1795116115.22611 5087 767d0b919f295a59f84bde2cfe55e484 "pdflatex"
   (generated)
   "Project3.bbl"
   "Project3.blg"
   (rewritten before read)
-["pdflatex"] 1795086356.08854 "Project3.tex" "Project3.pdf" "Project3" 1795086358.32143 0
+["pdflatex"] 1795116111.98223 "/Users/timholmen/FYS-STK4155/Project3/Rapport/Project3.tex" "Project3.pdf" "Project3" 1795116117.37956 0
+  "/Users/timholmen/FYS-STK4155/Project3/Rapport/Project3.tex" 1795085203.52532 2661 c23c9534a5fb74877b4223c347d6dc09 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -141,11 +142,12 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1786703604 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1786703436 3636773 17fe2d8d5c7efddfc0b6e5130954d037 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "Project3.aux" 1795086357.40711 4841 8ab1dcb9e85e376a17d54c6d7035c4ee "pdflatex"
-  "Project3.bbl" 1795086356.07934 2340 3b951e13f2bc2e48e789087048e84cdf "bibtex Project3"
-  "Project3.out" 1795086357.40806 3626 9850a76efc6f3dc3f140781c90327654 "pdflatex"
+  "Project3.aux" 1795116115.22611 5087 767d0b919f295a59f84bde2cfe55e484 "pdflatex"
+  "Project3.bbl" 1795116067.93754 2333 bdd42b3f4bf2f3af8596e89fbba9ce7b "bibtex Project3"
+  "Project3.out" 1795116115.2311 3626 9850a76efc6f3dc3f140781c90327654 "pdflatex"
   "Project3.tex" 1795085203.52532 2661 c23c9534a5fb74877b4223c347d6dc09 ""
-  "sections/appendix.tex" 1795085169.8009 1473 1d2dfbb89d955f0485d06917fac899b8 ""
+  "Results/data/examples.png" 1795108671.89159 301700 e06a96d88aead1d1eab0ed1c5f2f7cf7 ""
+  "sections/appendix.tex" 1795114890.15378 1605 f64015425ff23dc88338d1ba229690d5 ""
   "sections/conclusion.tex" 1795084821.49023 44 b0629f1731e82555da7c298cf107015a ""
   "sections/discussion.tex" 1795084985.97878 44 9a887e78f23527a7bdddcc5210c058eb ""
   "sections/introduction.tex" 1795084980.57168 47 6b811b68ae49236c29d88a5bdc4239f6 ""
@@ -154,8 +156,8 @@
   "sections/theory.tex" 1795086248.02906 185 d4424c16094fbe432aecbceddd11e874 ""
   "sections/theory/boosting.tex" 1795085968.04491 91 583d08aec9787540dfef7b9dde560da7 ""
   "sections/theory/cnn.tex" 1795086009.01412 83 78b25cfcb1f50d97c7054dcf36fab207 ""
-  "sections/theory/cost.tex" 1795085937.93002 4777 87d8946d3756ca321e94c267ae7c4a95 ""
-  "sections/theory/data.tex" 1795085905.84064 86 f75e9fabe443e0724a5ee9cccdf16682 ""
+  "sections/theory/cost.tex" 1795114526.51315 4872 7e44dd3e24ae061686df658c59ff0271 ""
+  "sections/theory/data.tex" 1795116111.62035 1740 3e417895fa436e02bfaed05ef0995f49 ""
   "sections/theory/ffnn.tex" 1795085990.86407 108 4bc52cfa37dd8b083a6beace84285a0c ""
   (generated)
   "Project3.aux"

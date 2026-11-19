@@ -1,3 +1,38 @@
 % !TEX root = Project3/Rapport/Project3.tex
+% LLM declaration (Claude Code, 2026-11-19): level 1 – LaTeX syntax and number formatting only.
 \subsection{Data}
 \label{sec:theory-data}
+The chosen data set for this project is the Fashion-MNIST data set from
+Zalando. \url{https://github.com/zalandoresearch/fashion-mnist}.  
+The data set consists of 70\,000 grey-scale images of $28 \times 28$ pixels of
+clothing items from the Zalando catalogue, in ten classes, the classes
+are shown in Fig.~\ref{fig:examples}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{Results/data/examples.png}
+    \caption{The 10 classes with 10 random images from each class}
+    \label{fig:examples}
+\end{figure}
+\FloatBarrier
+The data is split into 60\,000 training and 10\,000 test images with the 
+canonical split. All model selection and verification is done on the 
+training data, while the test images are kept out and used once
+for testing the chosen models. 
+The data. 
+The intensity value of each pixel in the images are 
+between $0$ and $255$. For the training data the pixel values 
+are standardized so that each pixel is between $[0,1]$.  
+For the feed forward neural network and the gradient boosting
+The $28 \times 28$ images are flattened to a one dimension vector 
+of size $784$. The original dimensions are kept for the 
+convolutional neural network.  
+For model selection, a subsection of the training data 
+from the canonical split is chosen for efficiency, the 
+number of data points are chosen as $1000$ initially. 
+Choosing a subsection of the data is
+ done using numpy \textit{concatenate} choosing 
+random index values with numpy \textit{random generator choice}.  
+The seed for generating random values throghout this project
+is $2026$. 
+
+
