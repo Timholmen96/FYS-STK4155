@@ -1,3 +1,45 @@
 % !TEX root = Project3/Rapport/Project3.tex
-\subsection{XGBoost}
+\subsection{Decision trees with gradient boosting}
 \label{sec:theory-xgboost}
+Decision trees partition the feature space into boxes and
+fit a constant in each, building the model by 
+a sequence of simple yes-or-no questions. A single tree 
+has low bias and very high variance; the remedy is to build
+many trees and combine them, with various \textit{ensemble methods}
+- baggin, random forests, AdaBoost - and the one used in this project: 
+\textit{gradient boosting}, particularly the \textit{XGBoost} library. 
+On tabular data, these ensemble methods are known to be the most accuracte, 
+and may even outperform neural networks.
+\cite[p.~199]{LectureNotes}. 
+\subsubsection{Basics of a tree}
+Before explaining XGBoost it is neccesary to explain the basics
+of a decision tree, and its hyperparameters.
+The \textit{root node} contains all the observations.
+Each \textit{internal node} tests one feature against a threshold
+and sends the observation left or right - \textit{branch}.
+Each terminal node carries a prediction or classification - \textit{leaf}.
+A classification or prediction means walking from the root to a leaf.
+% Geometrically, each test .. feature space.. hyperplane .. axis j.
+
+\subsubsection{Regression trees}
+A single decision tree can handle both regression
+and classification problems, and they only differ in what a leaf
+predicts and how splits are scored. For a regression the the prediction
+is the mean response in the leaf; for a classification tree it is
+the most occuring class among the training observations in that leaf.
+Although this project will solve
+a classification problem, the decision trees temselves are regression
+trees. % This is so for gradient boosting.
+Regression trees will be explained briefly, before XGBoost is explained,
+in which the tree building is optimized.  
+% I dont understand
+A regression tree is built in two steps. First the predictor space
+is split into J distinct and non-overlapping regions. Second, 
+for every observation falling into region j we make the same prediction,
+the mean of the response values of the training observations in region j.
+\subsubsection{XGBoost}
+Well well well
+
+\subsubsection{Implementation: Method}
+The gradient boosting method applied in this project is from the
+library \textit{XGBoost}:
