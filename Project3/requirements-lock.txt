@@ -1,3 +1,5 @@
+# LLM declaration (Claude, 2026-11-24): regenerated with 'pip freeze' from Project3/.venv (adds seaborn, xgboost).
+# XGBoost on macOS also needs the OpenMP runtime: brew install libomp
 appnope==1.0.0
 asttokens==3.0.2
 cloudpickle==3.1.2
@@ -46,6 +48,7 @@ python-dateutil==4.0.0
 pyzmq==27.3.0
 scikit-learn==1.9.1
 scipy==1.17.1
+seaborn==0.13.2
 stack-data==0.6.3
 sympy==1.14.0
 threadpoolctl==3.8.0
@@ -56,3 +59,4 @@ traitlets==5.16.1
 typing_extensions==4.16.0
 tzdata==2026.6
 wcwidth==0.9.4
+xgboost==3.4.1

@@ -20,26 +20,127 @@ and sends the observation left or right - \textit{branch}.
 Each terminal node carries a prediction or classification - \textit{leaf}.
 A classification or prediction means walking from the root to a leaf.
 % Geometrically, each test .. feature space.. hyperplane .. axis j.
-
 \subsubsection{Regression trees}
 A single decision tree can handle both regression
 and classification problems, and they only differ in what a leaf
 predicts and how splits are scored. For a regression the the prediction
-is the mean response in the leaf; for a classification tree it is
-the most occuring class among the training observations in that leaf.
-Although this project will solve
-a classification problem, the decision trees temselves are regression
-trees. % This is so for gradient boosting.
-Regression trees will be explained briefly, before XGBoost is explained,
-in which the tree building is optimized.  
-% I dont understand
-A regression tree is built in two steps. First the predictor space
-is split into J distinct and non-overlapping regions. Second, 
-for every observation falling into region j we make the same prediction,
-the mean of the response values of the training observations in region j.
+is the mean response in the leaf, which is a numerical value, for a classification tree it is
+the most occuring class among the training observations in that leaf, which is a classification category.  
+A split is scored by information gain for classification problems;
+Information is measured in each specific node; entropy, and gini impurity
+which measures how pure, or unpure the current node is. A pure node
+will have zero impurity and entropy, while the highest entropy is measured
+when the different classes are evenly disturbed. Information gain is measured
+when an internal node is split into two branches and "child" nodes by a decision, 
+the sum of the Gini impurity of the single internal node and the average 
+impurity of the child nodes, the split with the highest gain will be chosen to 
+split the internal node. 
+\begin{equation}
+    \text{Gini} = \sum_{k=1}^{K} p_k \times (1 - p_k)
+    \label{eq:Gini}
+\end{equation}
+where $$p_{mk} = \frac{1}{N_m}\sum_{x_i \in R_m} I(y_i = k)$$
+is the proportion of class k among the $N_m$ observations in
+region $R_m$.
+This process is repeated, growing the 
+branches and leaves of the tree until a chosen limit is reached.  
+For regression problems a split is scored by placing all observations
+in a single region and successively splitting; choosing the best split
+avaliable at that particular step.  
+A predictor $x_j$ and a cutpoint $s$ is chosen splitting the space in two parts,
+all values below s and all values above or equal to s. These values
+are chosen as to minimize the mean square difference between the target
+value and the mean value in each region. Ideally searching over all predictors $x_1, ..., x_p$,
+and for each, over all possible values of s, cutting the predictor space
+into J-distinct and non overlappping regions $R_1, .., R_J$, where the response
+value in each region is the mean of all the response values of the training
+observations in that region. For a single box the cost function is
+$$\sum_{j=1}^{J}\sum_{i \in R_j}(y_i - \bar{y}_{R_j})^2$$. 
+For the splitting of a box in two; \textit{Recursive binary splitting}
+$$\sum_{i:x_i \in R_1} (y_i - \bar{y}_{R_1})^2 \quad + \sum_{i:x_i \in R_2}(y_i - \bar{y_{R_2}})^2$$
+This process is repeated until 
+a stopping criterion is met - commonly that no region
+contains more than some minimum number of observations.
+\textit{Pros:} Easy to interpret and visualise. They require
+little data preparation, no scaling or centring is needed - 
+a monotone transformation of any feature leaves the tree unchanged!
+\textit{Cons:} single decision trees are prone to overfitting for deep trees.
+Overfitting can be limited by setting a max depth limit, 
+but this will be at the expense of an increasing bias. 
+The overfitting problem is the reason for ensemble methods,
+where many smaller decision trees are put together $(aggregated)$
+in various ways for increased variance, without increasing the bias as much.
+\cite[p.~199-208]{LectureNotes}.  
+\subsubsection{Gradientboost}
+The ensemble method used in this project is \textit{XGBoost}, it is a boosting ensemble method.
+Which means that it adds up weak trees / learners sequentially, so each new tre corrects the 
+errors of the previous ensemble. A weak classifier is one performing
+only slightly better than random guessing - a tree of depth one, a \textit{stump}, is the canonical example.
+Assume 
+\begin{equation}
+    f_M(x) = \sum_{m=1}^{M}\beta_mb(x;\gamma_m)
+    \label{eq: tree_basis}
+\end{equation}
+Where $b$ is a small decision tree and $\beta_m, \quad \gamma_m$ are determined
+by minimizing a cost function. 
+This process is done iteratively, by 
+\textit{forward stagewise fitting}: having built $f_{m-1}$, we add
+\begin{equation}
+    f_m(x) = f_{m-1}(x) + \beta_m b(x;\gamma_m)
+    \label{eq:fs_fit}
+\end{equation}
+From Eq.~\eqref{eq:fs_fit} wee se that each new tree $b(x;\gamma_m)$ builds upon
+the previous ensemble $f_{m-1}$, with the mentioned values $(\beta_m, \gamma_m)$ which
+are determined by minimizing the cost function. The boosting method used in this 
+project is a specialization of Eq.~\eqref{eq:fs_fit} to a particularly chosen
+loss function.  
+% LLM [1] - Correction and editing
+Minimizing the cost function
+equals differentiation and optimization, and for boosting the method is
+\textit{functional gradient descent}; gradient descent performed in function space.
+And the loss function is chosen for the particular problem, usually squared error for
+regression and logistic loss and cross entropy for classification. In this project
+the loss function is softmax cross entropy (multinomial log loss), since we are dealing
+with multiple classes. 
+While gradient boosting uses the first derivative of the loss, XGBoost expands
+the loss to second order around the current prediction. 
+$g_i = \partial L(y_i, f)/df$ and $h_i = \partial^2 L(y_i,f)/ \partial^2 f$ evaluated
+at $f_{m-1}(x_i)$. A tree assigns a single weight $w_j$ to every point in leaf $j$,
+writing $I_j$ for the set of observations landing there, we get $G_j = \sum_{i\in I_j}g_i$
+and $H_j = \sum_{i\in I_j}h_i$. With T being the number of leaves, $\gamma, \lambda$ being 
+regularization hyperparameters, the cost function becomes:
+\begin{equation}
+    C^{m} \approx \sum_{j=1}^{T}[G_jw_j + \frac{1}{2}(H_j + \lambda)w_j^2] + \gamma T
+    \label{eq:Cost_XG}
+\end{equation}  
+This is a sum of independent one-dimensional quadratics, so each is minimized 
+exactly, minimizing with respect to $w_j$ gives the optimal leaf weights 
+and the minimal cost function
+\begin{equation}
+    w_j^* = - \frac{G_j}{H_j + \lambda}, \qquad
+    C^* = -\frac{1}{2}\sum_{j=1}^{T}\frac{G_j^2}{H_j + \lambda} + \gamma T ,
+    \label{eq:Optimize}
+\end{equation}
+$\lambda $ is an L2 penalty on the leaf weights, shrinking them towards zero,
+like ridge. $\gamma$ is a penalty per leaf, and acts as a pruning factor. It is included in the complex penalty
+equation of the tree:
+\begin{equation}
+    \Omega (f) = \gamma T + \frac{1}{2}\lambda\sum_{j=1}^{T}w_j^2
+    \label{eq:Penalty}
+\end{equation}
 \subsubsection{XGBoost}
-Well well well
-
+The second expression in eq.~\eqref{eq:Optimize} is the score for a tree structure 
+- the smaller the better - and it gives a principled splitting criterion.  
+Splitting a leaf into left and right parts changes the score by
+\begin{equation}
+    \text{Gain} = \frac{1}{2}[\frac{G_L^2}{H_L + \lambda} + \frac{G_R^2}{H_R + \lambda} - \frac{(G_L + G_R)^2}{H_L + H_R + \lambda}] - \gamma
+    \label{eq:XGGain}
+\end{equation}
+The eq.~\eqref{eq:XGGain} replaces the Gini eq.~\eqref{eq:Gini} criterion.
+It is derived from the loss rather than chosen, it incorporates the regularisation,
+and the subtraction of $\gamma$ means a split whose gain does not exceed $\gamma$
+is simply not made - pruning becomes part of growing. \cite[p.~212-220]{LectureNotes}.
+\cite{chenXGBoostScalableTree2016}. 
 \subsubsection{Implementation: Method}
 The gradient boosting method applied in this project is from the
 library \textit{XGBoost}:
